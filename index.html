@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reverse Selling — A Free Revenue Review for Hamilton County Owners</title>
+<meta name="description" content="We research one local business at a time and show the owner the money already slipping past them. Free. No pitch. Jimmy + Paul, Hamilton County, Indiana.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0d2b24">
+<meta property="og:title" content="Reverse Selling — Built for businesses already moving.">
+<meta property="og:description" content="A free, private revenue review for established Hamilton County owners. No pitch.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d2b24'/><text x='16' y='23' font-size='20' font-family='Georgia,serif' fill='%23d4a64a' text-anchor='middle'>R</text></svg>">
+<style>
+:root{
+  --bg:#0d2b24;
+  --bg-2:#0a221c;
+  --ink:#f1e5c6;
+  --muted:#a9bdb2;
+  --accent:#d4a64a;
+  --accent-soft:#b79552;
+  --line:#2c5045;
+  --err:#ec8b6c;
+  --ok:#7fd0a8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-wrap:break-word;
+}
+.wrap{width:100%;max-width:660px;margin:0 auto;padding:0 20px}
+.serif{font-family:Georgia,"Times New Roman",serif}
+
+/* ---------- header ---------- */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:18px 0;border-bottom:1px solid var(--line);
+}
+.brand{font-size:15px;font-weight:800;letter-spacing:.14em}
+.brand i{font-style:normal;color:var(--accent)}
+.founders{font-size:10px;letter-spacing:.16em;color:var(--muted);white-space:nowrap}
+.founders i{font-style:normal;color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:34px 0 8px}
+.card{
+  border:1px solid var(--accent-soft);
+  padding:30px 22px;
+  position:relative;
+  background:linear-gradient(180deg,rgba(212,166,74,.05),rgba(212,166,74,0));
+}
+.card::before,.card::after{content:"";position:absolute;width:22px;height:22px;border-color:var(--accent)}
+.card::before{left:9px;top:9px;border-left:2px solid;border-top:2px solid}
+.card::after{right:9px;bottom:9px;border-right:2px solid;border-bottom:2px solid}
+.eyebrow{
+  font-size:11px;text-transform:uppercase;letter-spacing:.2em;
+  font-weight:800;color:var(--accent);margin-bottom:14px;
+}
+h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  font-size:clamp(2.15rem,10.5vw,3.4rem);
+  line-height:1.02;
+  letter-spacing:-.03em;
+  text-transform:uppercase;
+  overflow-wrap:normal;
+  word-break:keep-all;
+  hyphens:none;
+}
+.lead{margin-top:18px;color:var(--muted);font-size:1.05rem;line-height:1.55}
+.lead b{color:var(--ink);font-weight:700}
+.scarcity{
+  margin-top:20px;font-size:11.5px;font-weight:800;letter-spacing:.09em;
+  text-transform:uppercase;display:flex;align-items:center;gap:9px;color:var(--ink)
+}
+.scarcity span{width:8px;height:8px;background:var(--accent);border-radius:50%;flex:0 0 auto}
+
+.criteria{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  margin-top:26px;border-top:1px solid var(--line)
+}
+.criteria>div{padding:16px 8px 4px;border-right:1px solid var(--line)}
+.criteria>div:last-child{border-right:0}
+.criteria .num{font-size:10px;letter-spacing:.16em;color:var(--muted)}
+.criteria b{display:block;font-size:15px;margin-top:5px;line-height:1.2}
+
+/* ---------- steps ---------- */
+.section{padding:36px 0 0}
+h2{
+  font-family:Georgia,serif;font-weight:400;
+  font-size:clamp(1.45rem,6vw,1.9rem);line-height:1.15;letter-spacing:-.02em
+}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);font-weight:800;margin-bottom:10px}
+ol.steps{list-style:none;margin-top:20px;counter-reset:s}
+ol.steps li{
+  counter-increment:s;position:relative;padding:0 0 22px 46px;
+}
+ol.steps li::before{
+  content:counter(s,decimal-leading-zero);
+  position:absolute;left:0;top:1px;
+  width:32px;height:32px;border:1px solid var(--accent);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:800;border-radius:50%
+}
+ol.steps b{display:block;font-size:1.02rem}
+ol.steps p{color:var(--muted);font-size:.95rem;margin-top:3px}
+
+blockquote{
+  margin-top:26px;padding:18px 20px;border-left:3px solid var(--accent);
+  background:var(--bg-2);font-family:Georgia,serif;font-size:1.05rem;line-height:1.5
+}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-family:inherit;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- form ---------- */
+#apply{padding-top:40px}
+.formcard{
+  border:1px solid var(--accent-soft);background:var(--bg-2);
+  padding:26px 20px 28px;
+}
+.formcard h2{margin-bottom:6px}
+.formcard .sub{color:var(--muted);font-size:.95rem;margin-bottom:22px}
+.row{display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:520px){.row{grid-template-columns:1fr 1fr;gap:14px}}
+.field{margin-bottom:16px}
+label{
+  display:block;font-size:11px;font-weight:800;letter-spacing:.13em;
+  text-transform:uppercase;margin-bottom:7px;color:var(--ink)
+}
+label .req{color:var(--accent)}
+input{
+  width:100%;padding:14px 14px;font-size:16px;/* 16px stops iOS zoom */
+  font-family:inherit;color:var(--ink);
+  background:#0e332a;border:1px solid var(--line);border-radius:2px;
+  transition:border-color .15s,box-shadow .15s;
+}
+input::placeholder{color:#6f8a7e}
+input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(212,166,74,.18)}
+input[aria-invalid="true"]{border-color:var(--err)}
+.err{display:none;color:var(--err);font-size:12.5px;margin-top:6px;font-weight:600}
+.err.show{display:block}
+button{
+  width:100%;margin-top:6px;padding:19px 20px;
+  background:var(--accent);color:#0a221c;border:0;border-radius:2px;
+  font-family:inherit;font-size:16px;font-weight:800;letter-spacing:.07em;
+  text-transform:uppercase;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  -webkit-tap-highlight-color:transparent;
+}
+button:hover{background:#e0b45c}
+button:active{transform:translateY(1px)}
+button[disabled]{opacity:.6;cursor:progress}
+.finePrint{margin-top:14px;font-size:12px;color:var(--muted);line-height:1.5;text-align:center}
+.finePrint a{color:var(--muted);text-decoration:underline}
+.opt{color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0}
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:4px}
+.consent input{width:18px;height:18px;min-width:18px;margin-top:2px;accent-color:var(--accent);cursor:pointer}
+.consent label{font-size:12px;line-height:1.5;color:var(--muted);text-transform:none;letter-spacing:0;font-weight:400;cursor:pointer}
+.formError{
+  display:none;margin-top:16px;padding:13px 15px;border:1px solid var(--err);
+  color:var(--err);font-size:13.5px;line-height:1.5
+}
+.formError.show{display:block}
+
+/* ---------- success ---------- */
+#success{display:none}
+#success.show{display:block}
+.tick{
+  width:56px;height:56px;border:2px solid var(--ok);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  color:var(--ok);font-size:26px;line-height:1
+}
+.nextlist{list-style:none;margin:20px 0 0;border-top:1px solid var(--line)}
+.nextlist li{
+  padding:14px 0 14px 26px;border-bottom:1px solid var(--line);
+  position:relative;font-size:.97rem;color:var(--muted)
+}
+.nextlist li b{color:var(--ink)}
+.nextlist li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:44px;border-top:1px solid var(--line);
+  padding:24px 0 46px;text-align:center
+}
+footer .micro{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="nav">
+    <div class="brand">REVERSE<i>SELLING</i></div>
+    <div class="founders">JIMMY <i>+</i> PAUL</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="card">
+        <p class="eyebrow">A private working relationship</p>
+        <h1>Built for businesses already moving.</h1>
+        <p class="lead">
+          Most marketing helps you chase customers harder. We do the opposite.
+          We pick one local business at a time, research it properly, and show the owner
+          the money already slipping past them &mdash; the calls nobody picked up, the
+          customers nobody followed up, the people who quietly went somewhere else.
+          <b>It costs nothing and there is no pitch.</b>
+        </p>
+        <p class="scarcity"><span></span> We're selective &mdash; limited capacity.</p>
+
+        <div class="criteria">
+          <div><span class="num">01</span><b>Real customers</b></div>
+          <div><span class="num">02</span><b>Real capacity</b></div>
+          <div><span class="num">03</span><b>Real fit</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="kicker">What actually happens</p>
+      <h2>Three steps. None of them are a sales call.</h2>
+      <ol class="steps">
+        <li>
+          <b>You tell us where to look.</b>
+          <p>Name, email, phone. Thirty seconds. That's the whole form.</p>
+        </li>
+        <li>
+          <b>We do the research.</b>
+          <p>The same research that goes into the letters we send business owners &mdash;
+             how your phone gets answered, what happens after someone reaches out,
+             what your competitors are doing that you aren't.</p>
+        </li>
+        <li>
+          <b>We walk you through what we found.</b>
+          <p>A short, free conversation. You keep everything we found either way.
+             If there's a fit after that, we'll say so. If there isn't, we'll say that too.</p>
+        </li>
+      </ol>
+
+      <blockquote>
+        &ldquo;Stop chasing customers. Start being chosen.&rdquo;
+        <cite>The mechanism &mdash; Jimmy + Paul, Hamilton County, Indiana</cite>
+      </blockquote>
+    </section>
+
+    <section id="apply">
+      <div class="formcard">
+
+        <!-- FORM -->
+        <div id="formState">
+          <h2>Request your review</h2>
+          <p class="sub">Free. No cost, no card, nothing to buy on this page.</p>
+
+          <form id="optin" novalidate>
+            <div class="row">
+              <div class="field">
+                <label for="firstName">First name <span class="req">*</span></label>
+                <input id="firstName" name="firstName" type="text" autocomplete="given-name"
+                       placeholder="Jane" required aria-describedby="e-firstName">
+                <p class="err" id="e-firstName" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="lastName">Last name <span class="req">*</span></label>
+                <input id="lastName" name="lastName" type="text" autocomplete="family-name"
+                       placeholder="Miller" required aria-describedby="e-lastName">
+                <p class="err" id="e-lastName" role="alert"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email"
+                     inputmode="email" placeholder="you@yourbusiness.com" required
+                     aria-describedby="e-email">
+              <p class="err" id="e-email" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label for="phone">Mobile phone <span class="opt">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel"
+                     inputmode="tel" placeholder="(317) 555-0134"
+                     aria-describedby="e-phone">
+              <p class="err" id="e-phone" role="alert"></p>
+            </div>
+
+            <div class="consent">
+              <input id="smsConsent" name="smsConsent" type="checkbox">
+              <label for="smsConsent">
+                Text me the booking link. By checking this I agree to receive text messages
+                from Reverse Selling LLC about my revenue review. Consent is not a condition
+                of anything &mdash; leave it unchecked and we'll just email you.
+                Msg &amp; data rates may apply. Msg frequency varies.
+                Reply HELP for help, STOP to cancel.
+              </label>
+            </div>
+
+            <!-- honeypot -->
+            <div class="sr" aria-hidden="true">
+              <label for="company_website">Leave this blank</label>
+              <input id="company_website" name="company_website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button type="submit" id="submitBtn">
+              <span id="btnLabel">Request my free review</span>
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+
+            <div class="formError" id="formError" role="alert"></div>
+
+            <p class="finePrint">
+              We email you the booking link the moment this goes through &mdash; and text it
+              too, if you asked us to. We do not sell or share your information, and mobile
+              opt-in data is never shared with anyone for marketing.
+              <a href="privacy.html">Privacy Policy</a> &middot;
+              <a href="terms.html">Terms</a>
+            </p>
+          </form>
+        </div>
+
+        <!-- SUCCESS -->
+        <div id="success" aria-live="polite">
+          <div class="tick" aria-hidden="true">&#10003;</div>
+          <h2>You're in, <span id="successName">friend</span>.</h2>
+          <p class="sub" style="margin-top:8px">
+            Check your inbox. It's already on its way.
+          </p>
+          <ul class="nextlist">
+            <li><b>An email</b> &mdash; within the next few minutes, with a link to grab a time.</li>
+            <li><b>A text</b> &mdash; same link, if you asked us to text you.</li>
+            <li><b>Nothing else to do right now.</b> Pick a time that works and we'll handle the research before we talk.</li>
+          </ul>
+          <p class="finePrint" style="text-align:left;margin-top:18px">
+            Don't see the email in five minutes? Check spam &mdash; and the text will still land.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand">REVERSE<i>SELLING</i></div>
+    <p class="micro">Jimmy + Paul &nbsp;&middot;&nbsp; Hamilton County, Indiana</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var ENDPOINT = "https://webhook.davisdash.com/webhook/reverseselling-optin";
+  var SOURCE   = "reverseselling-landing-iwantaspot";
+
+  var form   = document.getElementById("optin");
+  var btn    = document.getElementById("submitBtn");
+  var label  = document.getElementById("btnLabel");
+  var boxErr = document.getElementById("formError");
+  var phone  = document.getElementById("phone");
+  var submitting = false;
+
+  /* ---- phone: live US formatting ---- */
+  function digitsOf(v){ return (v || "").replace(/\D/g, ""); }
+  phone.addEventListener("input", function(){
+    var d = digitsOf(phone.value);
+    if (d.length === 11 && d.charAt(0) === "1") d = d.slice(1);
+    d = d.slice(0, 10);
+    var out = d;
+    if (d.length > 6)      out = "(" + d.slice(0,3) + ") " + d.slice(3,6) + "-" + d.slice(6);
+    else if (d.length > 3) out = "(" + d.slice(0,3) + ") " + d.slice(3);
+    else if (d.length > 0) out = "(" + d;
+    phone.value = out;
+  });
+
+  /* ---- validators ---- */
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
+
+  var rules = {
+    firstName: function(v){
+      if (!v) return "Please enter your first name.";
+      if (v.length < 2) return "That looks too short.";
+      return "";
+    },
+    lastName: function(v){
+      if (!v) return "Please enter your last name.";
+      if (v.length < 2) return "That looks too short.";
+      return "";
+    },
+    email: function(v){
+      if (!v) return "Please enter your email address.";
+      if (!EMAIL_RE.test(v)) return "That doesn't look like a valid email address.";
+      return "";
+    },
+    phone: function(v){
+      var d = digitsOf(v);
+      if (!d) {
+        return document.getElementById("smsConsent").checked
+          ? "Add your mobile number, or uncheck the text option and we'll email you."
+          : "";
+      }
+      if (d.length === 11 && d.charAt(0) === "1") d = d.slice(1);
+      if (d.length !== 10) return "Enter a 10-digit US mobile number.";
+      if (/^[01]/.test(d)) return "That area code isn't valid.";
+      return "";
+    }
+  };
+
+  function setError(id, msg){
+    var input = document.getElementById(id);
+    var slot  = document.getElementById("e-" + id);
+    if (msg){
+      input.setAttribute("aria-invalid", "true");
+      slot.textContent = msg;
+      slot.classList.add("show");
+    } else {
+      input.removeAttribute("aria-invalid");
+      slot.textContent = "";
+      slot.classList.remove("show");
+    }
+    return !msg;
+  }
+
+  function checkField(id){
+    return setError(id, rules[id](document.getElementById(id).value.trim()));
+  }
+
+  Object.keys(rules).forEach(function(id){
+    var el = document.getElementById(id);
+    el.addEventListener("blur", function(){ checkField(id); });
+    el.addEventListener("input", function(){
+      if (el.getAttribute("aria-invalid") === "true") checkField(id);
+    });
+  });
+
+  function normalizedPhone(){
+    var d = digitsOf(phone.value);
+    if (!d) return "";
+    if (d.length === 11 && d.charAt(0) === "1") d = d.slice(1);
+    return "+1" + d;
+  }
+
+  function showFormError(msg){
+    boxErr.innerHTML = msg;
+    boxErr.classList.add("show");
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if (submitting) return;
+    boxErr.classList.remove("show");
+
+    var ok = true, firstBad = null;
+    Object.keys(rules).forEach(function(id){
+      var good = checkField(id);
+      if (!good){ ok = false; if (!firstBad) firstBad = id; }
+    });
+    if (!ok){
+      var el = document.getElementById(firstBad);
+      el.focus();
+      if (el.scrollIntoView) el.scrollIntoView({behavior:"smooth", block:"center"});
+      return;
+    }
+
+    // honeypot — silently pretend success for bots
+    if (document.getElementById("company_website").value){
+      succeed(document.getElementById("firstName").value.trim());
+      return;
+    }
+
+    var payload = {
+      firstName: document.getElementById("firstName").value.trim(),
+      lastName:  document.getElementById("lastName").value.trim(),
+      email:     document.getElementById("email").value.trim(),
+      phone:     normalizedPhone(),
+      smsConsent: document.getElementById("smsConsent").checked,
+      source:    SOURCE
+    };
+
+    submitting = true;
+    btn.disabled = true;
+    label.textContent = "Sending…";
+
+    var done = false;
+    var timer = setTimeout(function(){
+      if (!done) fail();
+    }, 15000);
+
+    function fail(){
+      done = true;
+      clearTimeout(timer);
+      submitting = false;
+      btn.disabled = false;
+      label.textContent = "Try again";
+      showFormError("Something went wrong sending that. Please try once more — " +
+        "or text us at <a href=\"tel:+13176969180\" style=\"color:inherit\">(317) 696-9180</a> and we'll get you on the calendar.");
+    }
+
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function(res){
+      if (done) return;
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      done = true;
+      clearTimeout(timer);
+      succeed(payload.firstName);
+    }).catch(function(){
+      if (!done) fail();
+    });
+  });
+
+  function succeed(name){
+    try {
+      document.getElementById("successName").textContent = name || "friend";
+      document.getElementById("formState").style.display = "none";
+      document.getElementById("success").classList.add("show");
+      document.getElementById("apply").scrollIntoView({behavior:"smooth", block:"start"});
+    } catch(e){}
+  }
+})();
+</script>
+</body>
+</html>
