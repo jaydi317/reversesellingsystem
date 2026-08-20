@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meetup HQ — Jimmy &amp; Paul</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900&family=Inter:wght@400;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fdfaf3;--ink:#1c1a20;--soft:#57515e;--coral:#d85a30;--green:#1e8f5a;--red:#c22f2f;--gold:#d99a1b;--line:#e6dfd3}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.55}
+.wrap{max-width:820px;margin:0 auto;padding:0 18px 60px}
+h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,6vw,46px);letter-spacing:-.02em}
+h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(19px,4vw,25px);margin-bottom:6px}
+.hand{font-family:'Caveat',cursive;font-size:22px;color:var(--coral)}
+.stamp{display:inline-block;background:var(--ink);color:#fff;font-weight:800;font-size:11.5px;letter-spacing:.08em;padding:5px 13px;border-radius:99px;margin:12px 0 4px}
+section{padding:26px 0 0}
+.card{background:#fff;border:2px solid var(--ink);border-radius:13px;padding:15px 18px;margin:11px 0;box-shadow:4px 4px 0 rgba(28,26,32,.08)}
+.row{display:flex;gap:11px;align-items:flex-start;border-top:1px dashed var(--line);padding:9px 0 7px}
+.row:first-of-type{border-top:none}
+.dot{flex:0 0 14px;height:14px;border-radius:99px;margin-top:4px}
+.g{background:var(--green)}.y{background:var(--gold)}.r{background:var(--red)}.b{background:#bbb}
+.rb{flex:1;color:var(--soft);font-size:14px}.rb b{color:var(--ink)}
+.own{font-size:11px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--coral);border-radius:99px;padding:1px 9px;margin-left:6px}
+.own.ai{background:#6b4a9e}.own.p{background:var(--green)}
+.jimmy{background:#fbeaea;border:3px solid var(--red);border-radius:14px;padding:14px 18px;margin:12px 0}
+.jimmy h2{color:var(--red)}
+#gate{position:fixed;inset:0;background:var(--paper);display:flex;align-items:center;justify-content:center;z-index:9}
+#gate .box{text-align:center}
+#gate input{font-size:18px;padding:10px 14px;border:2px solid var(--ink);border-radius:10px;margin:6px}
+#gate button{font-size:16px;font-weight:800;padding:10px 22px;background:var(--ink);color:#fff;border:none;border-radius:10px;cursor:pointer}
+.foot{font-size:12.5px;color:var(--soft);margin-top:24px;border-top:1px solid var(--line);padding-top:10px}
+</style>
+</head>
+<body>
+<div id="gate"><div class="box"><h1 style="margin-bottom:8px">Meetup HQ</h1><p class="hand">the board Jimmy &amp; Paul check</p><br>
+<input id="u" placeholder="username"><input id="p" type="password" placeholder="password"><br><button onclick="if(document.getElementById('u').value.trim().toLowerCase()==='paul'&&document.getElementById('p').value.trim().toLowerCase()==='paul'){document.getElementById('gate').style.display='none'}else{alert('Nope — ask Jimmy')}">Enter</button></div></div>
+
+<div class="wrap">
+<div style="padding:36px 0 2px">
+  <h1>MEETUP HQ</h1>
+  <div class="hand" style="display:inline-block;transform:rotate(-1.4deg)">AI for Business · Thursday evening Sept 10 · Indianapolis</div><br>
+  <span class="stamp">BOARD UPDATED: Wed Aug 20, ~2:00 AM ET · by Fable · Jarvis &amp; Vera keep this current + report in the 317 group</span>
+</div>
+
+<section>
+  <div class="jimmy"><h2>⏳ WAITING ON JIMMY &amp; PAUL (the only section you must read)</h2>
+    <div class="row"><div class="dot r"></div><div class="rb"><b>PAUL: send the 5 co-host messages</b> — playbook + copy-paste scripts delivered. <span class="own p">PAUL</span></div></div>
+    <div class="row"><div class="dot r"></div><div class="rb"><b>PAUL: venue calls</b> — Launch Fishers + The Speakeasy, pitch in the playbook, up to $150 approved. <span class="own p">PAUL</span></div></div>
+    <div class="row"><div class="dot r"></div><div class="rb"><b>JIMMY: pick the event name</b> — 10 options on the morning card. Default: "Built Live." <span class="own">JIMMY</span></div></div>
+    <div class="row"><div class="dot r"></div><div class="rb"><b>JIMMY: 3-hour block Thursday AM</b> — warm-network texts (script ready), approve reg page, approve ad spend. <span class="own">JIMMY</span></div></div>
+    <div class="row"><div class="dot y"></div><div class="rb"><b>JIMMY: true story for the reg page</b> — the copy has a placeholder story; swap in a real one (Kasey's hub going live on the call is true and perfect) or cut it. Never ship the template story. <span class="own">JIMMY</span></div></div>
+  </div>
+</section>
+
+<section><h2>🟢 DONE (receipts on file)</h2><div class="card">
+  <div class="row"><div class="dot g"></div><div class="rb"><b>317 texting line live</b> — dedicated number, 1:1 proven blue-bubble, Jarvis's identity. The "text this number" stage moment is technically real today.</div></div>
+  <div class="row"><div class="dot g"></div><div class="rb"><b>Grand Slam offer card</b> — $999 audit → $997/mo Pit Crew → $2,000/mo Concierge → big builds by $1,000-deposit application. Kodi law enforced.</div></div>
+  <div class="row"><div class="dot g"></div><div class="rb"><b>Fill-the-room plan</b> — 16 channels ranked with real Indy receipts; ~$480 budget; projection 130–170 registrations → 55–90 in the room.</div></div>
+  <div class="row"><div class="dot g"></div><div class="rb"><b>Copy package v1</b> — 10 names, registration page, 3 FB posts, co-host DMs, warm text, AI reminder texts with personality.</div></div>
+  <div class="row"><div class="dot g"></div><div class="rb"><b>X library distilled</b> — Corey + Luke + Allie + 302 bookmarks → meetup ammo, audit kit (audittemplate.ai), concierge spec, JimmyOS upgrades.</div></div>
+  <div class="row"><div class="dot g"></div><div class="rb"><b>Labor Day catch</b> — Sept 5 killed; date moved to Thu eve Sept 10. Kill switch: 25 regs by Sept 7 or the date slips (Paul's call).</div></div>
+</div></section>
+
+<section><h2>🔨 IN MOTION (the AI team, no humans needed)</h2><div class="card">
+  <div class="row"><div class="dot y"></div><div class="rb"><b>Registration page build</b> (Luma + copy) + form (business, industry, "what eats your hours," phone + consent) + text-START-to-317 confirm flow. <span class="own ai">COUNCIL</span></div></div>
+  <div class="row"><div class="dot y"></div><div class="rb"><b>Presentation spine v1</b> — Tesla cold-open script, 90-min run-of-show, volunteer demo, "does ChatGPT recommend you?" pattern-interrupt demo. <span class="own ai">COUNCIL</span></div></div>
+  <div class="row"><div class="dot y"></div><div class="rb"><b>Audit deliverable</b> — audittemplate.ai downloaded + upgraded with cost-of-inaction math → Jimmy's $999 report template. <span class="own ai">CODEX</span></div></div>
+  <div class="row"><div class="dot y"></div><div class="rb"><b>Registrant research pipeline</b> — every registration → council researches the business → dossier → slides + live demo material write themselves. <span class="own ai">VERA+JARVIS</span></div></div>
+  <div class="row"><div class="dot y"></div><div class="rb"><b>Event listings</b> — Luma (free), Eventbrite mirror, Meetup group ($30) on reverseselling.hq. Fees itemized on the morning card. <span class="own ai">COUNCIL</span></div></div>
+</div></section>
+
+<section><h2>⬜ QUEUED (after the above)</h2><div class="card">
+  <div class="row"><div class="dot b"></div><div class="rb">FB/IG ad test ($270) once the reg page is approved · chamber calendar submissions · reminder text sequence · follow-up (24-hr texts + audit booking) · October date announced from stage.</div></div>
+</div></section>
+
+<div class="foot"><b>How this board works:</b> Jarvis &amp; Vera update it and post changes in the 317 group (Jimmy + Paul + Jarvis). Anything waiting on a human for 24+ hours gets a nudge in that group — you asked to be kept accountable, so you will be. Budget spent so far: $364 (phone line) of $364+$500. Login is a privacy curtain, not a vault — nothing secret lives here.</div>
+</div></body>
+</html>
