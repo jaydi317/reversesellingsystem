@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">THE GUIDED EPIPHANY</title>
+  <desc id="desc">People trust conclusions they assemble for themselves.</desc>
+  <defs>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#061127"/><stop offset=".52" stop-color="#0a2148"/><stop offset="1" stop-color="#0b2e64"/></linearGradient>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff4d2e"/><stop offset=".55" stop-color="#ff7858"/><stop offset="1" stop-color="#ffab8f"/></linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#79e9ff"/><stop offset="1" stop-color="#24a8e6"/></linearGradient>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#9cc7ff" opacity=".105"/></pattern>
+    <filter id="shellShadow" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#031027" flood-opacity=".28"/></filter>
+    <filter id="copperGlow" x="-200%" y="-200%" width="400%" height="400%"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="softCopper" x="-30%" y="-60%" width="160%" height="220%"><feDropShadow dx="0" dy="0" stdDeviation="9" flood-color="#ff6548" flood-opacity=".65"/></filter>
+    <filter id="cyanGlow" x="-100%" y="-100%" width="300%" height="300%"><feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#40d8ff" flood-opacity=".72"/></filter>
+  </defs>
+  <style>
+    .shell{fill:url(#screen);stroke:#071128;stroke-width:12;filter:url(#shellShadow)}
+    .inner-frame{fill:url(#dots);stroke:#8cacd1;stroke-opacity:.35;stroke-width:1.5}
+    .brand{font:700 20px 'Arial Narrow',Arial,sans-serif;letter-spacing:.6px}.brand-a{fill:#ff6a4b}.brand-b{fill:#fff}
+    .top-label,.family,.concept-number,.instrument-header text,.tiny-label{font:600 8px Arial,sans-serif;letter-spacing:1.65px;fill:#91a8c7}
+    .concept-number{fill:#ff8d74}.family{fill:#57cef4}
+    .hero-title{font:700 53px 'Arial Narrow',Arial,sans-serif;letter-spacing:-1px;fill:#fff}
+    .hero-line{font:400 18px Arial,sans-serif;fill:#9fb2cc}
+    .rule{stroke:#58769e;stroke-opacity:.45}.truth-label{font:600 9px Arial,sans-serif;letter-spacing:1.7px;fill:#ff8167}.truth{font:600 19px Arial,sans-serif;fill:#f7fbff}
+    .instrument{fill:#06152f;fill-opacity:.82;stroke:#7e9abb;stroke-opacity:.42;stroke-width:1.5}
+    .instrument-header circle{fill:#38d794;filter:url(#cyanGlow)}.hairline{stroke:#617d9f;stroke-opacity:.38}
+    .mode-track{fill:#0e2c5a;stroke:#84a0c2;stroke-opacity:.24}.mode-off{font:600 10px Arial,sans-serif;letter-spacing:1.7px;fill:#7189a9}
+    .mode-active rect{fill:url(#copper);stroke:#ffc0b0;stroke-opacity:.65}.mode-active text{font:700 10px Arial,sans-serif;letter-spacing:1.7px;fill:#fff}
+    .field rect{fill:#071a38;stroke:#6c89af;stroke-opacity:.35}.orbit-lines{fill:none;stroke:#6685ad;stroke-opacity:.24;stroke-width:1.3;stroke-dasharray:3 8}
+    .inbound-paths{fill:none;stroke:#4e789e;stroke-width:2.2;stroke-linecap:round}.field-nodes circle{fill:#4bdfff;filter:url(#cyanGlow)}
+    .field-nodes circle:nth-child(2),.field-nodes circle:nth-child(4){fill:#ffb14f}.field-arrows{fill:none;stroke:#70dffc;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .core-halo{fill:#ff694c;opacity:.48}.core-ring{fill:none;stroke:#ff8065;stroke-width:2}.core-face{fill:url(#copper);stroke:#ffd1c5;stroke-width:1.5;filter:url(#softCopper)}
+    .gravity-core text{font:700 62px Arial,sans-serif;fill:#fff}.tiny-label{fill:#7690b2}
+    .frame-field>rect,.translator-field>rect,.epiphany-field>rect,.trust-field>rect,.moment-field>rect,.runway-field>rect{fill:#071a38;stroke:#6c89af;stroke-opacity:.35}
+    .zone-label,.frame-caption,.station-label{font:600 7px Arial,sans-serif;letter-spacing:1.45px;fill:#7892b5}.fact-stack rect,.input-channels rect,.proof-packets rect{fill:#0d2a54;stroke:#7191b8;stroke-opacity:.52}.fact-stack text,.input-channels text,.proof-packets text{font:600 7px Arial,sans-serif;letter-spacing:1.1px;fill:#a7bad1}.fact-stack circle,.input-channels circle{fill:#42d9ff}.fact-stack path,.input-channels path{stroke:#6381a5;stroke-width:1.2}
+    .frame-paths,.translation-lines,.output-path,.charge-lines,.offer-wire,.signal-paths{fill:none;stroke:#557da6;stroke-width:2;stroke-linecap:round}.frame-halo,.translator-halo{fill:#ff6b4d;opacity:.38}.frame-ring,.translator-ring{fill:#091d3e;stroke:#ff8066;stroke-width:2}.frame-face,.translator-face{fill:url(#copper);stroke:#ffd1c5;stroke-width:1.5;filter:url(#softCopper)}.meaning-frame path{fill:none;stroke:#fff;stroke-width:2}.outcome-card rect,.clarity-output rect{fill:#0b315b;stroke:#45d6fb;stroke-width:1.5;filter:url(#cyanGlow)}.outcome-card circle,.clarity-output circle{fill:#44d8fa;fill-opacity:.13;stroke:#5ee2ff}.outcome-card path,.clarity-output path{fill:none;stroke:#7be9ff;stroke-width:2}.outcome-card text,.clarity-output text{font:700 7px Arial,sans-serif;letter-spacing:1px;fill:#eafaff}
+    .translator-core>text{font:700 19px Arial,sans-serif;fill:#fff}.translator-core .core-sub,.moment-core .core-sub{font-size:6px;letter-spacing:1px}.epiphany-track{fill:none;stroke:#527ca8;stroke-width:3}.evidence-stations circle{fill:#0d315d;stroke:#56dafa;stroke-width:2;filter:url(#cyanGlow)}.evidence-stations text{font:700 7px Arial,sans-serif;fill:#e8f9ff}.arrival-halo{fill:#ff6b4d;opacity:.35}.arrival-ring{fill:none;stroke:#ff8066;stroke-width:2}.arrival-face{fill:url(#copper);stroke:#ffd0c4;filter:url(#softCopper)}.arrival path{fill:none;stroke:#fff;stroke-width:2.5}.arrival text{font:700 6px Arial,sans-serif;letter-spacing:1px;fill:#ff9b84}.hand-segment{fill:none;stroke:#ff7558;stroke-width:4;stroke-linecap:round;filter:url(#softCopper)}
+    .proof-packets text{font-size:7px}.charge-lines{stroke:#4bdcff;filter:url(#cyanGlow)}.cell-shell{fill:#0b2a54;stroke:#7694b9}.cell-fill{fill:url(#cyan);opacity:.8;filter:url(#cyanGlow)}.certainty-cell path{stroke:#d8f8ff;stroke-opacity:.52}.certainty-cell text{font:600 7px Arial,sans-serif;letter-spacing:1.2px;fill:#8da8c7}.gate-halo,.door-halo{fill:#ff6a4c;opacity:.36}.gate-face{fill:url(#copper);stroke:#ffc8bb;filter:url(#softCopper)}.offer-gate text{font:700 8px Arial,sans-serif;letter-spacing:1px;fill:#fff}.offer-gate circle{fill:#fff2;stroke:#fff}.offer-gate path{fill:none;stroke:#fff;stroke-width:2}.offer-gate .gate-ready{font-size:6px;letter-spacing:1.4px}
+    .radar-ring,.radar-cross{fill:none;stroke:#5379a4;stroke-opacity:.37;stroke-width:1.3;stroke-dasharray:3 8}.signal-paths{stroke:#507ba5}.signal-node circle{fill:#0d315e;stroke:#4cdcff;stroke-width:1.5;filter:url(#cyanGlow)}.signal-node text{font:700 5.5px Arial,sans-serif;letter-spacing:.6px;fill:#d9f8ff}.signal-node.status circle,.signal-node.choice circle{stroke:#ffab4f}.signal-node.safety circle{stroke:#9d7cff}.moment-halo{fill:#ff6a4c;opacity:.38}.moment-ring{fill:none;stroke:#ff8066;stroke-width:2}.moment-face{fill:url(#copper);stroke:#ffd0c4;filter:url(#softCopper)}.moment-core text{font:700 10px Arial,sans-serif;letter-spacing:1px;fill:#fff}.radar-sweep{stroke:#ff876e;stroke-width:2;filter:url(#softCopper)}
+    .runway{fill:#0c2c57;stroke:#587fa8;stroke-width:1.5}.runway-center{stroke:#d6f6ff;stroke-width:2;stroke-dasharray:13 15}.runway-lights circle{fill:#52ddff;filter:url(#cyanGlow)}.belief-gates rect{fill:#0d315e;stroke:#5ddfff}.belief-gates text{font:700 6px Arial,sans-serif;letter-spacing:.7px;fill:#e7fbff}.door-frame{fill:none;stroke:#ff8b72;stroke-width:3}.door-face{fill:url(#copper);stroke:#ffd2c7;filter:url(#softCopper)}.choice-door circle{fill:#fff}.choice-door text{font:700 6px Arial,sans-serif;letter-spacing:1px;fill:#ff9d87}
+  </style>
+  <rect width="1200" height="750" fill="#f2f4f7"/>
+  <rect class="shell" x="32" y="26" width="1136" height="698" rx="34"/>
+  <rect class="inner-frame" x="53" y="48" width="1094" height="654" rx="22"/>
+
+  <g transform="translate(80 75)">
+    <rect x="0" y="0" width="42" height="42" rx="9" fill="#071125" stroke="#7592b7" stroke-opacity=".35"/>
+    <text class="brand" x="21" y="27" text-anchor="middle"><tspan class="brand-a">R</tspan><tspan class="brand-b">S</tspan></text>
+    <text class="top-label" x="58" y="17">THE REVERSE SELLING SYSTEM</text>
+    <text class="top-label" x="58" y="34">JIMMY DAVIS · VISUAL PRINCIPLES</text>
+    <rect x="939" y="1" width="124" height="31" rx="6" fill="#143865" stroke="#6b8eb8" stroke-opacity=".42"/>
+    <text class="concept-number" x="1001" y="21" text-anchor="middle">CONCEPT 04</text>
+  </g>
+  <line class="rule" x1="80" y1="132" x2="1120" y2="132"/>
+
+  <g transform="translate(86 193)">
+    <text class="family" x="0" y="0">JIMMY MAGIC</text>
+    <text class="hero-title" x="0" y="73">THE GUIDED</text>
+    <text class="hero-title" x="0" y="127">EPIPHANY</text>
+    <text class="hero-line" x="0" y="177">Build the path. Let them own the arrival.</text>
+    <line class="rule" x1="0" y1="219" x2="399" y2="219"/>
+    <text class="truth-label" x="0" y="267">THE SHIFT</text>
+    <text class="truth" x="0" y="304">You place the proof.</text>
+    <text class="truth" x="0" y="333">They name the truth.</text>
+  </g>
+  
+      <g transform="translate(544 154)">
+        <rect class="instrument" width="548" height="466" rx="22"/>
+        <g class="instrument-header"><text x="25" y="34">SELF-AUTHORED CONCLUSION · EVIDENCE PATH</text><circle cx="505" cy="29" r="4"/><text x="493" y="34" text-anchor="end">OPEN</text></g>
+        <line class="hairline" x1="24" y1="54" x2="524" y2="54"/>
+        <g class="epiphany-field" transform="translate(24 78)">
+          <rect width="500" height="356" rx="16"/>
+          <path class="epiphany-track" d="M48 247C89 247 83 91 141 91s51 166 109 166S301 91 359 91s51 156 94 156"/>
+          <g class="evidence-stations">
+            <g transform="translate(48 247)"><circle r="18"/><text y="4" text-anchor="middle">01</text><text class="station-label" y="42" text-anchor="middle">STORY</text></g>
+            <g transform="translate(141 91)"><circle r="18"/><text y="4" text-anchor="middle">02</text><text class="station-label" y="-30" text-anchor="middle">PROOF</text></g>
+            <g transform="translate(250 257)"><circle r="18"/><text y="4" text-anchor="middle">03</text><text class="station-label" y="42" text-anchor="middle">PATTERN</text></g>
+            <g transform="translate(359 91)"><circle r="18"/><text y="4" text-anchor="middle">04</text><text class="station-label" y="-30" text-anchor="middle">SAFETY</text></g>
+          </g>
+          <g class="arrival" transform="translate(453 247)">
+            <circle class="arrival-halo" r="60" filter="url(#copperGlow)"/>
+            <circle class="arrival-ring" r="39"/><circle class="arrival-face" r="27"/>
+            <path d="M-11 1l8 8 17-20"/>
+            <text x="0" y="60" text-anchor="middle">THEIR IDEA</text>
+          </g>
+          <path class="hand-segment" d="M412 177c17 22 25 48 41 70"/>
+          <text class="tiny-label" x="250" y="330" text-anchor="middle">THE FINAL CONNECTION HAPPENS IN THEIR MIND</text>
+        </g>
+      </g>
+  <text class="top-label" x="86" y="681">ORIGINAL VISUAL CONCEPT · NOT SOFTWARE</text>
+</svg>
