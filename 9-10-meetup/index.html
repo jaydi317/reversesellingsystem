@@ -174,6 +174,17 @@ h1{letter-spacing:-2.4px}
   </div>
 </section>
 
+<section class="section" id="hosts" style="padding-top:20px">
+  <p class="eyebrow">WHO'S RUNNING THIS</p>
+  <h2>From his parents' basement <span>to his first million.</span></h2>
+  <div class="where-card" style="text-align:left;max-width:680px">
+    <p style="margin-top:0">Jimmy Davis started trying to build businesses at 13. At 24 he was living in his parents' basement. At 25 he'd made his first million.</p>
+    <p>Since then he's closed seven figures from the stage, written copy alongside some of the biggest names in direct response, and driven one project past $20 million. The owner's words, not his: "It's all because of you."</p>
+    <p>Twenty years of that taught him one strange skill: he doesn't convince people. He gets them to conclude. And people never doubt what they conclude.</p>
+    <p>Then AI showed up. He pointed it at that skill, and now he does it for local businesses. Paul Lorkowski is his full partner. Together they run Reverse Selling.</p>
+  </div>
+</section>
+
 <section class="section" id="where" style="padding-top:20px">
   <p class="eyebrow">WHERE</p>
   <div class="where-card">
@@ -187,9 +198,39 @@ h1{letter-spacing:-2.4px}
   <p class="eyebrow" style="justify-content:center">SEATS ARE CAPPED</p>
   <h2 style="margin:20px 0">Hold your seat.<br><span>Get the $20 back at the door.</span></h2>
   <p class="body-copy" style="color:var(--body);font-size:15px;max-width:520px;margin:0 auto 30px">The deposit isn't a ticket price — it's how we keep the room full of owners who actually show up. Walk in Thursday and it comes right back to you.</p>
-  <a class="button" href="mailto:reverseselling.hq@gmail.com?subject=Hold%20my%20seat%20—%20Sept%2010&body=Name%3A%0ABusiness%3A%0ACell%3A">Hold my seat <span>→</span></a>
-  <span class="preview-label" style="display:block;letter-spacing:1.3px;color:#7c889c;margin-top:34px;font-size:9px">ONLINE REGISTRATION OPENS THIS WEEKEND — EMAIL HOLDS YOUR SPOT TODAY</span>
+  <!-- CODEX: replace KIT_FORM_ACTION_URL with the Kit HTML-form endpoint (https://app.kit.com/forms/FORM_ID/subscriptions) and set each custom-field key to match the Kit form. Until then the JS below routes the form to email so nothing is lost. -->
+  <form id="regform" class="regform" action="KIT_FORM_ACTION_URL" method="post" style="max-width:560px;margin:0 auto;text-align:left">
+    <div class="fgrid">
+      <label>First name<input name="fields[first_name]" required autocomplete="given-name"></label>
+      <label>Last name<input name="fields[last_name]" required autocomplete="family-name"></label>
+    </div>
+    <label>Email<input type="email" name="email_address" required autocomplete="email"></label>
+    <label>Mobile (we text you the details and parking)<input type="tel" name="fields[phone]" required autocomplete="tel"></label>
+    <label>Business name + website<input name="fields[business]" placeholder="e.g. Hoosier Heating · hoosierheating.com" required></label>
+    <label>What's eating the most time in your business right now?<textarea name="fields[time_sink]" rows="2" required></textarea></label>
+    <label>What have you tried with AI, and what stopped you?<textarea name="fields[ai_tried]" rows="2"></textarea></label>
+    <label class="consent"><input type="checkbox" name="fields[sms_ok]" value="yes" required> OK to text me about this event (details, parking, one prep question). Stop anytime.</label>
+    <button class="button" type="submit" style="width:100%;margin-top:6px">Hold my seat <span>→</span></button>
+    <p class="micro" style="text-align:center">You'll get a text from Jimmy &amp; Paul's line within a minute. $20 holds your seat, refunded at the door.</p>
+  </form>
 </section>
+<style>
+.regform label{display:block;font-size:12px;font-weight:600;color:#243249;margin:0 0 12px;letter-spacing:.1px}
+.regform input,.regform textarea{display:block;width:100%;margin-top:6px;padding:13px 14px;font:inherit;font-size:14px;color:var(--ink);background:#fff;border:1px solid #d8e1ee;border-radius:9px;box-shadow:inset 0 1px 2px #17274808}
+.regform input:focus,.regform textarea:focus{outline:none;border-color:#b94f37;box-shadow:0 0 0 3px #b94f3722}
+.regform .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.regform .consent{display:flex;gap:10px;align-items:flex-start;font-weight:500;color:#535e70;font-size:12px;line-height:1.5}
+.regform .consent input{width:auto;margin:3px 0 0;display:inline-block}
+@media (max-width:550px){.regform .fgrid{grid-template-columns:1fr}}
+</style>
+<script>
+(function(){var f=document.getElementById('regform');if(!f)return;
+f.addEventListener('submit',function(e){
+  if(f.getAttribute('action')!=='KIT_FORM_ACTION_URL')return; /* Kit wired: let it post */
+  e.preventDefault();var d=new FormData(f);var b='';d.forEach(function(v,k){b+=k.replace(/fields\[|\]/g,'')+': '+v+'\n';});
+  window.location.href='mailto:reverseselling.hq@gmail.com?subject='+encodeURIComponent('Hold my seat - Sept 10')+'&body='+encodeURIComponent(b);
+});})();
+</script>
 
 <footer>
   <span class="wordmark"><span>Reverse&nbsp;</span><span>Selling</span></span>

@@ -2,80 +2,229 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meetup HQ — Jimmy &amp; Paul</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900&family=Inter:wght@400;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<title>D-Day Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#fdfaf3;--ink:#1c1a20;--soft:#57515e;--coral:#d85a30;--green:#1e8f5a;--red:#c22f2f;--gold:#d99a1b;--line:#e6dfd3}
+:root{--paper:#fdfaf3;--ink:#1c1a20;--soft:#57515e;--coral:#d85a30;--green:#1e8f5a;--red:#c22f2f;--gold:#d99a1b;--line:#e6dfd3;--blue:#3b5bb8;--purple:#6b4a9e}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-size:15.5px;line-height:1.55}
-.wrap{max-width:820px;margin:0 auto;padding:0 18px 60px}
-h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,6vw,46px);letter-spacing:-.02em}
-h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(19px,4vw,25px);margin-bottom:6px}
-.hand{font-family:'Caveat',cursive;font-size:22px;color:var(--coral)}
-.stamp{display:inline-block;background:var(--ink);color:#fff;font-weight:800;font-size:11.5px;letter-spacing:.08em;padding:5px 13px;border-radius:99px;margin:12px 0 4px}
-section{padding:26px 0 0}
-.card{background:#fff;border:2px solid var(--ink);border-radius:13px;padding:15px 18px;margin:11px 0;box-shadow:4px 4px 0 rgba(28,26,32,.08)}
-.row{display:flex;gap:11px;align-items:flex-start;border-top:1px dashed var(--line);padding:9px 0 7px}
-.row:first-of-type{border-top:none}
-.dot{flex:0 0 14px;height:14px;border-radius:99px;margin-top:4px}
-.g{background:var(--green)}.y{background:var(--gold)}.r{background:var(--red)}.b{background:#bbb}
-.rb{flex:1;color:var(--soft);font-size:14px}.rb b{color:var(--ink)}
-.own{font-size:11px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--coral);border-radius:99px;padding:1px 9px;margin-left:6px}
-.own.ai{background:#6b4a9e}.own.p{background:var(--green)}
-.jimmy{background:#fbeaea;border:3px solid var(--red);border-radius:14px;padding:14px 18px;margin:12px 0}
-.jimmy h2{color:var(--red)}
-#gate{position:fixed;inset:0;background:var(--paper);display:flex;align-items:center;justify-content:center;z-index:9}
-#gate .box{text-align:center}
-#gate input{font-size:18px;padding:10px 14px;border:2px solid var(--ink);border-radius:10px;margin:6px}
-#gate button{font-size:16px;font-weight:800;padding:10px 22px;background:var(--ink);color:#fff;border:none;border-radius:10px;cursor:pointer}
-.foot{font-size:12.5px;color:var(--soft);margin-top:24px;border-top:1px solid var(--line);padding-top:10px}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.55;padding-bottom:70px}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px}
+h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,7vw,46px);letter-spacing:-.02em;padding-top:28px}
+h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(19px,4.5vw,24px);margin:26px 0 8px}
+.sub{color:var(--soft);margin-top:5px;font-size:14.5px}
+.sub b{color:var(--ink)}
+.big{background:#eef3fb;border:3px solid var(--blue);border-radius:14px;padding:14px 17px;margin:14px 0;font-size:15.5px}
+.defaults{background:#eaf6ef;border:3px solid var(--green);border-radius:14px;padding:14px 17px;margin:16px 0}
+.defaults h2{color:var(--green);margin:0 0 8px;font-size:19px}
+.breaks{background:#fbeaea;border:3px solid var(--red);border-radius:14px;padding:14px 17px;margin:16px 0}
+.breaks h2{color:var(--red);margin:0 0 8px;font-size:19px}
+.rowline{border-top:1px dashed var(--line);padding:7px 0 6px;font-size:14.5px;color:var(--soft)}
+.rowline:first-of-type{border-top:none}
+.rowline b{color:var(--ink)}
+.day{background:#fff;border:2px solid var(--ink);border-radius:13px;margin:16px 0;box-shadow:4px 4px 0 rgba(28,26,32,.08);overflow:hidden}
+.dh{background:var(--ink);color:#fff;font-weight:800;padding:9px 16px;font-size:14px;letter-spacing:.03em;display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.dh span{color:#ffd27a;font-weight:700;font-size:12.5px}
+.who{padding:11px 16px 5px;border-top:1px dashed var(--line)}
+.who:first-of-type{border-top:none}
+.wtag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;color:#fff;border-radius:99px;padding:2px 10px;margin-bottom:6px}
+.j{background:var(--coral)}.p{background:var(--green)}.m{background:var(--purple)}
+.step{display:flex;gap:9px;align-items:flex-start;padding:4px 0 7px;color:var(--soft);font-size:14.5px}
+.step b{color:var(--ink)}
+.chk{flex:0 0 19px;height:19px;border:2px solid var(--ink);border-radius:5px;margin-top:2px;background:#fff;cursor:pointer}
+.chk.done{background:var(--green);border-color:var(--green);position:relative}
+.chk.done:after{content:"✓";color:#fff;font-weight:900;font-size:14px;position:absolute;top:-3px;left:2px}
+.target{display:inline-block;font-size:11px;font-weight:800;background:#fdf6e8;color:#9a6d00;border:1.5px solid var(--gold);border-radius:99px;padding:1px 9px;margin:2px 0 8px}
+.scripts{margin:4px 16px 12px;border:2px dashed var(--gold);border-radius:11px;overflow:hidden;background:#fdf6e8}
+.slabel{background:#f4e4bd;color:#6b4d00;font-weight:800;font-size:11px;letter-spacing:.05em;padding:5px 12px}
+.stext{padding:9px 12px 11px;font-size:13.5px;color:var(--ink);white-space:pre-wrap}
+.snote{padding:0 12px 9px;font-size:11.5px;color:var(--soft);font-style:italic}
+.def{display:inline-block;background:#eaf6ef;border:1.5px solid var(--green);color:var(--green);font-weight:800;font-size:11px;border-radius:99px;padding:1px 9px;margin-left:4px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0 4px}
+td,th{border-top:1px dashed var(--line);padding:5px 5px 4px;text-align:left;vertical-align:top;color:var(--soft)}
+th{color:var(--ink);font-weight:800;border-top:none;font-size:11px;letter-spacing:.04em}
+td b{color:var(--ink)}
+.foot{font-size:12.5px;color:var(--soft);margin-top:28px;border-top:1px solid var(--line);padding-top:10px}
 </style>
 </head>
 <body>
-<div id="gate"><div class="box"><h1 style="margin-bottom:8px">Meetup HQ</h1><p class="hand">the board Jimmy &amp; Paul check</p><br>
-<input id="u" placeholder="username"><input id="p" type="password" placeholder="password"><br><button onclick="if(document.getElementById('u').value.trim().toLowerCase()==='paul'&&document.getElementById('p').value.trim().toLowerCase()==='paul'){document.getElementById('gate').style.display='none'}else{alert('Nope — ask Jimmy')}">Enter</button></div></div>
-
 <div class="wrap">
-<div style="padding:36px 0 2px">
-  <h1>MEETUP HQ</h1>
-  <div class="hand" style="display:inline-block;transform:rotate(-1.4deg)">AI for Business · Thursday evening Sept 10 · Indianapolis</div><br>
-  <span class="stamp">BOARD UPDATED: Mon Aug 31, 10:30 AM ET · by Jarvis · Jarvis &amp; Vera keep this current + report in the 317 group</span>
+<h1>D-DAY BOARD</h1>
+<p class="sub"><b>The Owners' AI Night</b> · Thursday Sept 10, 2026 · doors 6:30, program 7:00, out by 9:00 · <b>Launch Fishers Theater</b>, 12175 Visionary Way, Fishers IN · booking held half-day 6–10pm, $400 Basic AV, venue contact <b>Carolyn McEachran</b> · target <b>40–50 local owners</b> in the room · registration: <b>reversesellingsystem.com/9-10-meetup</b> · 317 texting line run by <b>Jarvis</b> · orchestration by <b>Vera</b> · builds by <b>Codex</b> · <b>Fable</b> keeps this board honest</p>
+
+<div class="big"><b>How to read this:</b> ten day-cards, Sept 1 → Sept 10. Three lanes every day — <span class="wtag j" style="margin:0">JIMMY</span> <span class="wtag p" style="margin:0">PAUL</span> <span class="wtag m" style="margin:0">MACHINE</span>. Check a box, it's done. Jimmy's lane never grows past two kinds of task — calling people, and preparing/rehearsing what he says on stage. Everything with a hand on it — forms, money, tables, food, print — lives in Paul's lane.</p></div>
+
+<div class="defaults"><h2>✅ DEFAULTS (stated so nobody has to decide anything)</h2>
+  <div class="rowline"><b>Event name:</b> "The Owners' AI Night" <span class="def">LOCKED</span></div>
+  <div class="rowline"><b>Date/time:</b> Thu Sept 10, doors 6:30, program 7:00, out by 9:00 <span class="def">LOCKED</span></div>
+  <div class="rowline"><b>Venue:</b> Launch Fishers Theater, 12175 Visionary Way, Fishers IN — half-day 6–10pm, $400 Basic AV, contact Carolyn McEachran <span class="def">LOCKED</span></div>
+  <div class="rowline"><b>Ticket:</b> $20, refundable at the door — <u>public pages only.</u> Anyone Jimmy or Paul personally invites is in free. <span class="def">LOCKED</span></div>
+  <div class="rowline"><b>Registration:</b> reversesellingsystem.com/9-10-meetup, feeding a Kit form (Paul builds 9am Sept 1, Codex embeds 10am Sept 1) <span class="def">LOCKED</span></div>
+  <div class="rowline"><b>Jimmy's calling target:</b> 10 warm calls/texts a day, Sept 1–5 <span class="def">LOCKED</span></div>
+  <div class="rowline"><b>Refreshments:</b> coffee &amp; sodas via Launch Fishers' RISE shop, pizza via HotBox. No alcohol — a permit is not gettable on this timeline. <span class="def">LOCKED</span></div>
+  <div class="rowline"><b>Reminder cadence:</b> 1-week / 3-day / day-before / morning-of, all SMS from the 317 line <span class="def">LOCKED</span></div>
 </div>
 
-<section>
-  <div class="jimmy"><h2>⏳ WAITING ON JIMMY &amp; PAUL (the only section you must read)</h2>
-    <div class="row"><div class="dot r"></div><div class="rb"><b>PAUL: send the 5 co-host messages</b> — playbook + copy-paste scripts delivered. <span class="own p">PAUL</span></div></div>
-    <div class="row"><div class="dot r"></div><div class="rb"><b>PAUL: confirm COhatch Carmel — ⚠️ HOLD EXPIRED Thu Aug 27 AM</b> — If you haven't called yet, call NOW. The courtesy hold is gone. Sept 10 may still be open but it's first-come from here. Email or call to lock the date. On the call: "This is a monthly event — 40 local business owners in your space every month. Is there a community rate?" <span class="own p">PAUL</span></div></div>
-    <div class="row"><div class="dot r"></div><div class="rb"><b>JIMMY: say YES to publish</b> — Name locked as Built Live at 6pm (default). Publish pack, Luma draft, and full copy are ready. One word unlocks everything. <span class="own">JIMMY</span></div></div>
-    <div class="row"><div class="dot r"></div><div class="rb"><b>JIMMY: 3-hour block this week</b> — warm-network texts (script ready), approve reg page copy (your own story, no client cases), approve ad spend. <span class="own">JIMMY</span></div></div>
+<div class="breaks"><h2>⚠️ WHERE THIS BREAKS</h2>
+  <div class="rowline"><b>The static site has no backend.</b> reversesellingsystem.com/9-10-meetup is a page, not a form processor. The Kit form Paul builds Sept 1 at 9am IS the intake — Codex embeds it at 10am. If the embed slips, registration slips with it.</div>
+  <div class="rowline"><b>Nobody is watching the 317 line by default.</b> Jarvis's same-day rule: any inbound text gets a same-day reply — Jarvis answers what it can, escalates anything it can't to the 317 group. A message that sits overnight unanswered is the failure mode, not an acceptable delay.</div>
+  <div class="rowline"><b>Jimmy re-researching instead of shipping.</b> The 10am Sept 1 page lock is a hard stop — after that, no more rewriting the page or the offer. From that minute on Jimmy's only two jobs are calling and rehearsing.</div>
+</div>
+
+<h2>📅 THE TEN DAYS</h2>
+
+<div class="day"><div class="dh">TUESDAY SEPT 1 <span>LOCK THE PAGE, START THE CALLS</span></div>
+  <div class="who"><span class="wtag j">JIMMY</span>
+    <div class="step"><div class="chk"></div><div><b>Record the 20-minute Kennedy identity voice memo</b> — who's the guy on stage Sept 10, in your own words, one take, no notes.</div></div>
+    <div class="step"><div class="chk"></div><div><b>Start warm calls/texts.</b> <span class="target">TARGET: 10 TODAY</span> Scripts below.</div></div>
   </div>
-</section>
+  <div class="scripts"><div class="slabel">WARM INVITE — friends, family, people you know</div>
+  <div class="stext">Hey [Name] — [personal line: something true about their business]. Thursday Sept 10, 6:30, Launch Fishers Theater — Paul and I are running a private room for local owners: we take a real business and run its Monday-morning busywork with AI, live on screen, nothing sold from stage. The public page charges $20 a seat — you're on my list, so you're in free. Want me to hold you a seat?</div>
+  <div class="snote">Never mention the $20 to warm people except as the thing THEY skip. A yes goes straight to the 317 group as a guest-list name — no Kit form needed for warm invites.</div></div>
+  <div class="scripts"><div class="slabel">CONNECTOR ASK — the people who know everybody</div>
+  <div class="stext">[Name] — you know everybody, so you're my first call. Thursday Sept 10 at Launch Fishers, Paul and I are hosting a private AI night for business owners — a real local business rebuilt live on screen, nothing sold in the room. The public page charges $20 a seat, but anyone YOU send walks in free — tell them you know the host. Just text me their names and I'll put them on the door list. Who comes to mind?</div></div>
+  <div class="who"><span class="wtag p">PAUL</span>
+    <div class="step"><div class="chk"></div><div><b>9am — build the Kit form.</b> Fields: name, email, mobile, business name + website, "what's eating the most time in your business right now?", "what have you tried with AI and what stopped you?"</div></div>
+    <div class="step"><div class="chk"></div><div><b>Set up the $20 Stripe payment link</b> for the public page.</div></div>
+    <div class="step"><div class="chk"></div><div><b>Open the venue conversation with Carolyn McEachran</b> — contract + payment for the half-day hold (6–10pm) and the $400 Basic AV package.</div></div>
+  </div>
+  <div class="who"><span class="wtag m">MACHINE</span>
+    <div class="step"><div class="chk"></div><div><b>10am — PAGE LOCK.</b> Codex embeds the finished Kit form into reversesellingsystem.com/9-10-meetup. No further copy edits without Fable's sign-off.</div></div>
+    <div class="step"><div class="chk"></div><div>Vera arms the 317 intake drip so it fires the instant a form submits.</div></div>
+  </div>
+</div>
 
-<section><h2>🟢 DONE (receipts on file)</h2><div class="card">
-  <div class="row"><div class="dot g"></div><div class="rb"><b>317 texting line live</b> — dedicated number, 1:1 proven blue-bubble, Jarvis's identity. The "text this number" stage moment is technically real today.</div></div>
-  <div class="row"><div class="dot g"></div><div class="rb"><b>Grand Slam offer card</b> — $999 audit → $997/mo Pit Crew → $2,000/mo Concierge → big builds by $1,000-deposit application. Kodi law enforced.</div></div>
-  <div class="row"><div class="dot g"></div><div class="rb"><b>Fill-the-room plan</b> — 16 channels ranked with real Indy receipts; ~$480 budget; projection 130–170 registrations → 55–90 in the room.</div></div>
-  <div class="row"><div class="dot g"></div><div class="rb"><b>Copy package v1</b> — 10 names, registration page, 3 FB posts, co-host DMs, warm text, AI reminder texts with personality.</div></div>
-  <div class="row"><div class="dot g"></div><div class="rb"><b>X library distilled</b> — Corey + Luke + Allie + 302 bookmarks → meetup ammo, audit kit (audittemplate.ai), concierge spec, JimmyOS upgrades.</div></div>
-  <div class=”row”><div class=”dot g”></div><div class=”rb”><b>FINAL GO CARD issued (Aug 20 AM)</b> — Jimmy’s 3-hour block, day-by-day calendar to Sept 10, name locks 6pm (default “Built Live”).</div></div>
-  <div class=”row”><div class=”dot g”></div><div class=”rb”><b>Event name locked: Built Live</b> — 6pm default hit (Fri Aug 21). Jimmy did not override. Name is settled; publish still awaits Jimmy’s YES.</div></div>
-  <div class=”row”><div class=”dot g”></div><div class=”rb”><b>Venue selected: COhatch Carmel</b> — $175/hr, free parking (attached garage on Main St), TV screen included. Sept 9 AND Sept 10 both open. Jimmy + Paul chose this on the 4pm call Wed Aug 26. Delaware out (no openings). Grindstone out ($2,500 food min). Noblesville COhatch out (no seating for 50). Fallback: Hawthorne Country Club (~$600). Courtesy hold expires Thu Aug 27 AM — Paul confirming.</div></div>
-  <div class="row"><div class="dot g"></div><div class="rb"><b>Dossier system V1 built (Vera)</b> — registrant-research pipeline designed; every registration gets researched automatically.</div></div>
-  <div class="row"><div class="dot g"></div><div class="rb"><b>Labor Day catch</b> — Sept 5 killed; date moved to Thu eve Sept 10. Kill switch: 25 regs by Sept 7 or the date slips (Paul's call).</div></div>
-</div></section>
+<div class="day"><div class="dh">WEDNESDAY SEPT 2 <span>THE VENUE GOES LEGIT</span></div>
+  <div class="who"><span class="wtag j">JIMMY</span>
+    <div class="step"><div class="chk"></div><div>Warm calls/texts. <span class="target">TARGET: 10</span> Same two scripts, day 2.</div></div>
+  </div>
+  <div class="who"><span class="wtag p">PAUL</span>
+    <div class="step"><div class="chk"></div><div><b>Finalize + pay the venue contract with Carolyn</b> — half-day 6–10pm, $400 Basic AV.</div></div>
+    <div class="step"><div class="chk"></div><div><b>Order the PA speaker.</b> Test it at home before the Sept 8 dress rehearsal.</div></div>
+  </div>
+  <div class="who"><span class="wtag m">MACHINE</span>
+    <div class="step"><div class="chk"></div><div>Jarvis 317 confirmation is live — every registrant gets an instant text the moment they submit.</div></div>
+    <div class="step"><div class="chk"></div><div>Nightly registration count posted to the 317 group.</div></div>
+  </div>
+</div>
 
-<section><h2>🔨 IN MOTION (the AI team, no humans needed)</h2><div class="card">
-  <div class="row"><div class="dot y"></div><div class="rb"><b>Registration page build</b> (Luma + copy) + form (business, industry, "what eats your hours," phone + consent) + text-START-to-317 confirm flow. <span class="own ai">COUNCIL</span></div></div>
-  <div class="row"><div class="dot y"></div><div class="rb"><b>Presentation spine v1</b> — Tesla cold-open script, 90-min run-of-show, volunteer demo, "does ChatGPT recommend you?" pattern-interrupt demo. <span class="own ai">COUNCIL</span></div></div>
-  <div class="row"><div class="dot y"></div><div class="rb"><b>Audit deliverable</b> — audittemplate.ai downloaded + upgraded with cost-of-inaction math → Jimmy's $999 report template. <span class="own ai">CODEX</span></div></div>
-  <div class="row"><div class="dot y"></div><div class="rb"><b>Registrant research pipeline</b> — every registration → council researches the business → dossier → slides + live demo material write themselves. <span class="own ai">VERA+JARVIS</span></div></div>
-  <div class="row"><div class="dot y"></div><div class="rb"><b>Event listings</b> — Luma (free), Eventbrite mirror, Meetup group ($30) on reverseselling.hq. Fees itemized on the morning card. <span class="own ai">COUNCIL</span></div></div>
-</div></section>
+<div class="day"><div class="dh">THURSDAY SEPT 3 <span>ONE WEEK OUT</span></div>
+  <div class="who"><span class="wtag j">JIMMY</span>
+    <div class="step"><div class="chk"></div><div>Warm calls/texts. <span class="target">TARGET: 10</span></div></div>
+  </div>
+  <div class="who"><span class="wtag p">PAUL</span>
+    <div class="step"><div class="chk"></div><div>Order name tags; start the printed roster.</div></div>
+    <div class="step"><div class="chk"></div><div><b>Design the QR table tents</b> — QR 1 texts FISHERS to the 317 line, QR 2 goes straight to the booking link.</div></div>
+  </div>
+  <div class="who"><span class="wtag m">MACHINE</span>
+    <div class="step"><div class="chk"></div><div><b>1-WEEK reminder text fires</b> to everyone registered so far.</div></div>
+    <div class="step"><div class="chk"></div><div>Vera opens a dossier on each registrant from their Kit answers.</div></div>
+  </div>
+</div>
 
-<section><h2>⬜ QUEUED (after the above)</h2><div class="card">
-  <div class="row"><div class="dot b"></div><div class="rb">FB/IG ad test ($270) once the reg page is approved · chamber calendar submissions · reminder text sequence · follow-up (24-hr texts + audit booking) · October date announced from stage.</div></div>
-</div></section>
+<div class="day"><div class="dh">FRIDAY SEPT 4 <span>KEEP THE CALLS MOVING</span></div>
+  <div class="who"><span class="wtag j">JIMMY</span>
+    <div class="step"><div class="chk"></div><div>Warm calls/texts. <span class="target">TARGET: 10</span></div></div>
+  </div>
+  <div class="who"><span class="wtag p">PAUL</span>
+    <div class="step"><div class="chk"></div><div><b>Order refreshments</b> — coffee &amp; sodas via Launch Fishers' RISE shop, pizza via HotBox. No alcohol.</div></div>
+  </div>
+  <div class="who"><span class="wtag m">MACHINE</span>
+    <div class="step"><div class="chk"></div><div>Nightly count; dossiers keep building as forms come in.</div></div>
+  </div>
+</div>
 
-<div class="foot"><b>How this board works:</b> Jarvis &amp; Vera update it and post changes in the 317 group (Jimmy + Paul + Jarvis). Anything waiting on a human for 24+ hours gets a nudge in that group — you asked to be kept accountable, so you will be. Budget spent so far: $364 (phone line) of $364+$500. Login is a privacy curtain, not a vault — nothing secret lives here.</div>
-</div></body>
+<div class="day"><div class="dh">SATURDAY SEPT 5 <span>LAST CALL DAY</span></div>
+  <div class="who"><span class="wtag j">JIMMY</span>
+    <div class="step"><div class="chk"></div><div>Warm calls/texts — final day of the calling push. <span class="target">TARGET: 10</span> After today: prepping and rehearsing only.</div></div>
+  </div>
+  <div class="who"><span class="wtag p">PAUL</span>
+    <div class="step"><div class="chk"></div><div>Line up the door greeter, 6:15–7:15pm.</div></div>
+    <div class="step"><div class="chk"></div><div>Print index cards as a sign-in backup, in case the roster or Wi-Fi fails at the door.</div></div>
+  </div>
+  <div class="who"><span class="wtag m">MACHINE</span>
+    <div class="step"><div class="chk"></div><div>Nightly count; dossiers.</div></div>
+  </div>
+</div>
+
+<div class="day"><div class="dh">SUNDAY SEPT 6 <span>QUIET DAY</span></div>
+  <div class="who"><span class="wtag j">JIMMY</span>
+    <div class="step"><div class="chk"></div><div>No calls today. Read through whatever dossier answers exist so far — start shaping what goes on stage.</div></div>
+  </div>
+  <div class="who"><span class="wtag p">PAUL</span>
+    <div class="step"><div class="chk"></div><div>Schedule the fob pickup + venue setup visit for this week.</div></div>
+  </div>
+  <div class="who"><span class="wtag m">MACHINE</span>
+    <div class="step"><div class="chk"></div><div>Vera keeps the drip running; nightly count.</div></div>
+  </div>
+</div>
+
+<div class="day"><div class="dh">MONDAY SEPT 7 <span>THE OUTLINE</span></div>
+  <div class="who"><span class="wtag m">MACHINE</span>
+    <div class="step"><div class="chk"></div><div><b>Fable builds the presentation outline from the accumulated form data</b> — every "what's eating the most time" and "what have you tried with AI" answer becomes a beat in the live demo.</div></div>
+    <div class="step"><div class="chk"></div><div><b>3-DAY reminder text fires.</b></div></div>
+  </div>
+  <div class="who"><span class="wtag j">JIMMY</span>
+    <div class="step"><div class="chk"></div><div>Review Fable's outline the moment it lands; start rehearsing out loud.</div></div>
+  </div>
+  <div class="who"><span class="wtag p">PAUL</span>
+    <div class="step"><div class="chk"></div><div>Confirm printed roster + name tags are on track; chase the refreshment order.</div></div>
+  </div>
+</div>
+
+<div class="day"><div class="dh">TUESDAY SEPT 8 <span>DRESS REHEARSAL</span></div>
+  <div class="who"><span class="wtag j">JIMMY</span>
+    <div class="step"><div class="chk"></div><div><b>Full run-through at the venue</b> — dress rehearsal, out loud, on the actual stage.</div></div>
+  </div>
+  <div class="who"><span class="wtag p">PAUL</span>
+    <div class="step"><div class="chk"></div><div><b>Fob pickup + setup walkthrough</b> — doubles as the dress rehearsal venue visit.</div></div>
+    <div class="step"><div class="chk"></div><div>Confirm PA, table layout, and that the QR table tents are printed.</div></div>
+  </div>
+  <div class="who"><span class="wtag m">MACHINE</span>
+    <div class="step"><div class="chk"></div><div>Nightly count; dossiers finalized for anyone who hasn't answered yet.</div></div>
+  </div>
+</div>
+
+<div class="day"><div class="dh">WEDNESDAY SEPT 9 <span>EVE OF</span></div>
+  <div class="who"><span class="wtag j">JIMMY</span>
+    <div class="step"><div class="chk"></div><div>Final quiet rehearsal pass. No calls.</div></div>
+  </div>
+  <div class="who"><span class="wtag p">PAUL</span>
+    <div class="step"><div class="chk"></div><div><b>Final logistics sweep:</b> name tags, roster, index cards, sign-in table, QR tents, refreshments — all confirmed for pickup or delivery tomorrow.</div></div>
+  </div>
+  <div class="who"><span class="wtag m">MACHINE</span>
+    <div class="step"><div class="chk"></div><div><b>DAY-BEFORE reminder text fires.</b></div></div>
+    <div class="step"><div class="chk"></div><div>Final nightly count to the 317 group.</div></div>
+  </div>
+</div>
+
+<div class="day"><div class="dh">THURSDAY SEPT 10 <span>SHOWTIME</span></div>
+  <div class="who"><span class="wtag j">JIMMY</span>
+    <div class="step"><div class="chk"></div><div><b>Present, 6:30–9:00pm.</b> That's the whole job today.</div></div>
+  </div>
+  <div class="who"><span class="wtag p">PAUL</span>
+    <div class="step"><div class="chk"></div><div>Greeter at the door, 6:15–7:15pm.</div></div>
+    <div class="step"><div class="chk"></div><div>Sign-in table running; refreshments out; PA, name tags, roster, and QR tents all live.</div></div>
+  </div>
+  <div class="who"><span class="wtag m">MACHINE</span>
+    <div class="step"><div class="chk"></div><div><b>MORNING-OF reminder text fires.</b></div></div>
+    <div class="step"><div class="chk"></div><div>Stage count relayed to Jarvis as the room fills.</div></div>
+    <div class="step"><div class="chk"></div><div>Post-event booking drip arms, ready to fire tomorrow morning.</div></div>
+  </div>
+</div>
+
+<h2>💰 THE ONE MONEY NUMBER</h2>
+<div class="day" style="padding:6px 16px 10px">
+<table><tr><th>ITEM</th><th>COST</th></tr>
+<tr><td>Venue — Launch Fishers Theater, half-day 6–10pm + $400 Basic AV</td><td><b>$400 + rental</b></td></tr>
+<tr><td>Refreshments — RISE coffee/soda + HotBox pizza, ~40–50 heads</td><td><b>~$250–350</b></td></tr>
+<tr><td>Print + gear — name tags, roster, QR tents, PA speaker</td><td><b>~$300–450</b></td></tr>
+<tr><td>Ticket revenue at 40–50 in the room × $20 (most take the credit, not the refund)</td><td><b>up to +$800–1,000 back</b></td></tr></table>
+</div>
+
+<div class="foot"><b>Who keeps this current:</b> Vera updates statuses as receipts come in · Jarvis nags the 317 group when a day's row is still unchecked by evening · this board republishes as things change. Tap a checkbox to mark it done on your own screen — it doesn't save, so the source of truth stays with whoever's watching the group. — Fable</div>
+</div>
+<script>
+document.querySelectorAll('.chk').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('done')));
+</script>
+</body>
 </html>
