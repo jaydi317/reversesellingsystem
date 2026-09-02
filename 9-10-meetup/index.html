@@ -211,21 +211,17 @@ h1{letter-spacing:-2.4px}
   <p class="eyebrow" style="justify-content:center">SEATS ARE CAPPED · FREE NIGHT</p>
   <h2 style="margin:20px 0">Save your seat.<br><span>When the chairs are gone, waitlist.</span></h2>
   <p class="body-copy" style="color:var(--body);font-size:15px;max-width:520px;margin:0 auto 30px">Tell us one thing about your business below — Jimmy builds part of the night around the actual businesses in the room.</p>
-  <form id="regform" class="regform" action="https://formsubmit.co/reverseselling.hq@gmail.com" method="POST" style="max-width:560px;margin:0 auto;text-align:left">
-    <input type="hidden" name="_subject" value="🔥 MEETUP REG — Sept 10">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://reversesellingsystem.com/9-10-meetup/thanks.html">
+  <form id="regform" class="regform" action="https://app.kit.com/forms/9872042/subscriptions" method="POST" style="max-width:560px;margin:0 auto;text-align:left">
     <div class="fgrid">
-      <label>First name<input name="first_name" required autocomplete="given-name"></label>
-      <label>Last name<input name="last_name" required autocomplete="family-name"></label>
+      <label>First name<input name="fields[first_name]" required autocomplete="given-name"></label>
+      <label>Last name<input name="fields[last_name]" required autocomplete="family-name"></label>
     </div>
-    <label>Email<input type="email" name="email" required autocomplete="email"></label>
-    <label>Mobile (we text you the details and parking)<input type="tel" name="mobile" required autocomplete="tel"></label>
-    <label>Business name + website<input name="business" placeholder="e.g. Hoosier Heating · hoosierheating.com" required></label>
-    <label>If AI could take ONE thing off your plate by Friday, what would it be?<textarea name="one_thing" rows="2" required></textarea></label>
+    <label>Email<input type="email" name="email_address" required autocomplete="email"></label>
+    <label>Mobile (we text you the details and parking)<input type="tel" name="fields[mobile]" required autocomplete="tel"></label>
+    <label>Business name + website<input name="fields[business_website]" placeholder="e.g. Hoosier Heating · hoosierheating.com" required></label>
+    <label>If AI could take ONE thing off your plate by Friday, what would it be?<textarea name="fields[one_thing]" rows="2" required></textarea></label>
     <label>How did you hear about us?
-      <select name="hear_about" required style="display:block;width:100%;margin-top:6px;padding:13px 14px;font:inherit;font-size:14px;color:var(--ink);background:#fff;border:1px solid #d8e1ee;border-radius:9px">
+      <select name="fields[hear_about]" required style="display:block;width:100%;margin-top:6px;padding:13px 14px;font:inherit;font-size:14px;color:var(--ink);background:#fff;border:1px solid #d8e1ee;border-radius:9px">
         <option value="" disabled selected>Choose one…</option>
         <option>Russell Brunson's podcast</option>
         <option>Another podcast</option>
@@ -236,7 +232,7 @@ h1{letter-spacing:-2.4px}
         <option>Other</option>
       </select>
     </label>
-    <label class="consent"><input type="checkbox" name="sms_ok" value="yes" required> OK to text me about this event — the details, the parking, and one prep question. Stop anytime.</label>
+    <label class="consent"><input type="checkbox" name="fields[sms_ok]" value="yes" required> OK to text me about this event — the details, the parking, and one prep question. Stop anytime.</label>
     <button class="button" type="submit" style="width:100%;margin-top:6px">Save my seat — free <span>→</span></button>
     <p class="micro" style="text-align:center">You'll get a text from Jimmy &amp; Paul's line with the details.</p>
   </form>
