@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Group Posting Play</title>
+<style>
+:root{--ink:#172748;--copper:#b94f37;--body:#535e70;--line:#e0e6ed;--eyebrow:#6e798b;--mono:#8a94a5;--rule-bg:#fbeae6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif;color:var(--ink);background:#fcfdff;padding:36px 20px 60px;max-width:860px;margin:0 auto;line-height:1.6}
+
+header{margin-bottom:26px}
+h1{font-size:32px;letter-spacing:-1.3px;font-weight:800}
+.sub{color:var(--body);font-size:14.5px;margin:8px 0 0;max-width:640px}
+.sub a{color:var(--copper);text-decoration:none;font-weight:700}
+
+h2.eyebrow{font-size:12px;letter-spacing:2px;color:var(--eyebrow);margin:30px 0 10px;font-weight:800;text-transform:uppercase}
+h2.eyebrow:first-of-type{margin-top:6px}
+
+.card{border:1px solid var(--line);background:#fff;border-radius:16px;padding:22px 24px;margin-bottom:6px}
+
+/* Card 1: the rule, visually dominant */
+.rule-card{background:linear-gradient(140deg,#172748,#20335c);border:1px solid #172748;border-radius:16px;padding:30px 28px;margin-bottom:6px;color:#fcfdff}
+.rule-card .rule-text{font-size:22px;font-weight:800;letter-spacing:-.4px;line-height:1.35;margin-bottom:14px}
+.rule-card .rule-text .accent{color:#e8a998}
+.rule-card .rule-sub{color:#c7cfe0;font-size:14.5px;line-height:1.65}
+
+/* Step loop */
+.steps{counter-reset:step}
+.step{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:none}
+.step-num{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--rule-bg);color:var(--copper);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.step-body{flex:1}
+.step-label{font-weight:700;color:var(--ink);font-size:15px;margin-bottom:2px}
+.step-desc{color:var(--body);font-size:14px}
+
+/* Script blocks */
+.script-label{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.8px;padding:3px 10px;border-radius:999px;background:var(--rule-bg);color:var(--copper);text-transform:uppercase;margin-bottom:12px}
+.script{font-size:14.5px;color:var(--ink);line-height:1.7;background:#f5f7fb;border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-style:italic}
+.script-note{color:var(--body);font-size:13px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.script-note strong{color:var(--ink);font-style:normal}
+
+/* checklist */
+.checklist{list-style:none}
+.checklist li{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--ink)}
+.checklist li:last-child{border-bottom:none}
+.checklist li::before{content:"";flex:0 0 auto;width:16px;height:16px;border:2px solid var(--copper);border-radius:4px;margin-top:2px}
+.rule-of-thumb{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);color:var(--body);font-size:13.5px}
+.rule-of-thumb strong{color:var(--ink)}
+
+/* two column split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.split-col h3{font-size:13px;letter-spacing:.6px;text-transform:uppercase;color:var(--copper);font-weight:800;margin-bottom:8px}
+.split-col p{color:var(--body);font-size:14.5px;line-height:1.65}
+.split-col p strong{color:var(--ink)}
+
+/* don'ts list */
+.donts{list-style:none}
+.donts li{padding:10px 0 10px 26px;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--body);position:relative}
+.donts li:last-child{border-bottom:none}
+.donts li::before{content:"✕";position:absolute;left:0;top:10px;color:var(--copper);font-weight:800;font-size:13px}
+.donts li strong{color:var(--ink)}
+
+footer{margin-top:36px;text-align:center;color:var(--mono);font-size:12px;letter-spacing:.2px;padding-top:20px;border-top:1px solid var(--line)}
+
+@media print{
+  body{padding:0 8px}
+  .card,.rule-card{break-inside:avoid}
+  h2.eyebrow{break-after:avoid}
+}
+
+@media (max-width:560px){
+  body{padding:26px 14px 50px}
+  h1{font-size:25px}
+  .card,.rule-card{padding:18px 16px}
+  .split{grid-template-columns:1fr}
+  .rule-card .rule-text{font-size:19px}
+}
+</style>
+</head><body>
+
+<header>
+<h1>The Group Posting Play</h1>
+<p class="sub">How we fill the room from other people's Facebook groups. Sept 10 event. Link everywhere is <a href="#">reversesellingsystem.com/meetup</a>.</p>
+</header>
+
+<h2 class="eyebrow">The rule</h2>
+<div class="rule-card">
+<div class="rule-text">Never post cold. Ask the admin first. <span class="accent">An admin's yes turns an ad into an endorsement.</span></div>
+<div class="rule-sub">Groups delete drive-by promo posts. But when the admin approves or shares it, the group treats it as theirs. That is how the successful meetups actually filled: one to one invites plus group endorsements. The event page does the selling; the post's only job is the click.</div>
+</div>
+
+<h2 class="eyebrow">The 3-step loop, repeat per group</h2>
+<div class="card steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<div class="step-label">DM the admin</div>
+<div class="step-desc">Use the admin script below. Wait for a yes.</div>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<div class="step-label">Post</div>
+<div class="step-desc">Use the group post below, or let the admin share it themselves, which is even better.</div>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<div class="step-label">Work the comments</div>
+<div class="step-desc">Reply to every comment within the hour, then DM anyone who comments "interested" with the link. Comments are leads.</div>
+</div>
+</div>
+</div>
+
+<h2 class="eyebrow">Admin DM script</h2>
+<div class="card">
+<span class="script-label">Paul sends these</span>
+<div class="script">"Hey, I help run a free night for local business owners next Thursday at Launch Fishers. We fix real owners' problems with AI live on a big screen, nothing is sold, everyone leaves with free tools. I'd rather ask you than just post it. Would you be open to sharing it with the group, or is it OK if I post? Happy to hold seats for your members. Here's the page so you can check it's legit: reversesellingsystem.com/meetup"</div>
+</div>
+
+<h2 class="eyebrow">The group post</h2>
+<div class="card">
+<span class="script-label">Goes up only after the yes</span>
+<div class="script">"Admin said it was OK to share this. Next Thursday night there's a free event for business owners at Launch Fishers. Real owners bring real problems and AI fixes them live on the big screen. Nothing is sold. Everyone leaves with ready made AI helpers for their business, plus food and drinks. If you run a business in Hamilton County, seats are capped: reversesellingsystem.com/meetup"</div>
+<div class="script-note"><strong>Post as yourself, not a page.</strong> Add one real sentence of your own at the top about why you're going. Personal beats polished.</div>
+</div>
+
+<h2 class="eyebrow">Where to run it</h2>
+<div class="card">
+<ul class="checklist">
+<li>Fishers community groups</li>
+<li>HSE parents and neighborhood groups</li>
+<li>Carmel small business groups</li>
+<li>Noblesville and Westfield community groups</li>
+<li>Indy entrepreneur and small business groups</li>
+<li>Any chamber or BNI adjacent group either of us is already in</li>
+<li>Niche owner groups (contractors, salons, restaurants, real estate)</li>
+</ul>
+<div class="rule-of-thumb"><strong>Rule of thumb:</strong> groups where owners hang out beat groups about AI.</div>
+</div>
+
+<h2 class="eyebrow">Split the work</h2>
+<div class="card split">
+<div class="split-col">
+<h3>Jimmy</h3>
+<p>Your groups, your one to one texts and calls down the 40 name list, Maestros follow up.</p>
+</div>
+<div class="split-col">
+<h3>Paul</h3>
+<p>Admin DMs (<strong>3 tonight, 3 tomorrow</strong>), track which groups said yes, repost approved ones Saturday morning when weekend scrolling peaks.</p>
+</div>
+</div>
+
+<h2 class="eyebrow">The don'ts</h2>
+<div class="card">
+<ul class="donts">
+<li><strong>Don't post the same wording in every group at the same hour.</strong> Facebook flags it: change the first sentence each time.</li>
+<li><strong>Don't argue with a skeptic in comments.</strong> Invite them: "come see it live, it's free."</li>
+<li><strong>Don't post in AI groups.</strong> They're not owners.</li>
+<li><strong>Don't post without the admin yes.</strong> One deleted post can get you muted in the group.</li>
+</ul>
+</div>
+
+<footer>Sept 10 · Launch Fishers · doors 6:30 · reversesellingsystem.com/meetup · updated Sept 3</footer>
+
+</body></html>
