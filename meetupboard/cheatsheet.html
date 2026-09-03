@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Cheat Sheet · Everything We Built</title>
+<style>
+:root{--ink:#172748;--copper:#b94f37;--body:#535e70;--line:#e0e6ed;--eyebrow:#6e798b;--mono:#8a94a5}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif;color:var(--ink);background:#fcfdff;padding:36px 20px 70px;max-width:900px;margin:0 auto;line-height:1.6}
+
+header{margin-bottom:26px}
+h1{font-size:34px;letter-spacing:-1.4px;font-weight:800}
+.sub{color:var(--body);font-size:14.5px;margin:8px 0 22px}
+
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+nav.toc a{font-size:11.5px;font-weight:700;letter-spacing:.4px;color:var(--eyebrow);background:#eef1f6;border:1px solid var(--line);border-radius:999px;padding:6px 12px;text-decoration:none;white-space:nowrap}
+nav.toc a:hover{border-color:var(--copper);color:var(--copper)}
+
+h2.eyebrow{font-size:12.5px;letter-spacing:2px;color:var(--eyebrow);margin:40px 0 4px;font-weight:800;text-transform:uppercase;scroll-margin-top:16px}
+.section-note{color:var(--mono);font-size:12.5px;margin-bottom:12px;font-style:italic}
+
+.card{border:1px solid var(--line);background:linear-gradient(140deg,#f5f7fb,#eef2f8);border-radius:16px;padding:22px 24px;margin-bottom:6px}
+
+.item{padding:13px 0;border-bottom:1px solid var(--line)}
+.item:first-child{padding-top:2px}
+.item:last-child{border-bottom:none;padding-bottom:2px}
+.item-name{font-weight:700;color:var(--ink);font-size:15.5px;margin-bottom:4px;letter-spacing:-.1px}
+.item-desc{color:var(--body);font-size:14.5px;line-height:1.55}
+.item-loc{font-family:"SF Mono",ui-monospace,SFMono-Regular,Consolas,Menlo,monospace;font-size:11.5px;color:var(--mono);margin-top:6px;word-break:break-word}
+
+.badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.8px;padding:3px 9px;border-radius:999px;background:#fbeae6;color:var(--copper);margin-left:8px;vertical-align:middle;text-transform:uppercase}
+
+footer{margin-top:44px;text-align:center;color:var(--mono);font-size:12px;letter-spacing:.2px;padding-top:22px;border-top:1px solid var(--line)}
+
+@media (max-width:520px){
+  body{padding:26px 14px 56px}
+  h1{font-size:27px}
+  .card{padding:18px 16px}
+}
+</style>
+</head><body>
+
+<header>
+<h1>The Cheat Sheet</h1>
+<p class="sub">Everything we built. This is the page Paul goes to first, so he never has to wait on Jimmy.</p>
+<nav class="toc" aria-label="Jump to section">
+<a href="#live">Live now</a>
+<a href="#assets">Assets built</a>
+<a href="#decisions">Open decisions</a>
+<a href="#jimmy">Jimmy's lane</a>
+<a href="#paul">Paul's lane</a>
+<a href="#owed">Still owed</a>
+</nav>
+</header>
+
+<h2 class="eyebrow" id="live">Section 1 · Live on the internet right now</h2>
+<div class="card">
+
+<div class="item">
+<div class="item-name">The event page</div>
+<div class="item-desc">Free event. Kit registration form, mini-makeover offer.</div>
+<div class="item-loc">reversesellingsystem.com/9-10-meetup &nbsp;·&nbsp; easy link: reversesellingsystem.com/meetup redirects there</div>
+</div>
+
+<div class="item">
+<div class="item-name">Thank-you page</div>
+<div class="item-desc">Where a new registrant lands right after they sign up.</div>
+<div class="item-loc">/9-10-meetup/thanks.html</div>
+</div>
+
+<div class="item">
+<div class="item-name">Day-by-Day Board</div>
+<div class="item-desc">The full meetup board, laid out day by day.</div>
+<div class="item-loc">reversesellingsystem.com/meetupboard</div>
+</div>
+
+<div class="item">
+<div class="item-name">Today Page</div>
+<div class="item-desc">The one page. If you only ever open one link, open this one.</div>
+<div class="item-loc">reversesellingsystem.com/meetupboard/today.html</div>
+</div>
+
+<div class="item">
+<div class="item-name">Mission Board</div>
+<div class="item-desc">Copy-paste scripts, ready to send as-is.</div>
+<div class="item-loc">reversesellingsystem.com/meetupboard/mission.html</div>
+</div>
+
+<div class="item">
+<div class="item-name">Acceleration Page</div>
+<div class="item-desc">The AI chart page, built for Paul.</div>
+<div class="item-loc">reversesellingsystem.com/meetupboard/acceleration.html</div>
+</div>
+
+<div class="item">
+<div class="item-name">Registration machine, Kit form 9872042</div>
+<div class="item-desc">Sends the instant confirmation email, then reminder emails on Sept 3, 7, 9, and 10. Runs on Kit's own servers, no one has to trigger it.</div>
+<div class="item-loc">form 9872042</div>
+</div>
+
+<div class="item">
+<div class="item-name">Registration machine, Jarvis</div>
+<div class="item-desc">Texts every registrant from the 317 line within 60 seconds of signup, and keeps the registrant board updated.</div>
+<div class="item-loc">the 317 line</div>
+</div>
+
+<div class="item">
+<div class="item-name">Registration machine, Claire</div>
+<div class="item-desc">Watches the HQ inbox and the venue invoice. Pays it only if it comes in at exactly $400.</div>
+<div class="item-loc">HQ inbox</div>
+</div>
+
+</div>
+
+<h2 class="eyebrow" id="assets">Section 2 · Assets built</h2>
+<p class="section-note">All in Documents/Jimmy-OS/05-projects/meetup/ unless another path is shown.</p>
+<div class="card">
+
+<div class="item">
+<div class="item-name">THE OWNER'S KIT v1</div>
+<div class="item-desc">The event giveaway. One-page BUY/TRY/TOY filter, 10 copy-paste prompts for owners, the Mini Makeover template with an HVAC example, and the Thanksgiving page.</div>
+<div class="item-loc">2026-09-03 file · Documents/Jimmy-OS/05-projects/meetup/</div>
+</div>
+
+<div class="item">
+<div class="item-name">Reverse Selling Asset Pack</div>
+<div class="item-desc">Our version of Corey's system. 18 discovery questions, scoring, an explainer-video prompt, a sales-prep prompt, the stage close, the two-path close, and the hard rules.</div>
+<div class="item-loc">2026-09-01 file · Documents/Jimmy-OS/05-projects/meetup/</div>
+</div>
+
+<div class="item">
+<div class="item-name">The Vault</div>
+<div class="item-desc">7 runnable client skills, 38 receipt-backed automation recipes, and 26 tool routes.</div>
+<div class="item-loc">~/clawd/skills/rs-vault/ &nbsp;·&nbsp; start at 00-VAULT-INDEX.md</div>
+</div>
+
+<div class="item">
+<div class="item-name">Meetup Follow-Up Machine</div>
+<div class="item-desc">Every text sequence, from registration to show-up to post-event.</div>
+<div class="item-loc">2026-08-27 file · Documents/Jimmy-OS/05-projects/meetup/</div>
+</div>
+
+<div class="item">
+<div class="item-name">Last 30 Days research</div>
+<div class="item-desc">What owners are actually asking about AI right now, their objections, and the events competing for their attention.</div>
+<div class="item-loc">2026-09-01 file · Documents/Jimmy-OS/05-projects/meetup/</div>
+</div>
+
+<div class="item">
+<div class="item-name">Slide Catalog</div>
+<div class="item-desc">18 belief images for the sales letter. Codex's dark "Visual Principles" style is the locked slide look.</div>
+<div class="item-loc">Documents/Jimmy-OS/02-marketing-brain/2026-08-28/</div>
+</div>
+
+<div class="item">
+<div class="item-name">Idea Foundry v2-B spec</div>
+<div class="item-desc">The business doodle system: a 25-belief catalog and the Doodle Kit giveaway plan. 4 anchor renders are waiting in Pixa.</div>
+<div class="item-loc">Documents/Jimmy-OS/02-marketing-brain/2026-09-01/</div>
+</div>
+
+<div class="item">
+<div class="item-name">THE ACCELERATION</div>
+<div class="item-desc">The METR chart, plus Astra and Tiger 21, the page built for Paul.</div>
+<div class="item-loc">2026-09-02 file · Documents/Jimmy-OS/05-projects/meetup/</div>
+</div>
+
+<div class="item">
+<div class="item-name">Kennedy Library</div>
+<div class="item-desc">The Pedestal File (the full Dan Kennedy bootcamp extraction, including the Identity Exercise rubric) plus 6 Kennedy skills.</div>
+<div class="item-loc">Pedestal File: Documents/Jimmy-OS/02-marketing-brain/2026-08-20/ &nbsp;·&nbsp; Kennedy Pack: Documents/Jimmy-OS/99-system/2026-08-20 KENNEDY PACK.zip, unpacked list in the Codex manifest</div>
+</div>
+
+<div class="item">
+<div class="item-name">Project-Pack-5.1</div>
+<div class="item-desc">14 files, ready to drag straight into the new Claude Project. Instructions file included.</div>
+<div class="item-loc">in the meetup folder</div>
+</div>
+
+<div class="item">
+<div class="item-name">Asset manifest</div>
+<div class="item-desc">194 items catalogued by Codex. The fuel for the future Command Center.</div>
+<div class="item-loc">~/clawd/inbox/for-fable/CODEX-2026-09-01-asset-manifest.json</div>
+</div>
+
+</div>
+
+<h2 class="eyebrow" id="decisions">Section 3 · Decisions sitting open</h2>
+<p class="section-note">One word each from Jimmy unlocks all three.</p>
+<div class="card">
+
+<div class="item">
+<div class="item-name">Doodle anchor <span class="badge">needs: 1, 2, 3, or 4</span></div>
+<div class="item-desc">Pick render 1, 2, 3, or 4 in Pixa. Once it's picked, the 7 site doodles and the Doodle Kit get drawn.</div>
+<div class="item-loc">waiting in Pixa</div>
+</div>
+
+<div class="item">
+<div class="item-name">Jarvis X/Reddit sweep <span class="badge">needs: allow or deny</span></div>
+<div class="item-desc">Jarvis wants to run it using his own logged-in Chrome. Allow it with an announcement, or deny it.</div>
+<div class="item-loc">Jarvis's Chrome</div>
+</div>
+
+<div class="item">
+<div class="item-name">Command Center build <span class="badge">needs: "build HQ"</span></div>
+<div class="item-desc">Tabs for today, meetup, assets, skills, and clients. Just say "build HQ" when you want it.</div>
+<div class="item-loc">waiting on the words</div>
+</div>
+
+</div>
+
+<h2 class="eyebrow" id="jimmy">Section 4 · Jimmy's Quadrant 1</h2>
+<p class="section-note">The only things on this whole page that need him, specifically.</p>
+<div class="card">
+
+<div class="item">
+<div class="item-name">Calls and texts down the 40-name list</div>
+<div class="item-desc">The link to send is reversesellingsystem.com/meetup.</div>
+<div class="item-loc">reversesellingsystem.com/meetup</div>
+</div>
+
+<div class="item">
+<div class="item-name">The Maestros visit</div>
+<div class="item-desc">Jarvis's QR table cards, in hand.</div>
+</div>
+
+<div class="item">
+<div class="item-name">Facebook group posts tonight</div>
+<div class="item-desc">By hand. Rules first.</div>
+<div class="item-loc">the Facebook group</div>
+</div>
+
+<div class="item">
+<div class="item-name">The Kennedy Recording</div>
+<div class="item-desc">Today. 20 minutes, voice memo, one take. The rubric is Pedestal File section 2: one competency, one characteristic, one story, the Facts List. Once it's recorded, Fable extracts it into the stage intro and the about page.</div>
+<div class="item-loc">Pedestal File, section 2</div>
+</div>
+
+<div class="item">
+<div class="item-name">Being magnetic on Sept 10</div>
+<div class="item-desc">Everything else on this page exists so he never has to think about it.</div>
+</div>
+
+</div>
+
+<h2 class="eyebrow" id="paul">Section 5 · Paul's lane</h2>
+<div class="card">
+
+<div class="item">
+<div class="item-name">Co-host emails (3)</div>
+<div class="item-desc">OneZone, Noblesville Chamber, Kevin Whited.</div>
+<div class="item-loc">script s5 on the mission board</div>
+</div>
+
+<div class="item">
+<div class="item-name">Ask Carolyn</div>
+<div class="item-desc">Will Launch Fishers promote the event to their community?</div>
+</div>
+
+<div class="item">
+<div class="item-name">Pay the venue invoice</div>
+<div class="item-desc">The moment Claire flags it. Exactly $400, already signed.</div>
+</div>
+
+<div class="item">
+<div class="item-name">Names</div>
+<div class="item-desc">A door greeter and tech hands.</div>
+</div>
+
+<div class="item">
+<div class="item-name">Print</div>
+<div class="item-desc">Name tags, the roster, and the QR table tents.</div>
+<div class="item-loc">Jarvis's files</div>
+</div>
+
+<div class="item">
+<div class="item-name">The Answer Desk</div>
+<div class="item-desc">Works for Paul too. Any question in the 317 group gets answered in 5 minutes.</div>
+<div class="item-loc">the 317 group</div>
+</div>
+
+</div>
+
+<h2 class="eyebrow" id="owed">Section 6 · Still owed by the machine</h2>
+<p class="section-note">The honest list.</p>
+<div class="card">
+
+<div class="item">
+<div class="item-name">THE WIRE CHECK document</div>
+<div class="item-desc">Every wire, its owner, its test, and a weekly heartbeat.</div>
+<div class="item-loc">owed by Fable</div>
+</div>
+
+<div class="item">
+<div class="item-name">The dated big-picture flowchart</div>
+<div class="item-desc">Owed by Fable.</div>
+</div>
+
+<div class="item">
+<div class="item-name">Codex's 7 dark slides v2</div>
+<div class="item-desc">Ordered, in flight.</div>
+</div>
+
+<div class="item">
+<div class="item-name">Owner-quote sweep from X/Reddit</div>
+<div class="item-desc">Blocked on the decision in Section 3.</div>
+</div>
+
+<div class="item">
+<div class="item-name">@reversesellingsystem.com email addresses</div>
+<div class="item-desc">Plus HQ password rotation with 2FA.</div>
+<div class="item-loc">due this week</div>
+</div>
+
+</div>
+
+<footer>Updated Sept 3, 2026 · kept by the council · questions go to the 317 group and get answered in 5 minutes.</footer>
+
+</body></html>
