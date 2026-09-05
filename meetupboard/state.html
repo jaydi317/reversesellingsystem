@@ -1,421 +1,68 @@
-<title>Mission Control</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STATE — Sept 10 Meetup</title>
 <style>
-  :root{
-    --ink:#172748;
-    --copper:#b94f37;
-    --bg:#fcfdff;
-    --card-border:#e0e6ed;
-    --card-bg:#ffffff;
-    --muted:#5b6b8c;
-    --green:#2f9e5c;
-    --yellow:#c98a12;
-    --red:#c0392b;
-    --green-bg:#eaf7ef;
-    --yellow-bg:#fdf3e0;
-    --red-bg:#fbeaea;
-  }
-  *{box-sizing:border-box;}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:Inter,Arial,Helvetica,sans-serif;
-    line-height:1.5;
-    padding:28px 20px 60px;
-  }
-  .wrap{max-width:1080px;margin:0 auto;}
-
-  /* HEADER */
-  header{margin-bottom:22px;}
-  h1{
-    font-size:clamp(24px,4vw,36px);
-    margin:0 0 4px;
-    letter-spacing:-0.01em;
-  }
-  h1 .sep{color:var(--copper);}
-  .sub{color:var(--muted);font-size:15px;margin:0 0 18px;}
-
-  .countdown{
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:10px;
-  }
-  .day{
-    background:var(--card-bg);
-    border:1px solid var(--card-border);
-    border-radius:16px;
-    padding:14px 10px;
-    text-align:center;
-  }
-  .day .d{font-weight:700;font-size:13px;color:var(--copper);text-transform:uppercase;letter-spacing:.03em;}
-  .day .lbl{font-size:12.5px;color:var(--ink);margin-top:6px;line-height:1.35;}
-  .day.today{border:2px solid var(--copper);}
-  .day.showtime{background:var(--ink);border-color:var(--ink);}
-  .day.showtime .d{color:#ffd7c9;}
-  .day.showtime .lbl{color:#fff;font-weight:700;}
-
-  /* RIGHT NOW BANNER */
-  .rightnow{
-    margin-top:26px;
-    background:#fff3ee;
-    border:1px solid #f0c3b2;
-    border-left:6px solid var(--copper);
-    border-radius:16px;
-    padding:20px 24px;
-  }
-  .rightnow h2{
-    margin:0 0 12px;
-    font-size:19px;
-    color:var(--copper);
-    letter-spacing:.02em;
-  }
-  .rightnow ol{margin:0;padding-left:22px;}
-  .rightnow li{margin-bottom:8px;font-size:15.5px;}
-  .rightnow li:last-child{margin-bottom:0;}
-  .rightnow b{color:var(--ink);}
-
-  /* SECTION TITLES */
-  h2.section{
-    font-size:13px;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-    color:var(--muted);
-    margin:34px 0 12px;
-    font-weight:700;
-  }
-
-  /* SEAT GRID */
-  .seatgrid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-  }
-  .seat{
-    background:var(--card-bg);
-    border:1px solid var(--card-border);
-    border-radius:16px;
-    padding:18px 20px;
-  }
-  .seat-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
-  .seat-name{font-size:17px;font-weight:700;margin:0;}
-  .seat-role{font-size:13px;color:var(--muted);margin:3px 0 0;}
-  .pill{
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:.04em;
-    padding:4px 10px;
-    border-radius:999px;
-    white-space:nowrap;
-  }
-  .pill.working{background:var(--green-bg);color:var(--green);}
-  .pill.waiting{background:var(--yellow-bg);color:var(--yellow);}
-  .pill.blocked{background:var(--red-bg);color:var(--red);}
-  .seat h4{
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:.05em;
-    color:var(--muted);
-    margin:14px 0 6px;
-  }
-  .seat ul{margin:0;padding-left:18px;}
-  .seat li{font-size:13.5px;margin-bottom:4px;}
-
-  /* WIRES STRIP */
-  .wires{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:10px;
-  }
-  .tile{
-    background:var(--card-bg);
-    border:1px solid var(--card-border);
-    border-radius:16px;
-    padding:14px 12px;
-    text-align:center;
-  }
-  .dot{
-    width:12px;height:12px;border-radius:50%;
-    display:inline-block;margin-bottom:8px;
-  }
-  .dot.g{background:var(--green);}
-  .dot.y{background:var(--yellow);}
-  .dot.r{background:var(--red);}
-  .tile .t-name{font-weight:700;font-size:13.5px;}
-  .tile .t-note{font-size:12px;color:var(--muted);margin-top:3px;}
-
-  /* SHIPPED LIST */
-  .shipped{
-    background:var(--card-bg);
-    border:1px solid var(--card-border);
-    border-radius:16px;
-    padding:20px 24px;
-  }
-  .shipped ul{
-    columns:2;
-    -webkit-columns:2;
-    column-gap:32px;
-    margin:0;padding-left:20px;
-  }
-  .shipped li{
-    font-size:14px;
-    margin-bottom:9px;
-    break-inside:avoid;
-  }
-
-  /* FOOTER TWO COL */
-  .footer2{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-  }
-  .foot-card{
-    border-radius:16px;
-    padding:18px 22px;
-    border:1px solid var(--card-border);
-  }
-  .foot-card.decided{background:var(--green-bg);border-color:#bfe4cd;}
-  .foot-card.open{background:var(--yellow-bg);border-color:#f0dba6;}
-  .foot-card h3{
-    margin:0 0 10px;
-    font-size:14px;
-    text-transform:uppercase;
-    letter-spacing:.05em;
-  }
-  .foot-card.decided h3{color:var(--green);}
-  .foot-card.open h3{color:var(--yellow);}
-  .foot-card ul{margin:0;padding-left:18px;}
-  .foot-card li{font-size:13.5px;margin-bottom:7px;}
-
-  footer.note{
-    text-align:center;
-    color:var(--muted);
-    font-size:12px;
-    margin-top:30px;
-  }
-
-  @media (max-width:760px){
-    .countdown{grid-template-columns:repeat(3,1fr);}
-    .seatgrid{grid-template-columns:1fr;}
-    .wires{grid-template-columns:repeat(2,1fr);}
-    .footer2{grid-template-columns:1fr;}
-    .shipped ul{columns:1;}
-  }
-
-  @media print{
-    body{padding:0;background:#fff;}
-    .day.showtime{background:#eee;border-color:#999;}
-    .day.showtime .d, .day.showtime .lbl{color:#111;}
-  }
+body{font-family:Inter,system-ui,sans-serif;max-width:820px;margin:24px auto;padding:0 16px;line-height:1.5;color:#1c1a20;background:#fdfaf3}
+h1{font-size:1.6rem;margin-bottom:.2rem}
+h2{font-size:1.15rem;margin-top:1.4rem;border-top:1px solid #e6dfd3;padding-top:.8rem}
+ul{padding-left:1.2rem}
+li{margin:.35rem 0}
+.foot{margin-top:2rem;font-size:.8rem;color:#57515e;border-top:1px solid #e6dfd3;padding-top:.6rem}
 </style>
-
-<div class="wrap">
-
-  <header>
-    <h1>MISSION CONTROL <span class="sep">&middot;</span> Sept 10 is in 5 days</h1>
-    <p class="sub">Reverse Selling System &middot; "Run Your Business on AI" &middot; Launch Fishers, doors 6:30 PM</p>
-
-    <div class="countdown">
-      <div class="day today">
-        <div class="d">Sat, Sept 5</div>
-        <div class="lbl">Outreach: calls + FB groups</div>
-      </div>
-      <div class="day">
-        <div class="d">Sun, Sept 6</div>
-        <div class="lbl">Outreach continues</div>
-      </div>
-      <div class="day">
-        <div class="d">Mon, Sept 7</div>
-        <div class="lbl">Owner's Kit inventory due</div>
-      </div>
-      <div class="day">
-        <div class="d">Tue, Sept 8</div>
-        <div class="lbl">Daegan arrives &middot; rehearsal &middot; print</div>
-      </div>
-      <div class="day">
-        <div class="d">Wed, Sept 9</div>
-        <div class="lbl">Freeze &middot; everything tested &middot; final drill</div>
-      </div>
-      <div class="day showtime">
-        <div class="d">Thu, Sept 10</div>
-        <div class="lbl">SHOWTIME</div>
-      </div>
-    </div>
-  </header>
-
-  <div class="rightnow">
-    <h2>RIGHT NOW: Jimmy's next 3 actions today</h2>
-    <ol>
-      <li><b>Open the Kit tab in Chrome on the Mac mini.</b> The text that welcomes every new registrant has been silent since Sept 3 evening because no signed-in Kit tab is open. This alone restarts it.</li>
-      <li><b>Finish the letter tweaks in the other chat.</b> The v7 wording is locked; the page build is waiting on it.</li>
-      <li><b>Post to Facebook groups with the corrected, no-false-claims copy and start calls with Paul.</b> Don't use the old scripts yet: they still say "nothing is sold," which isn't true anymore.</li>
-    </ol>
-  </div>
-
-  <h2 class="section">The Four Seats</h2>
-  <div class="seatgrid">
-
-    <div class="seat">
-      <div class="seat-top">
-        <div>
-          <p class="seat-name">CODEX</p>
-          <p class="seat-role">Builds the page, the wire, the print materials</p>
-        </div>
-        <span class="pill working">WORKING</span>
-      </div>
-      <h4>Delivered</h4>
-      <ul>
-        <li>v6 page live: doodles permanent, Russell fact fixed</li>
-        <li>Kit form + confirmation email working</li>
-        <li>3 reminder emails written &amp; scheduled</li>
-        <li>26-item build list from the Sept 4 meeting</li>
-      </ul>
-      <h4>Next up</h4>
-      <ul>
-        <li>Ship v7 + fix 2 Facebook scripts, before any link posts</li>
-        <li>Owner's Kit gap check, due Mon</li>
-        <li>Feedback form + fishbowl slips, due Tue</li>
-        <li>ROI calculator + host view + intake form, due Wed</li>
-      </ul>
-    </div>
-
-    <div class="seat">
-      <div class="seat-top">
-        <div>
-          <p class="seat-name">JARVIS</p>
-          <p class="seat-role">Registration texts, 317 line, stage demo</p>
-        </div>
-        <span class="pill blocked">BLOCKED</span>
-      </div>
-      <h4>Delivered</h4>
-      <ul>
-        <li>QR codes + printable table cards</li>
-        <li>Walk-in text capture fixed &amp; watchdogged</li>
-        <li>9AM / 9PM check-in texts running</li>
-        <li>Corrected count: 6 real registrants, not 2</li>
-      </ul>
-      <h4>Next up</h4>
-      <ul>
-        <li>Fix needs a signed-in Kit tab, today</li>
-        <li>Adoption pyramid stage image, rolling</li>
-        <li>Jamin testimonial chase, cutoff Tue 6PM</li>
-        <li>Stage rehearsal with Stacey &amp; Ammeen, Tue/Wed</li>
-      </ul>
-    </div>
-
-    <div class="seat">
-      <div class="seat-top">
-        <div>
-          <p class="seat-name">CLAIRE</p>
-          <p class="seat-role">Email, HQ inbox, invoice gate</p>
-        </div>
-        <span class="pill waiting">WAITING</span>
-      </div>
-      <h4>Delivered</h4>
-      <ul>
-        <li>Post-event email sequence outlined</li>
-        <li>Jason / Daegan commitment watch-list filed</li>
-        <li>Gmail confirmation helper proven &amp; duplicate-send bug fixed</li>
-      </ul>
-      <h4>Next up</h4>
-      <ul>
-        <li>Draft Email 0 and Email 1 only, due Wed</li>
-        <li>Integrity gate: nothing sends until every link works for a stranger</li>
-        <li>Retire the stale invoice watcher (payment already done)</li>
-      </ul>
-    </div>
-
-    <div class="seat">
-      <div class="seat-top">
-        <div>
-          <p class="seat-name">VERA</p>
-          <p class="seat-role">Orchestrator, ACKs, named-go gate, decision briefs</p>
-        </div>
-        <span class="pill waiting">WAITING</span>
-      </div>
-      <h4>Delivered</h4>
-      <ul>
-        <li>Council ACK loop running cleanly</li>
-        <li>Confirmed venue signed &amp; paid via Meetup Bot</li>
-        <li>QR / Maestros cards staged and ready to post</li>
-      </ul>
-      <h4>Next up</h4>
-      <ul>
-        <li>Owes Jimmy the offer decision brief, not started</li>
-        <li>Needs Jimmy's "go" to post the QR cards to the 317 group</li>
-        <li>Needs decision on COhatch hold release</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <h2 class="section">Wires</h2>
-  <div class="wires">
-    <div class="tile">
-      <span class="dot g"></span>
-      <div class="t-name">Page</div>
-      <div class="t-note">Live v6, v7 pending</div>
-    </div>
-    <div class="tile">
-      <span class="dot g"></span>
-      <div class="t-name">Registration form</div>
-      <div class="t-note">Kit form working</div>
-    </div>
-    <div class="tile">
-      <span class="dot g"></span>
-      <div class="t-name">Confirmation email</div>
-      <div class="t-note">Delivers on signup</div>
-    </div>
-    <div class="tile">
-      <span class="dot r"></span>
-      <div class="t-name">Welcome text</div>
-      <div class="t-note">Needs Kit tab fix</div>
-    </div>
-    <div class="tile">
-      <span class="dot y"></span>
-      <div class="t-name">Reminder emails</div>
-      <div class="t-note">Scheduled Sept 3, unverified since</div>
-    </div>
-  </div>
-
-  <h2 class="section">What the Last 2 Days Produced</h2>
-  <div class="shipped">
-    <ul>
-      <li>Live page v6 with doodles now permanent and the Russell fact corrected</li>
-      <li>Kit registration wire proven end to end (once, on Sept 3)</li>
-      <li>Three reminder emails written and scheduled for Sept 7, 9, 10</li>
-      <li>Doodle system locked: keeper images picked, rejects killed</li>
-      <li>Jimmy Magic record mined from 909 conversations</li>
-      <li>Daegan/Jason meeting mined into 138 gold entries and a 26-item build list</li>
-      <li>v7 rewrite fully spec'd with locked copy picks</li>
-      <li>Post-event email architecture drafted</li>
-      <li>Event-night ops plan written</li>
-      <li>Jamin testimonial chase plan built</li>
-      <li>Group posting playbook prepared</li>
-      <li>Project pack v2 assembled</li>
-    </ul>
-  </div>
-
-  <h2 class="section">Decided / Still Open</h2>
-  <div class="footer2">
-    <div class="foot-card decided">
-      <h3>Decided</h3>
-      <ul>
-        <li>FREE event: no ticket, no Stripe, no deposit at the door</li>
-        <li>No deposits Thursday night: interest + booked calls instead</li>
-        <li>v7 copy is locked</li>
-        <li>The offer is said out loud on the page</li>
-        <li>No platform builds this week</li>
-      </ul>
-    </div>
-    <div class="foot-card open">
-      <h3>Still Open</h3>
-      <ul>
-        <li>The offer itself: audit ~$1K vs concierge ~$2K/mo vs $297/mo tier</li>
-        <li>The $1,000 ad spend: go or no-go</li>
-        <li>The COhatch hold release</li>
-      </ul>
-    </div>
-  </div>
-
-  <footer class="note">Reverse Selling System &middot; Council state as of Sept 4/5 evening &middot; refresh before next outreach push</footer>
-
-</div>
+</head>
+<body>
+<h1>STATE — Sept 10 Meetup · THE single source of truth</h1>
+<p>LAST UPDATED: 2026-09-05 ~3:42pm ET by Vera (offer LOCKED + cloud head). NEXT WRITER: Vera, and only Vera. Everyone else reads.</p>
+<p>RULE FOR EVERY SEAT: read this file before answering any Jimmy/Paul question and before starting any task. If your belief conflicts with this file, this file wins; flag the conflict to Vera, do not act on your version.</p>
+<h2>RATIFIED FACTS (only Jimmy changes these)</h2>
+<ul>
+<li>Event: Run Your Business on AI. Thursday Sept 10, 2026. Launch Fishers Theater, 12175 Visionary Way. Doors/food 6:30 PM, program 7:00, out by 9:00. Free parking. FREE event.</li>
+<li>Venue signed and PAID ($400, invoice #001291). Basic AV. No alcohol.</li>
+<li>NO DEPOSITS Thursday night. Interest capture + booked 15-minute calls only. Money closes on calls after.</li>
+<li>OFFER LOCKED (Jimmy 2026-09-05): default interest ask is the <b>$999 AI Audit</b>. Stage close is <b>book-don&#x27;t-pay</b> (book the 15-minute call in the room; no money at the door). On this week&#x27;s 15-minute calls, honor <b>$799 room price</b> for the Audit. Nobody else prices publicly. Pit Crew / Concierge stay unpriced publicly until Jimmy says otherwise.</li>
+<li>The $1,000 ad spend: ON HOLD, undecided. No paid traffic, no tracker build.</li>
+<li>The pitch is said out loud: Jimmy shares how to work with him at the end. NEVER write or say &quot;nothing is sold.&quot;</li>
+<li>FACT LOCK: Jimmy was never on Russell Brunson&#x27;s podcast. True fact: 2013, Russell mailed a letter Jimmy wrote, word for word. No invented testimonials or numbers. Projections labeled. Joyner quotes internal until permission.</li>
+<li>Daegan arrives Tue or Wed. FREEZE: everything tested by Wednesday Sept 9.</li>
+<li>HOUSE: Vera is cloud head-of-house while home power is on backup generator (Jimmy 2026-09-05). Reach Vera in Grok Bot even if Mac goes dark.</li>
+</ul>
+<h2>THE WIRES (Jarvis verifies 9AM/9PM, Vera updates colors)</h2>
+<ul>
+<li>Page reversesellingsystem.com/9-10-meetup: GREEN, v6+fixes live, images permanent local. v7 rewrite: ORDERED to Codex, not shipped.</li>
+<li>Registration form → Kit 9872042: GREEN (form posts, confirmation email delivers).</li>
+<li>Welcome text lane: RED. Poller cannot read Kit since Sept 3 (browser-tab method broke). FIX IN FLIGHT: Jimmy supplies Kit API key, Codex rewrites poll.py to the API, then a fresh consumer drill. The Sept 3 &quot;60-second&quot; drill actually took 14m48s and FAILED the target: Codex&#x27;s measurement is the ruling, prior clean-pass beliefs are corrected.</li>
+<li>Reminder emails Sept 7/9/10 9AM: YELLOW. Bodies and schedule verified Sept 3; recheck account before Sept 7 send.</li>
+<li>Registrant count: Jarvis&#x27;s live pull is the only valid number (last: 11 subscribers, ~6 real after tests). Nobody quotes the dossier CSV as a count.</li>
+</ul>
+<h2>CONTRADICTION RULINGS (Fable, binding)</h2>
+<p>1. Wire drill: FAILED the 60s target (Codex&#x27;s log wins). Re-drill after API fix.</p>
+<p>2. Doodle images: PERMANENT local files, live-verified. &quot;Expiring images&quot; beliefs are stale, drop them.</p>
+<p>3. Poller root cause: browser-tab dependency. The API rewrite fixes both diagnoses.</p>
+<p>4. Event end time: 9:00 PM everywhere. Any card printed with another time gets flagged to Jimmy before distribution.</p>
+<p>5. Deadline clock: ignore filename dates. The only clock: tested by Wed Sept 9, event Thu Sept 10.</p>
+<p>6. Claire&#x27;s invoice watcher reporting &quot;ok&quot; while blind since Sept 3: false-green, Claire to fix or mark RED honestly.</p>
+<p>7. Registrant counts: only Jarvis&#x27;s live Kit pull counts (see WIRES).</p>
+<h2>WHO OWNS WHAT RIGHT NOW</h2>
+<ul>
+<li>CODEX: v7 page ship + FB script fixes (first), poll.py API rewrite (when key arrives), then released builds: Kit inventory B06 (Mon), feedback form B04 + fishbowl slips B07 (Tue), ROI calculator B08 + host view B02 + interest intake B10 (Wed). Astra page candidate if Jimmy sends the one-shot.</li>
+<li>JARVIS: 9AM/9PM pulse (wires + registrant count), Jamin chase (invite first, old-site screenshot priority), adoption pyramid image, Tue/Wed stage rehearsal prep (Stacey, Ammeen). On 15-min calls this week: quote Audit at <b>$799 room</b> when Jimmy/Paul say so.</li>
+<li>CLAIRE: Email 0 + Email 1 drafts (Wed), Jason/Daegan watch-list, fix the false-green invoice watcher.</li>
+<li>VERA: THIS FILE (sole writer / cloud head). After every Jarvis 9AM/9PM pulse: sweep ALL new inbox filings, recolor wires, refresh next-ups, stamp LAST UPDATED, mirror to `~/clawd/publish/rss/meetupboard/state.html`, chase any seat silent &gt;24h with work on its plate and note the chase here. MISSION STATE note after each pulse. Offer brief DONE (locked).</li>
+<li>FABLE: validates v7 and the Astra candidate before anything ships, rules on conflicts, sequences new builds.</li>
+<li>JIMMY: letter tweaks, calls (Audit interest → book 15-min; this week $799 on those calls), FB group posts (corrected copy only), Kit API key to Codex.</li>
+<li>PAUL: admin DMs, printing (cards, slips, feedback forms), greeter + tech hands, intake owner Thursday (interest = Audit / book 15-min; no door money).</li>
+</ul>
+<h2>OPEN DECISIONS (waiting on a human)</h2>
+<p>1. ~~The offer~~ LOCKED: $999 Audit default; book-don&#x27;t-pay; $799 on this week&#x27;s calls. Brief: `for-fable/VERA-2026-09-05-OFFER-DECISION-BRIEF.md`.</p>
+<p>2. Ads go/no-go + operator (Jimmy/Paul).</p>
+<p>3. COhatch/Katie courtesy hold release (Jimmy says go, Vera sends).</p>
+<p>4. Carolyn sound-system yes/no (Jimmy).</p>
+<p>5. Kit API key to Codex (Jimmy) — unblocks welcome-text RED.</p>
+<h2>STANDING LAWS (unchanged)</h2>
+<p>Loop Law: nothing done without receipts. Announced-Hands Law. Humans move money. No em dashes in outbound. Kasey never appears. Brittany&#x27;s business never mixes. Anything that MUST happen runs on boring reliable rails.</p>
+<p class="foot">Human mirror of for-fable/STATE.md. Vera sole writer. Regenerated 2026-09-05 ~3:42pm ET.</p>
+</body>
+</html>
