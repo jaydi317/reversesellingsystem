@@ -1,0 +1,421 @@
+<title>Mission Control</title>
+<style>
+  :root{
+    --ink:#172748;
+    --copper:#b94f37;
+    --bg:#fcfdff;
+    --card-border:#e0e6ed;
+    --card-bg:#ffffff;
+    --muted:#5b6b8c;
+    --green:#2f9e5c;
+    --yellow:#c98a12;
+    --red:#c0392b;
+    --green-bg:#eaf7ef;
+    --yellow-bg:#fdf3e0;
+    --red-bg:#fbeaea;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Inter,Arial,Helvetica,sans-serif;
+    line-height:1.5;
+    padding:28px 20px 60px;
+  }
+  .wrap{max-width:1080px;margin:0 auto;}
+
+  /* HEADER */
+  header{margin-bottom:22px;}
+  h1{
+    font-size:clamp(24px,4vw,36px);
+    margin:0 0 4px;
+    letter-spacing:-0.01em;
+  }
+  h1 .sep{color:var(--copper);}
+  .sub{color:var(--muted);font-size:15px;margin:0 0 18px;}
+
+  .countdown{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:10px;
+  }
+  .day{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:14px 10px;
+    text-align:center;
+  }
+  .day .d{font-weight:700;font-size:13px;color:var(--copper);text-transform:uppercase;letter-spacing:.03em;}
+  .day .lbl{font-size:12.5px;color:var(--ink);margin-top:6px;line-height:1.35;}
+  .day.today{border:2px solid var(--copper);}
+  .day.showtime{background:var(--ink);border-color:var(--ink);}
+  .day.showtime .d{color:#ffd7c9;}
+  .day.showtime .lbl{color:#fff;font-weight:700;}
+
+  /* RIGHT NOW BANNER */
+  .rightnow{
+    margin-top:26px;
+    background:#fff3ee;
+    border:1px solid #f0c3b2;
+    border-left:6px solid var(--copper);
+    border-radius:16px;
+    padding:20px 24px;
+  }
+  .rightnow h2{
+    margin:0 0 12px;
+    font-size:19px;
+    color:var(--copper);
+    letter-spacing:.02em;
+  }
+  .rightnow ol{margin:0;padding-left:22px;}
+  .rightnow li{margin-bottom:8px;font-size:15.5px;}
+  .rightnow li:last-child{margin-bottom:0;}
+  .rightnow b{color:var(--ink);}
+
+  /* SECTION TITLES */
+  h2.section{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--muted);
+    margin:34px 0 12px;
+    font-weight:700;
+  }
+
+  /* SEAT GRID */
+  .seatgrid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .seat{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:18px 20px;
+  }
+  .seat-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+  .seat-name{font-size:17px;font-weight:700;margin:0;}
+  .seat-role{font-size:13px;color:var(--muted);margin:3px 0 0;}
+  .pill{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.04em;
+    padding:4px 10px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .pill.working{background:var(--green-bg);color:var(--green);}
+  .pill.waiting{background:var(--yellow-bg);color:var(--yellow);}
+  .pill.blocked{background:var(--red-bg);color:var(--red);}
+  .seat h4{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--muted);
+    margin:14px 0 6px;
+  }
+  .seat ul{margin:0;padding-left:18px;}
+  .seat li{font-size:13.5px;margin-bottom:4px;}
+
+  /* WIRES STRIP */
+  .wires{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+  }
+  .tile{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:14px 12px;
+    text-align:center;
+  }
+  .dot{
+    width:12px;height:12px;border-radius:50%;
+    display:inline-block;margin-bottom:8px;
+  }
+  .dot.g{background:var(--green);}
+  .dot.y{background:var(--yellow);}
+  .dot.r{background:var(--red);}
+  .tile .t-name{font-weight:700;font-size:13.5px;}
+  .tile .t-note{font-size:12px;color:var(--muted);margin-top:3px;}
+
+  /* SHIPPED LIST */
+  .shipped{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:20px 24px;
+  }
+  .shipped ul{
+    columns:2;
+    -webkit-columns:2;
+    column-gap:32px;
+    margin:0;padding-left:20px;
+  }
+  .shipped li{
+    font-size:14px;
+    margin-bottom:9px;
+    break-inside:avoid;
+  }
+
+  /* FOOTER TWO COL */
+  .footer2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .foot-card{
+    border-radius:16px;
+    padding:18px 22px;
+    border:1px solid var(--card-border);
+  }
+  .foot-card.decided{background:var(--green-bg);border-color:#bfe4cd;}
+  .foot-card.open{background:var(--yellow-bg);border-color:#f0dba6;}
+  .foot-card h3{
+    margin:0 0 10px;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+  }
+  .foot-card.decided h3{color:var(--green);}
+  .foot-card.open h3{color:var(--yellow);}
+  .foot-card ul{margin:0;padding-left:18px;}
+  .foot-card li{font-size:13.5px;margin-bottom:7px;}
+
+  footer.note{
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+    margin-top:30px;
+  }
+
+  @media (max-width:760px){
+    .countdown{grid-template-columns:repeat(3,1fr);}
+    .seatgrid{grid-template-columns:1fr;}
+    .wires{grid-template-columns:repeat(2,1fr);}
+    .footer2{grid-template-columns:1fr;}
+    .shipped ul{columns:1;}
+  }
+
+  @media print{
+    body{padding:0;background:#fff;}
+    .day.showtime{background:#eee;border-color:#999;}
+    .day.showtime .d, .day.showtime .lbl{color:#111;}
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <h1>MISSION CONTROL <span class="sep">&middot;</span> Sept 10 is in 5 days</h1>
+    <p class="sub">Reverse Selling System &middot; "Run Your Business on AI" &middot; Launch Fishers, doors 6:30 PM</p>
+
+    <div class="countdown">
+      <div class="day today">
+        <div class="d">Sat, Sept 5</div>
+        <div class="lbl">Outreach: calls + FB groups</div>
+      </div>
+      <div class="day">
+        <div class="d">Sun, Sept 6</div>
+        <div class="lbl">Outreach continues</div>
+      </div>
+      <div class="day">
+        <div class="d">Mon, Sept 7</div>
+        <div class="lbl">Owner's Kit inventory due</div>
+      </div>
+      <div class="day">
+        <div class="d">Tue, Sept 8</div>
+        <div class="lbl">Daegan arrives &middot; rehearsal &middot; print</div>
+      </div>
+      <div class="day">
+        <div class="d">Wed, Sept 9</div>
+        <div class="lbl">Freeze &middot; everything tested &middot; final drill</div>
+      </div>
+      <div class="day showtime">
+        <div class="d">Thu, Sept 10</div>
+        <div class="lbl">SHOWTIME</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="rightnow">
+    <h2>RIGHT NOW: Jimmy's next 3 actions today</h2>
+    <ol>
+      <li><b>Open the Kit tab in Chrome on the Mac mini.</b> The text that welcomes every new registrant has been silent since Sept 3 evening because no signed-in Kit tab is open. This alone restarts it.</li>
+      <li><b>Finish the letter tweaks in the other chat.</b> The v7 wording is locked; the page build is waiting on it.</li>
+      <li><b>Post to Facebook groups with the corrected, no-false-claims copy and start calls with Paul.</b> Don't use the old scripts yet: they still say "nothing is sold," which isn't true anymore.</li>
+    </ol>
+  </div>
+
+  <h2 class="section">The Four Seats</h2>
+  <div class="seatgrid">
+
+    <div class="seat">
+      <div class="seat-top">
+        <div>
+          <p class="seat-name">CODEX</p>
+          <p class="seat-role">Builds the page, the wire, the print materials</p>
+        </div>
+        <span class="pill working">WORKING</span>
+      </div>
+      <h4>Delivered</h4>
+      <ul>
+        <li>v6 page live: doodles permanent, Russell fact fixed</li>
+        <li>Kit form + confirmation email working</li>
+        <li>3 reminder emails written &amp; scheduled</li>
+        <li>26-item build list from the Sept 4 meeting</li>
+      </ul>
+      <h4>Next up</h4>
+      <ul>
+        <li>Ship v7 + fix 2 Facebook scripts, before any link posts</li>
+        <li>Owner's Kit gap check, due Mon</li>
+        <li>Feedback form + fishbowl slips, due Tue</li>
+        <li>ROI calculator + host view + intake form, due Wed</li>
+      </ul>
+    </div>
+
+    <div class="seat">
+      <div class="seat-top">
+        <div>
+          <p class="seat-name">JARVIS</p>
+          <p class="seat-role">Registration texts, 317 line, stage demo</p>
+        </div>
+        <span class="pill blocked">BLOCKED</span>
+      </div>
+      <h4>Delivered</h4>
+      <ul>
+        <li>QR codes + printable table cards</li>
+        <li>Walk-in text capture fixed &amp; watchdogged</li>
+        <li>9AM / 9PM check-in texts running</li>
+        <li>Corrected count: 6 real registrants, not 2</li>
+      </ul>
+      <h4>Next up</h4>
+      <ul>
+        <li>Fix needs a signed-in Kit tab, today</li>
+        <li>Adoption pyramid stage image, rolling</li>
+        <li>Jamin testimonial chase, cutoff Tue 6PM</li>
+        <li>Stage rehearsal with Stacey &amp; Ammeen, Tue/Wed</li>
+      </ul>
+    </div>
+
+    <div class="seat">
+      <div class="seat-top">
+        <div>
+          <p class="seat-name">CLAIRE</p>
+          <p class="seat-role">Email, HQ inbox, invoice gate</p>
+        </div>
+        <span class="pill waiting">WAITING</span>
+      </div>
+      <h4>Delivered</h4>
+      <ul>
+        <li>Post-event email sequence outlined</li>
+        <li>Jason / Daegan commitment watch-list filed</li>
+        <li>Gmail confirmation helper proven &amp; duplicate-send bug fixed</li>
+      </ul>
+      <h4>Next up</h4>
+      <ul>
+        <li>Draft Email 0 and Email 1 only, due Wed</li>
+        <li>Integrity gate: nothing sends until every link works for a stranger</li>
+        <li>Retire the stale invoice watcher (payment already done)</li>
+      </ul>
+    </div>
+
+    <div class="seat">
+      <div class="seat-top">
+        <div>
+          <p class="seat-name">VERA</p>
+          <p class="seat-role">Orchestrator, ACKs, named-go gate, decision briefs</p>
+        </div>
+        <span class="pill waiting">WAITING</span>
+      </div>
+      <h4>Delivered</h4>
+      <ul>
+        <li>Council ACK loop running cleanly</li>
+        <li>Confirmed venue signed &amp; paid via Meetup Bot</li>
+        <li>QR / Maestros cards staged and ready to post</li>
+      </ul>
+      <h4>Next up</h4>
+      <ul>
+        <li>Owes Jimmy the offer decision brief, not started</li>
+        <li>Needs Jimmy's "go" to post the QR cards to the 317 group</li>
+        <li>Needs decision on COhatch hold release</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <h2 class="section">Wires</h2>
+  <div class="wires">
+    <div class="tile">
+      <span class="dot g"></span>
+      <div class="t-name">Page</div>
+      <div class="t-note">Live v6, v7 pending</div>
+    </div>
+    <div class="tile">
+      <span class="dot g"></span>
+      <div class="t-name">Registration form</div>
+      <div class="t-note">Kit form working</div>
+    </div>
+    <div class="tile">
+      <span class="dot g"></span>
+      <div class="t-name">Confirmation email</div>
+      <div class="t-note">Delivers on signup</div>
+    </div>
+    <div class="tile">
+      <span class="dot r"></span>
+      <div class="t-name">Welcome text</div>
+      <div class="t-note">Needs Kit tab fix</div>
+    </div>
+    <div class="tile">
+      <span class="dot y"></span>
+      <div class="t-name">Reminder emails</div>
+      <div class="t-note">Scheduled Sept 3, unverified since</div>
+    </div>
+  </div>
+
+  <h2 class="section">What the Last 2 Days Produced</h2>
+  <div class="shipped">
+    <ul>
+      <li>Live page v6 with doodles now permanent and the Russell fact corrected</li>
+      <li>Kit registration wire proven end to end (once, on Sept 3)</li>
+      <li>Three reminder emails written and scheduled for Sept 7, 9, 10</li>
+      <li>Doodle system locked: keeper images picked, rejects killed</li>
+      <li>Jimmy Magic record mined from 909 conversations</li>
+      <li>Daegan/Jason meeting mined into 138 gold entries and a 26-item build list</li>
+      <li>v7 rewrite fully spec'd with locked copy picks</li>
+      <li>Post-event email architecture drafted</li>
+      <li>Event-night ops plan written</li>
+      <li>Jamin testimonial chase plan built</li>
+      <li>Group posting playbook prepared</li>
+      <li>Project pack v2 assembled</li>
+    </ul>
+  </div>
+
+  <h2 class="section">Decided / Still Open</h2>
+  <div class="footer2">
+    <div class="foot-card decided">
+      <h3>Decided</h3>
+      <ul>
+        <li>FREE event: no ticket, no Stripe, no deposit at the door</li>
+        <li>No deposits Thursday night: interest + booked calls instead</li>
+        <li>v7 copy is locked</li>
+        <li>The offer is said out loud on the page</li>
+        <li>No platform builds this week</li>
+      </ul>
+    </div>
+    <div class="foot-card open">
+      <h3>Still Open</h3>
+      <ul>
+        <li>The offer itself: audit ~$1K vs concierge ~$2K/mo vs $297/mo tier</li>
+        <li>The $1,000 ad spend: go or no-go</li>
+        <li>The COhatch hold release</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="note">Reverse Selling System &middot; Council state as of Sept 4/5 evening &middot; refresh before next outreach push</footer>
+
+</div>
