@@ -14,9 +14,11 @@ li{margin:.35rem 0}
 </style>
 </head>
 <body>
+
 <h1>STATE — Sept 10 Meetup · THE single source of truth</h1>
-<p>LAST UPDATED: 2026-09-05 ~3:42pm ET by Vera (offer LOCKED + cloud head). NEXT WRITER: Vera, and only Vera. Everyone else reads.</p>
+<p>LAST UPDATED: 2026-09-05 ~9:03pm ET by Vera (9PM pulse sweep). NEXT WRITER: Vera, and only Vera. Everyone else reads.</p>
 <p>RULE FOR EVERY SEAT: read this file before answering any Jimmy/Paul question and before starting any task. If your belief conflicts with this file, this file wins; flag the conflict to Vera, do not act on your version.</p>
+<p>CANONICAL COPIES (must stay identical): `~/clawd/inbox/for-fable/STATE.md`, `Jimmy-OS/05-projects/meetup/STATE.md`, and startup mirror `~/clawd/STATE.md`.</p>
 <h2>RATIFIED FACTS (only Jimmy changes these)</h2>
 <ul>
 <li>Event: Run Your Business on AI. Thursday Sept 10, 2026. Launch Fishers Theater, 12175 Visionary Way. Doors/food 6:30 PM, program 7:00, out by 9:00. Free parking. FREE event.</li>
@@ -27,42 +29,52 @@ li{margin:.35rem 0}
 <li>The pitch is said out loud: Jimmy shares how to work with him at the end. NEVER write or say &quot;nothing is sold.&quot;</li>
 <li>FACT LOCK: Jimmy was never on Russell Brunson&#x27;s podcast. True fact: 2013, Russell mailed a letter Jimmy wrote, word for word. No invented testimonials or numbers. Projections labeled. Joyner quotes internal until permission.</li>
 <li>Daegan arrives Tue or Wed. FREEZE: everything tested by Wednesday Sept 9.</li>
-<li>HOUSE: Vera is cloud head-of-house while home power is on backup generator (Jimmy 2026-09-05). Reach Vera in Grok Bot even if Mac goes dark.</li>
+<li>HOUSE: Vera is cloud head-of-house while home power is on backup generator (Jimmy 2026-09-05). Reach Vera in Grok Bot even if Mac goes dark. Mac rebooted after ~3:45pm outage; services confirmed back ~6:40pm (Jarvis 1845 receipt).</li>
 </ul>
 <h2>THE WIRES (Jarvis verifies 9AM/9PM, Vera updates colors)</h2>
 <ul>
 <li>Page reversesellingsystem.com/9-10-meetup: GREEN, v6+fixes live, images permanent local. v7 rewrite: ORDERED to Codex, not shipped.</li>
 <li>Registration form → Kit 9872042: GREEN (form posts, confirmation email delivers).</li>
-<li>Welcome text lane: RED. Poller cannot read Kit since Sept 3 (browser-tab method broke). FIX IN FLIGHT: Jimmy supplies Kit API key, Codex rewrites poll.py to the API, then a fresh consumer drill. The Sept 3 &quot;60-second&quot; drill actually took 14m48s and FAILED the target: Codex&#x27;s measurement is the ruling, prior clean-pass beliefs are corrected.</li>
-<li>Reminder emails Sept 7/9/10 9AM: YELLOW. Bodies and schedule verified Sept 3; recheck account before Sept 7 send.</li>
-<li>Registrant count: Jarvis&#x27;s live pull is the only valid number (last: 11 subscribers, ~6 real after tests). Nobody quotes the dossier CSV as a count.</li>
+<li>Welcome text lane: GREEN. Kit API poller live under launchd (`com.jarvis.meetup-reg-loop`). Codex rewrote `poll.py` to Kit API (receipt 13:06); Jarvis re-enabled launchd after reboot (receipt 18:45). Live proof 21:01:50 ET: `Kit API form 9872042 read ok: 11 subscribers, 0 new`. Kit API key is IN PLACE (not outstanding). Still owed: fresh consumer re-drill vs the failed 60s target (ruling #1).</li>
+<li>Reminder emails Sept 7/9/10 9AM: YELLOW. Bodies and schedule verified Sept 3; recheck account before Sept 7 send. RISK (Jarvis, unapproved): 8 of 11 Kit subscribers show Unconfirmed — if that gates broadcast, reminders may miss most people. Verify before Sept 7.</li>
+<li>Cards (`/card`): YELLOW. Banned &quot;Nothing sold&quot; phrase removed ~3:30pm; live copy is Jarvis draft &quot;Free. Bring your worst bottleneck.&quot; (unapproved). Paul warned on 317 to stop printing old stock and report count. Some banned-phrase texts already went out (unsendable).</li>
+<li>Registrant count: Jarvis&#x27;s live pull is the only valid number (last: 11 subscribers at 21:01 ET, 0 new during outage). Nobody quotes the dossier CSV as a count.</li>
 </ul>
 <h2>CONTRADICTION RULINGS (Fable, binding)</h2>
-<p>1. Wire drill: FAILED the 60s target (Codex&#x27;s log wins). Re-drill after API fix.</p>
+<p>1. Wire drill: FAILED the 60s target (Codex&#x27;s log wins). Re-drill still owed after API fix (rail is GREEN; drill not yet re-run).</p>
 <p>2. Doodle images: PERMANENT local files, live-verified. &quot;Expiring images&quot; beliefs are stale, drop them.</p>
-<p>3. Poller root cause: browser-tab dependency. The API rewrite fixes both diagnoses.</p>
+<p>3. Poller root cause: browser-tab / TCC dependency. API rewrite + launchd closed it. Do not reopen &quot;blocked on Kit API key.&quot;</p>
 <p>4. Event end time: 9:00 PM everywhere. Any card printed with another time gets flagged to Jimmy before distribution.</p>
 <p>5. Deadline clock: ignore filename dates. The only clock: tested by Wed Sept 9, event Thu Sept 10.</p>
-<p>6. Claire&#x27;s invoice watcher reporting &quot;ok&quot; while blind since Sept 3: false-green, Claire to fix or mark RED honestly.</p>
+<p>6. Claire&#x27;s invoice watcher reporting &quot;ok&quot; while blind since Sept 3: false-green, Claire to fix or mark RED honestly. CHASED 9:03pm ET (still open &gt;24h).</p>
 <p>7. Registrant counts: only Jarvis&#x27;s live Kit pull counts (see WIRES).</p>
+<p>8. Root `~/clawd/STATE.md` must mirror canonical. Stale-mirror blockers from Codex 15:43 and Claire 18:44 are CLOSED by this sweep.</p>
 <h2>WHO OWNS WHAT RIGHT NOW</h2>
 <ul>
-<li>CODEX: v7 page ship + FB script fixes (first), poll.py API rewrite (when key arrives), then released builds: Kit inventory B06 (Mon), feedback form B04 + fishbowl slips B07 (Tue), ROI calculator B08 + host view B02 + interest intake B10 (Wed). Astra page candidate if Jimmy sends the one-shot.</li>
-<li>JARVIS: 9AM/9PM pulse (wires + registrant count), Jamin chase (invite first, old-site screenshot priority), adoption pyramid image, Tue/Wed stage rehearsal prep (Stacey, Ammeen). On 15-min calls this week: quote Audit at <b>$799 room</b> when Jimmy/Paul say so.</li>
-<li>CLAIRE: Email 0 + Email 1 drafts (Wed), Jason/Daegan watch-list, fix the false-green invoice watcher.</li>
-<li>VERA: THIS FILE (sole writer / cloud head). After every Jarvis 9AM/9PM pulse: sweep ALL new inbox filings, recolor wires, refresh next-ups, stamp LAST UPDATED, mirror to `~/clawd/publish/rss/meetupboard/state.html`, chase any seat silent &gt;24h with work on its plate and note the chase here. MISSION STATE note after each pulse. Offer brief DONE (locked).</li>
-<li>FABLE: validates v7 and the Astra candidate before anything ships, rules on conflicts, sequences new builds.</li>
-<li>JIMMY: letter tweaks, calls (Audit interest → book 15-min; this week $799 on those calls), FB group posts (corrected copy only), Kit API key to Codex.</li>
-<li>PAUL: admin DMs, printing (cards, slips, feedback forms), greeter + tech hands, intake owner Thursday (interest = Audit / book 15-min; no door money).</li>
+<li>CODEX: v7 page ship + FB script fixes (first). poll.py API rewrite DONE. Then released builds: Kit inventory B06 (Mon), feedback form B04 + fishbowl slips B07 (Tue), ROI calculator B08 + host view B02 + interest intake B10 (Wed). Astra page candidate if Jimmy sends the one-shot. Filing duties installed (receipt 15:43).</li>
+<li>JARVIS: 9AM/9PM pulse (wires + registrant count), Jamin chase (invite first, old-site screenshot priority; hard cutoff Tue Sept 8 6pm), adoption pyramid image, Tue/Wed stage rehearsal prep (Stacey, Ammeen). On 15-min calls this week: quote Audit at <b>$799 room</b> when Jimmy/Paul say so. Card copy: hold for Vera/Fable confirm or replace.</li>
+<li>CLAIRE: Email 0 + Email 1 drafts (Wed), Jason/Daegan watch-list, fix the false-green invoice watcher (CHASED tonight). Filing rule ACK&#x27;d. Council alignment complete; treat Jimmy-OS meetup STATE as authoritative.</li>
+<li>VERA: THIS FILE (sole writer / cloud head). After every Jarvis 9AM/9PM pulse: sweep ALL new inbox filings, recolor wires, refresh next-ups, stamp LAST UPDATED, mirror to publish + root `~/clawd/STATE.md`, chase any seat silent &gt;24h with work on its plate and note the chase here. MISSION STATE note after each pulse. Offer brief DONE (locked).</li>
+<li>FABLE: validates v7 and the Astra candidate before anything ships, rules on conflicts, sequences new builds, confirm or replace Jarvis card copy.</li>
+<li>JIMMY: letter tweaks, calls (Audit interest → book 15-min; this week $799 on those calls), FB group posts (corrected copy only). Kit API key: DONE (no longer blocking).</li>
+<li>PAUL: admin DMs, printing (cards, slips, feedback forms — report old &quot;Nothing sold&quot; stock count), greeter + tech hands, intake owner Thursday (interest = Audit / book 15-min; no door money).</li>
 </ul>
 <h2>OPEN DECISIONS (waiting on a human)</h2>
 <p>1. ~~The offer~~ LOCKED: $999 Audit default; book-don&#x27;t-pay; $799 on this week&#x27;s calls. Brief: `for-fable/VERA-2026-09-05-OFFER-DECISION-BRIEF.md`.</p>
 <p>2. Ads go/no-go + operator (Jimmy/Paul).</p>
 <p>3. COhatch/Katie courtesy hold release (Jimmy says go, Vera sends).</p>
 <p>4. Carolyn sound-system yes/no (Jimmy).</p>
-<p>5. Kit API key to Codex (Jimmy) — unblocks welcome-text RED.</p>
+<p>5. ~~Kit API key to Codex~~ CLOSED 2026-09-05: key in `~/.openclaw/secrets/kit-api.key`, poller GREEN.</p>
+<p>6. Card copy confirm/replace for &quot;Free. Bring your worst bottleneck.&quot; (Vera/Fable; Paul reports old stock count).</p>
+<h2>IN-FLIGHT / CHASES (this pulse)</h2>
+<ul>
+<li>Codex: v7 still ordered, not shipped (no WORKING note filed). Next action remains ship v7.</li>
+<li>Claire: invoice-watcher honesty fix still open since ruling #6; chased 9:03pm ET in `VERA-2026-09-05-2103-CHASE-CLAIRE-invoice-watcher.md`.</li>
+<li>Jarvis: 9PM wire colors applied from 1845 + live poll.log; full formal 9PM pulse filing not required if this sweep covers count (11 / 0 new).</li>
+<li>No seat silent &gt;24h with work ignored: Codex/Claire/Jarvis all filed today. Claire&#x27;s invoice item is the only stale open owned task.</li>
+</ul>
 <h2>STANDING LAWS (unchanged)</h2>
 <p>Loop Law: nothing done without receipts. Announced-Hands Law. Humans move money. No em dashes in outbound. Kasey never appears. Brittany&#x27;s business never mixes. Anything that MUST happen runs on boring reliable rails.</p>
-<p class="foot">Human mirror of for-fable/STATE.md. Vera sole writer. Regenerated 2026-09-05 ~3:42pm ET.</p>
+<p class="foot">Human mirror of for-fable/STATE.md. Vera sole writer. Regenerated 2026-09-05 ~9:03pm ET.</p>
 </body>
 </html>
