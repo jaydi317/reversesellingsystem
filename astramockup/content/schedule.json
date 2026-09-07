@@ -1,0 +1,68 @@
+[
+  {
+    "time": "6:30 to 7:00",
+    "lead": "Both",
+    "title": "Doors, food, and a warm welcome",
+    "description": "Meet owners, offer the room QR and paper route. Keep the opening on time."
+  },
+  {
+    "time": "7:00 to 7:10",
+    "lead": "Paul, then both",
+    "title": "Find out who is here",
+    "description": "Welcome, two short polls, why the night is free, and what they will leave with."
+  },
+  {
+    "time": "7:10 to 7:20",
+    "lead": "Paul",
+    "title": "The work wrapped around the work",
+    "description": "Tell the logistics story. Help the room recognize a worthwhile job."
+  },
+  {
+    "time": "7:20 to 7:40",
+    "lead": "Paul + Jimmy",
+    "title": "Customer-first live makeover",
+    "description": "Paul diagnoses the customer question. Jimmy builds the brief and draft. The owner judges it."
+  },
+  {
+    "time": "7:40 to 8:05",
+    "lead": "Both",
+    "title": "Let the room try it",
+    "description": "Send a tool to phones. Work in pairs if useful. Check who has a draft or a clear first step."
+  },
+  {
+    "time": "8:05 to 8:10",
+    "lead": "Both",
+    "title": "Five-minute reset",
+    "description": "Keep the QR and question box open. Return at 8:10."
+  },
+  {
+    "time": "8:10 to 8:25",
+    "lead": "Paul",
+    "title": "A practical helper, checked in public",
+    "description": "Turn rough notes into a CRM record. Jimmy helps refine instructions. Paul verifies the result."
+  },
+  {
+    "time": "8:25 to 8:40",
+    "lead": "Both",
+    "title": "Choose a first helper",
+    "description": "Complete the job, information, result, check, and Friday step. Offer the first-job tool to unsure owners."
+  },
+  {
+    "time": "8:40 to 8:48",
+    "lead": "Paul + Jimmy",
+    "title": "The room’s questions",
+    "description": "Answer the top moderated questions. Clarify what needs separate setup."
+  },
+  {
+    "time": "8:48 to 8:55",
+    "lead": "Both",
+    "title": "The optional next step",
+    "description": "Explain the agreed audit and 15-minute call. No deposits. No new prices or payment terms."
+  },
+  {
+    "time": "8:55 to 9:00",
+    "lead": "Both",
+    "title": "Save the work. Finish on time.",
+    "description": "Confirm tools and notes are saved. Choose Friday’s first step. Thank every owner."
+  }
+]
