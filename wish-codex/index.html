@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>The Wish Letter, review draft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&family=Georgia&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#172748;
+  --body:#303d51;
+  --muted:#626a74;
+  --copper:#b94f37;
+  --paper:#fbfaf7;
+  --line:#dddcd6;
+  --pale:#f2efe8;
+  --white:#fff;
+  --navy:#172748;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased;font-size:18px;line-height:1.75}
+h1,h2,h3,p,figure,blockquote{margin:0}
+p{margin:0 0 22px}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:720px;margin:auto;padding:0 24px}
+.eyebrow-strip{background:var(--navy);color:#f4e3db;text-align:center;padding:12px 16px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.7}
+.hero{text-align:center;padding:64px 24px 40px;max-width:820px;margin:auto}
+.hero h1{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:clamp(34px,5.6vw,56px);line-height:1.12;letter-spacing:-.01em;margin:0 auto 22px;max-width:760px}
+.hero .subhead{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(17px,2.1vw,21px);line-height:1.55;color:var(--body);max-width:600px;margin:0 auto}
+figure.pic{max-width:720px;width:100%;margin:44px auto;text-align:center}
+figure.pic img{width:100%;border-radius:10px;box-shadow:0 6px 24px rgba(23,39,72,.10)}
+figure.pic figcaption{font-size:14px;font-style:italic;color:var(--muted);margin-top:12px;line-height:1.6}
+.letter{max-width:680px;margin:auto;padding:0 24px}
+.letter p{font-size:18px;line-height:1.75;color:var(--body)}
+.letter p strong{color:var(--ink);font-weight:700}
+.crosshead{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:clamp(24px,3.2vw,32px);color:var(--ink);text-align:center;letter-spacing:-.01em;line-height:1.3;margin:64px auto 30px;max-width:640px}
+.big-statement{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:clamp(24px,3.4vw,34px);text-align:center;color:var(--copper);line-height:1.4;letter-spacing:-.01em;max-width:660px;margin:48px auto;padding:8px 0}
+.section-space{height:8px}
+/* screenshot placeholder phone frame */
+.phone-frame-wrap{max-width:720px;margin:44px auto;text-align:center}
+.phone-frame{width:100%;max-width:360px;min-height:520px;margin:0 auto;border:2.5px dashed #c7bfae;border-radius:34px;background:var(--pale);display:flex;align-items:center;justify-content:center;padding:32px 22px;position:relative}
+.phone-frame::before{content:"";position:absolute;top:16px;left:50%;transform:translateX(-50%);width:70px;height:6px;border-radius:4px;background:#c7bfae}
+.phone-frame .label{font-size:13px;color:var(--muted);line-height:1.7;letter-spacing:.02em}
+.phone-frame .label .title{display:block;font-family:Georgia,serif;font-style:italic;font-size:16px;color:var(--ink);margin-bottom:14px}
+.phone-frame-wrap figcaption{font-size:14px;font-style:italic;color:var(--muted);margin-top:14px}
+/* jamin browser frames */
+.jamin-wrap{max-width:720px;margin:48px auto;text-align:center}
+.jamin-arrow{font-size:40px;color:var(--copper);line-height:1;margin:6px 0;font-weight:700}
+.browser-frame{max-width:520px;margin:0 auto;border:2.5px dashed #c7bfae;border-radius:10px;overflow:hidden;background:var(--pale)}
+.browser-bar{background:#ece7db;padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #d8d0bd}
+.browser-dots{display:flex;gap:6px}
+.browser-dots span{width:9px;height:9px;border-radius:50%;background:#c7bfae;display:inline-block}
+.browser-address{flex:1;background:#fff;border:1px solid #d8d0bd;border-radius:5px;padding:5px 12px;font-size:12px;color:var(--muted);text-align:left;font-family:Inter,Arial,sans-serif}
+.browser-body{min-height:220px;display:flex;align-items:center;justify-content:center;padding:28px 20px}
+.browser-body .label{font-size:13px;color:var(--muted);line-height:1.7}
+.jamin-caption{font-size:14px;font-style:italic;color:var(--muted);margin-top:12px}
+.jamin-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--copper);margin-bottom:10px}
+/* ledger */
+.ledger-wrap{max-width:660px;margin:36px auto 44px;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:34px 30px;box-shadow:0 4px 18px rgba(23,39,72,.06)}
+.ledger-title{text-align:center;font-family:'Barlow Condensed',Impact,sans-serif;letter-spacing:.06em;font-size:13px;color:var(--copper);font-weight:700;text-transform:uppercase;margin-bottom:18px;border-bottom:1px dashed var(--line);padding-bottom:14px}
+.ledger{list-style:none;margin:0;padding:0;counter-reset:wish}
+.ledger li{counter-increment:wish;display:flex;gap:14px;padding:9px 0;font-size:14px;line-height:1.6;color:var(--body);border-bottom:1px dotted var(--line)}
+.ledger li:last-child{border-bottom:none}
+.ledger li::before{content:counter(wish, decimal-leading-zero);flex:none;font-family:'Barlow Condensed',Impact,sans-serif;color:var(--copper);font-size:13px;font-weight:700;letter-spacing:.03em;padding-top:1px}
+.ledger .date{font-weight:600;color:var(--ink);margin-right:4px}
+.ledger-total{text-align:center;margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted);letter-spacing:.03em}
+/* button */
+.btn-wrap{text-align:center;margin:44px auto}
+.btn{display:inline-block;background:var(--copper);color:#fff;border:1px solid var(--copper);border-radius:5px;padding:20px 38px;font-size:17px;font-weight:700;letter-spacing:.02em;text-decoration:none;box-shadow:0 3px 0 #813724;text-transform:uppercase}
+/* ps block */
+.ps-block{max-width:680px;margin:56px auto 0;padding:0 24px}
+.ps-block p{font-size:16px;line-height:1.8;color:var(--body);text-align:left;margin-bottom:20px}
+.ps-block p strong{color:var(--ink)}
+.footer-line{text-align:center;color:#a9a49a;font-size:11px;letter-spacing:.03em;margin:60px auto 40px}
+@media (max-width:600px){
+  .hero{padding:44px 20px 30px}
+  .crosshead{margin:48px auto 24px}
+  .big-statement{margin:36px auto}
+  .phone-frame{min-height:420px}
+  .ledger-wrap{padding:24px 18px}
+}
+
+/* v2 additions */
+.telegram-pair{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;max-width:720px;margin:44px auto}
+.telegram-phone{flex:1 1 260px;max-width:400px}
+.telegram-phone img{width:100%;border-radius:28px;border:1px solid var(--line);box-shadow:0 6px 24px rgba(23,39,72,.10)}
+.telegram-phone figcaption{font-size:14px;font-style:italic;color:var(--muted);margin-top:12px}
+.browser-body.filled{padding:0;min-height:0;display:block}
+.browser-body.filled img{width:100%;display:block}
+.doodle-wrap{max-width:640px;margin:40px auto;text-align:center}
+.doodle-box{border:2.5px dashed #c7bfae;border-radius:14px;background:var(--pale);padding:32px 24px;font-size:13px;color:var(--muted);line-height:1.7}
+.doodle-box .title{display:block;font-family:Georgia,serif;font-style:italic;font-size:16px;color:var(--ink);margin-bottom:14px}
+.doodle-wrap figcaption{font-size:14px;font-style:italic;color:var(--muted);margin-top:14px}
+.pic-narrow{max-width:640px}
+.pic-narrow img{border:1px solid var(--line)}
+@media (max-width:600px){
+  .telegram-pair{flex-direction:column;align-items:center}
+  .telegram-phone{max-width:400px;width:100%}
+}
+
+/* v3 additions */
+.expect-wrap{max-width:680px;margin:36px auto 44px;background:var(--pale);border:1px solid var(--line);border-radius:8px;padding:30px 28px;text-align:center}
+.expect-label{font-family:'Barlow Condensed',Impact,sans-serif;letter-spacing:.06em;font-size:13px;color:var(--copper);font-weight:700;text-transform:uppercase;margin-bottom:16px}
+.expect-wrap p{font-size:16px;line-height:1.7;color:var(--body);margin:0 0 10px}
+.expect-wrap p:last-child{margin-bottom:0}
+.math-wrap{max-width:660px;margin:36px auto 44px;background:var(--pale);border:1px solid var(--line);border-radius:8px;padding:30px 28px}
+.math-label{text-align:center;font-family:'Barlow Condensed',Impact,sans-serif;letter-spacing:.06em;font-size:13px;color:var(--copper);font-weight:700;text-transform:uppercase;margin-bottom:16px;border-bottom:1px dashed var(--line);padding-bottom:14px}
+.math-wrap p{font-size:16px;line-height:1.7;color:var(--body);text-align:center;margin:0 0 14px}
+.math-wrap p:last-child{margin-bottom:0}
+.math-wrap p strong{color:var(--ink)}
+.paul-cards{display:flex;gap:24px;max-width:680px;margin:36px auto;flex-wrap:wrap}
+.paul-card{flex:1 1 260px;background:var(--pale);border:1px solid var(--line);border-radius:10px;padding:26px 24px}
+.paul-card h3{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:19px;color:var(--ink);margin:0 0 6px}
+.paul-card .card-sublabel{display:block;font-family:'Barlow Condensed',Impact,sans-serif;letter-spacing:.08em;font-size:11px;font-weight:700;text-transform:uppercase;color:var(--copper);margin-bottom:14px}
+.paul-card p{font-size:15px;line-height:1.7;color:var(--body);margin:0}
+@media (max-width:600px){
+  .paul-cards{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<div class="eyebrow-strip">FREE NIGHT FOR HAMILTON COUNTY BUSINESS OWNERS &middot; THURSDAY SEPT 10 &middot; 6:30 TO 9:00 &middot; LAUNCH FISHERS &middot; DINNER INCLUDED</div>
+
+<section class="hero">
+  <h1>It Called 18 Stores While I Drove. Imagine What It Could Do for Your Business.</h1>
+  <p class="subhead">A true story, receipts included, plus a free night in Fishers where I show you how to do it yourself. Dinner's on me.</p>
+</section>
+
+<div class="expect-wrap">
+  <div class="expect-label">HERE'S THE NIGHT, IN ONE BREATH</div>
+  <p>You watch AI fix real Fishers businesses, live, on a big screen.</p>
+  <p>You take home $2,141 in real tools, priced piece by piece.</p>
+  <p>Dinner's included. Doors at 6:30. Out by 9.</p>
+  <p>At the end, one minute on how to work with us. That's the whole pitch.</p>
+</div>
+
+<figure class="pic">
+  <img src="img/wish-01.webp" alt="That's me out there. Nobody checked my credentials.">
+  <figcaption>That's me out there. Nobody checked my credentials.</figcaption>
+</figure>
+
+<div class="letter">
+  <p>My name is Jimmy Davis, and I feel like I'm walking around with the best kept secret in Indiana.</p>
+  <p>You know how in the movies, some guy is down on his luck, and then he finds a genie, and he gets three wishes?</p>
+  <p><strong>I feel like that guy.</strong></p>
+  <p>A year ago I started playing with AI. And the things I'm doing with it now would blow your mind.</p>
+  <p>Now, before we go one step further, let me tell you what this is, because I know what you're thinking.</p>
+  <p>You've been to the free business event before. Slides, vanilla tips, and then at 8:40 the lights go down and here comes the two thousand dollar program.</p>
+  <p><strong>So here's my whole plan, up front, no surprises.</strong> Two hours of the real thing. Dinner on us. And at the very end I'll take one minute, one, to tell you how to work with us if you want more. I'd be a coward to hide that, so I'm telling you now, and you can watch me do it. Most of you won't take me up on it. The night is yours either way.</p>
+  <p>Okay. Back to the genie.</p>
+  <p>Maybe you've rubbed the lamp once or twice yourself. You opened ChatGPT, it wrote a cute poem about your dog, and your business was exactly the same on Monday.</p>
+  <p><strong>You didn't get a broken genie. You made a small wish. And a small wish pays out in poems.</strong></p>
+</div>
+
+<figure class="pic">
+  <img src="img/wish-02.webp" alt="Same genie. Different wish.">
+  <figcaption>Same genie. Different wish.</figcaption>
+</figure>
+
+<div class="letter">
+  <p>I made a different one. Here was my first wish.</p>
+</div>
+
+<h2 class="crosshead">WISH #1: THE FIREWORKS</h2>
+
+<div class="letter">
+  <p>It was the third of July, and every fireworks store in Hamilton County was too busy to answer their phone.</p>
+  <p>Amy wanted the big ones. The Excalibur shells that shake the windows. There were eighteen stores within twenty miles of my house, and no way to know who had them, or at what price, without driving to every one of them.</p>
+  <p>I called two myself. No answer. Of course not. It was July third.</p>
+  <p>So I texted my AI. His name is Jarvis. He runs on a computer in my house, day and night, and I text him like I text a friend.</p>
+  <p>I said, call the fireworks stores around me and get me the best price.</p>
+  <p>Then I drove. And while I drove, Jarvis called. Real calls. Real people. If a store didn't pick up, he called back. Then he texted me the prices, ranked.</p>
+  <p><strong>I never got out of the car.</strong></p>
+</div>
+
+<figure class="pic">
+  <img src="img/wish-03.webp" alt="I sat in the truck. It made the calls.">
+  <figcaption>I sat in the truck. It made the calls.</figcaption>
+</figure>
+
+<div class="telegram-pair">
+  <figure class="telegram-phone">
+    <img src="img/wish-04.jpg" alt="The actual ask. July 3, 5:45 PM. Timestamps and all.">
+    <figcaption>The actual ask. July 3, 5:45 PM. Timestamps and all.</figcaption>
+  </figure>
+  <figure class="telegram-phone">
+    <img src="img/wish-05.jpg" alt="What came back while I drove. Ranked, with a backup plan.">
+    <figcaption>What came back while I drove. Ranked, with a backup plan.</figcaption>
+  </figure>
+</div>
+
+<div class="letter">
+  <p>People ask me, what is AI?</p>
+  <p><strong>That's what it is. It's a thing that makes the phone calls you don't have time to make.</strong></p>
+  <p>Now, I did not tell you that story because I want you to buy fireworks.</p>
+  <p>I told you because of what actually happened. A machine picked up a phone, called eighteen businesses on the busiest night of their year, asked the same questions at every one, kept trying the ones that didn't answer, and handed me the answer in a form I could use.</p>
+  <p><strong>Read that again. But this time, think about your business instead of my fireworks.</strong></p>
+  <p>How many calls came into your shop last week that nobody answered?</p>
+  <p>How many people did you mean to follow up with, and didn't?</p>
+  <p>Here's a number that should bother you. Almost 3 out of 10 calls to a small business come in after closing time. And a third of those callers are ready to buy right then. Whoever picks up first wins the job.</p>
+  <p>Mine was about bottle rockets. Yours is about customers. Mine cost me nothing. <strong>Yours costs you money every single week.</strong></p>
+</div>
+
+<div class="math-wrap">
+  <div class="math-label">QUICK MATH. USE YOUR OWN NUMBERS.</div>
+  <p>Say 10 calls a week hit voicemail. Say 1 in 3 of those callers was ready to buy, and a customer is worth $350 to you.</p>
+  <p><strong>That's over $60,000 a year, ringing, with nobody picking up.</strong></p>
+  <p>Swap in your numbers. It doesn't get prettier.</p>
+</div>
+
+<h2 class="crosshead">SO WHAT IS AI, ANYWAY?</h2>
+
+<div class="letter">
+  <p>Here's the answer no guru will give you.</p>
+  <p><strong>Nobody knows how AI works.</strong> Not the smartest people in the world. The people who built it have said so, on the record. If somebody tells you they know how it works, they're lying.</p>
+  <p>We just know it works.</p>
+  <p>Here's the whole technical explanation, and then I'll never bring it up again. In 2017, a bunch of guys at Google published a paper called "Attention Is All You Need." Don't look it up unless you're having trouble sleeping. That paper is why all of this works. And here's all you need to know about it: <strong>you don't need to understand it. You just need to ask it.</strong></p>
+  <p>For forty years, you had to learn the computer. Buttons. Menus. Passwords. Your nephew.</p>
+  <p><strong>This is the first computer that learned you.</strong></p>
+</div>
+
+<figure class="pic">
+  <img src="img/wish-06.webp" alt="You never have to learn it. It already learned you.">
+  <figcaption>You never have to learn it. It already learned you.</figcaption>
+</figure>
+
+<div class="letter">
+  <p>You don't program it. You don't click through menus. You talk to it, like a new hire on day one, and it does the work.</p>
+  <p>And that changes everything. Because if nobody understands it, then being smart isn't the edge. Being curious is. All of my breakthroughs have come from me just playing with it.</p>
+</div>
+
+<p class="big-statement">AI is a curiosity thing. Not a computer thing.</p>
+
+<div class="letter">
+  <p>Read that again, slower.</p>
+</div>
+
+<figure class="pic">
+  <img src="img/wish-07.webp" alt="No bouncer. No test. Just walk in.">
+  <figcaption>No bouncer. No test. Just walk in.</figcaption>
+</figure>
+
+<div class="letter">
+  <p>My dog watches me pull out of the driveway every morning. He has no idea what a truck is. He never will.</p>
+  <p>He doesn't need to. He just needs to know to get in when I open the door.</p>
+  <p>You're never going to fully understand how this thing works. Neither do the people who built it. That's not your job.</p>
+  <p><strong>Your job is to know what to ask it for.</strong></p>
+</div>
+
+<h2 class="crosshead">YOU ALREADY USE THIS STUFF. YOU JUST DON'T CALL IT THAT.</h2>
+
+<div class="letter">
+  <p>Your junk mail folder. Something reads every email and decides.</p>
+  <p>Your phone typing what you say out loud.</p>
+  <p>The map that reroutes you around the wreck on 69.</p>
+  <p>The check you deposited with a photo.</p>
+  <p>Every one of those was called artificial intelligence right up until it worked. Then people just called it the phone.</p>
+  <p><strong>You are not behind. You are unaware.</strong></p>
+  <p>And here's the part that surprises everybody. The machine can pass a law exam. It can read a thousand pages in a minute. But it cannot carry a toilet up a flight of stairs. It cannot crawl under a house in February and find the leak by feel.</p>
+  <p>The stuff that took you twenty years to learn with your hands is the stuff it's worst at.</p>
+  <p><strong>The stuff that eats your nights is the stuff it's best at. Quotes. Follow up. Invoices. The phone.</strong></p>
+  <p>Your hands are safe. Your paperwork is not.</p>
+</div>
+
+<h2 class="crosshead">HERE ARE THE LAST 30 THINGS I ASKED IT TO DO</h2>
+
+<div class="letter">
+  <p>You don't have to take my word that this genie grants wishes. Here's my actual wish list. Dated.</p>
+</div>
+
+<div class="ledger-wrap">
+  <div class="ledger-title">The Wish Ledger &middot; 66 Days</div>
+  <ol class="ledger">
+    <li><span class="date">July 3.</span> Called 18 fireworks stores for me while I sat in the car.</li>
+    <li><span class="date">July 10.</span> Combed through a year of my own chats looking for my patterns.</li>
+    <li><span class="date">July 11.</span> Researched a scenic drive website for Tesla's self driving screen.</li>
+    <li><span class="date">July 11.</span> Looked into building a video app for the Tesla dashboard screen.</li>
+    <li><span class="date">July 12.</span> Built a list of 20 women who explain hard ideas well.</li>
+    <li><span class="date">July 13.</span> Turned a course I bought into one organized file for me.</li>
+    <li><span class="date">July 14.</span> Built a system to mine reviews and comments for a client's brand.</li>
+    <li><span class="date">July 22.</span> Studied a favorite author's writing to find what makes it read clean.</li>
+    <li><span class="date">July 23.</span> Wrote the brief to finish transcribing an entire author's library.</li>
+    <li><span class="date">July.</span> Linked my wearable recorder into the whole AI team.</li>
+    <li><span class="date">July 26.</span> Uploaded two old sales letters and asked it to find my own patterns.</li>
+    <li><span class="date">July 26.</span> Built a set of drawings about my mom that made people cry.</li>
+    <li><span class="date">July 28.</span> Asked if AI could edit my saved videos just from the text.</li>
+    <li><span class="date">July 28.</span> Queued up a set of articles as a gift for a friend.</li>
+    <li><span class="date">July 28.</span> Had one AI build a reusable system out of one drawing project.</li>
+    <li><span class="date">August 2.</span> Built a 20 business prospect list for a local consulting push.</li>
+    <li><span class="date">August 20.</span> Pulled an entire marketing bootcamp into one usable file.</li>
+    <li><span class="date">August 22.</span> Combined two mockups into one website for a wedding DJ I'd just met.</li>
+    <li><span class="date">August 27.</span> Wrote every follow up text from signup to the night of.</li>
+    <li><span class="date">August 27.</span> Built a coaching page and a named method for a woman I'd just met.</li>
+    <li><span class="date">August 28.</span> Drew 18 belief images to build this very letter around.</li>
+    <li><span class="date">August 31.</span> Sent one voice memo and had the whole team go to work.</li>
+    <li><span class="date">September 1.</span> Researched what business owners are really asking about AI.</li>
+    <li><span class="date">September 1.</span> Built 7 client tools and 38 automations in one folder.</li>
+    <li><span class="date">September 1.</span> Cataloged 194 build files into one master list.</li>
+    <li><span class="date">September 2.</span> Built a page for my partner charting how fast AI is moving.</li>
+    <li><span class="date">September 3.</span> Wrote the script and shot list for our event invite video.</li>
+    <li><span class="date">September 4.</span> Mined my own voice memo for the rawest lines for this letter.</li>
+    <li><span class="date">September 4.</span> Brainstormed 35 name options for a new AI helper site.</li>
+    <li><span class="date">September 7.</span> Wrote the hand off brief teaching another AI to draw like me.</li>
+  </ol>
+  <div class="ledger-total">30 wishes. 66 days.</div>
+</div>
+
+<div class="letter">
+  <p><strong>Thirty wishes in sixty-six days.</strong> That's not a demo reel. That's a diary.</p>
+  <p>And here's the thing about wishes. They compound. The first one teaches you the second. The second teaches you the third. Every month you wait, somebody else's wishes are compounding.</p>
+</div>
+
+<figure class="pic">
+  <img src="img/wish-08.webp" alt="It feels flat because you're standing on it.">
+  <figcaption>It feels flat because you're standing on it.</figcaption>
+</figure>
+
+<h2 class="crosshead">WISH #2: THE JACK OF ALL TRADES</h2>
+
+<div class="letter">
+  <p>Wish number one was fireworks. A life wish. Wish number two was a business wish, and it wasn't even for my business.</p>
+  <p>There's a contractor buddy of mine here in Hamilton County. His company is called The Jack of All Trades. That really is the name, and I love it. One problem. His website looked like websites used to look. No offense, buddy. He'd tell you the same thing.</p>
+  <p>So I made a wish for him. I asked my AI to build him a brand new website.</p>
+  <p>Look at this.</p>
+</div>
+
+<div class="jamin-wrap">
+  <span class="jamin-tag">Before</span>
+  <div class="browser-frame">
+    <div class="browser-bar">
+      <div class="browser-dots"><span></span><span></span><span></span></div>
+      <div class="browser-address">tjoat.net</div>
+    </div>
+    <div class="browser-body filled"><img src="img/wish-09.jpg" alt="BEFORE. The old site."></div>
+  </div>
+  <p class="jamin-caption">BEFORE. The old site.</p>
+  <div class="jamin-arrow">&darr;</div>
+  <span class="jamin-tag">After</span>
+  <div class="browser-frame">
+    <div class="browser-bar">
+      <div class="browser-dots"><span></span><span></span><span></span></div>
+      <div class="browser-address">gottacalljack.com</div>
+    </div>
+    <div class="browser-body filled"><img src="img/wish-10.jpg" alt="AFTER. I asked. It built."></div>
+  </div>
+  <p class="jamin-caption">AFTER. I asked. It built.</p>
+</div>
+
+<div class="letter">
+  <p>Same guy. Same business. Same phone number.</p>
+  <p>And you don't have to trust my screenshots. The new one is live right now. Go type in gottacalljack.com and look at it yourself.</p>
+  <p>And the website was only his first wish.</p>
+  <p>Then we kept wishing. Somebody calls while he's up a ladder? They get a text back right away instead of dial tone. Every quote goes out three ways now, good, better, best, the way Dan Kennedy taught. Job wraps up? It asks the happy customer for the review and the referral without him touching a thing.</p>
+  <p><strong>Two meetings. About two hours each. Around twenty jobs like that now run themselves.</strong></p>
+</div>
+
+<figure class="pic">
+  <img src="img/wish-11.webp" alt="The wishes he can't even see running.">
+  <figcaption>The wishes he can't even see running.</figcaption>
+</figure>
+
+<div class="letter">
+  <p>Then this text came in. Not to me. To him.</p>
+</div>
+
+<figure class="pic pic-narrow">
+  <img src="img/wish-12.jpg" alt="A homeowner found the new site and texted him. A customer, from a website, in his own words.">
+  <figcaption>A homeowner found the new site and texted him. A customer, from a website, in his own words.</figcaption>
+</figure>
+
+<div class="letter">
+  <p><strong>That's what a wish looks like when a business owner learns to make one.</strong></p>
+  <p>And it's not just me. A plumbing company in Milwaukee has its techs carrying tablets with AI on the truck, writing invoices and proposals on the spot. That one was on CNN, go look it up. Regular people are doing this too. A guy in Michigan pointed his phone at a dead snowblower and it told him which pulley to tighten. A 71-year-old grandma used it to check whether her mechanic's $800 quote was fair.</p>
+  <p>Same genie. Different wishes. The whole skill is the asking.</p>
+</div>
+
+<h2 class="crosshead">NOW HERE'S WHY YOU'RE EARLY, AND I CAN PROVE IT</h2>
+
+<div class="letter">
+  <p>Picture a page of a hundred squares. Every square is a business owner you compete with.</p>
+  <p>Now color in the ones actually using AI to run their business. Not playing with it. Running on it.</p>
+  <p><strong>You'd need one crayon, and it wouldn't get tired.</strong></p>
+</div>
+
+<figure class="pic">
+  <img src="img/wish-13.webp" alt="One square out of a hundred. There's room.">
+  <figcaption>One square out of a hundred. There's room.</figcaption>
+</figure>
+
+<div class="letter">
+  <p>These aren't my numbers. They're bank numbers. Only about 2 or 3 people out of every 100 pay even twenty bucks a month for AI. The government counted too: fewer than 20 percent of small businesses use AI at all, and only about 9 percent use it to actually run their operations.</p>
+  <p>So when I tell you you're early, I'm not selling you. I'm reading you the census.</p>
+  <p>Remember 2007, when the iPhone came out? Most people said, my flip phone is fine. Within a few years, every business that mattered lived on that thing. With AI, right now, it is 2007. <strong>You're not late. You're standing in an empty parking lot before the store opens.</strong></p>
+  <p>It won't stay empty. Four days ago the newest AI came out, and it can fill out tax returns, order food, and run a job search by itself. This Tuesday Apple holds its big event, and days later the brand new AI Siri lands on everyone's iPhone. Your customers' phones are about to get a lot smarter.</p>
+  <p>The edge is the gap between today and the day your slowest competitor catches on. You're standing in it.</p>
+</div>
+
+<figure class="pic">
+  <img src="img/wish-14.webp" alt="Show this to yourself from 2019 and watch her face.">
+  <figcaption>Show this to yourself from 2019 and watch her face.</figcaption>
+</figure>
+
+<h2 class="crosshead">SO WHAT HAPPENS THURSDAY NIGHT?</h2>
+
+<div class="letter">
+  <p>Thursday night, you learn to wish. And what shows up when you wish right isn't a gadget. <strong>It's a crew.</strong></p>
+  <p>Real Fishers owners bring real problems. AI fixes them live on the big screen while you watch. One of them can be yours. And everything we use in front of you, you take home.</p>
+</div>
+
+<figure class="pic">
+  <img src="img/wish-15.webp" alt="That's not an app. That's a crew.">
+  <figcaption>That's not an app. That's a crew.</figcaption>
+</figure>
+
+<div class="letter">
+  <p>Here's the pile you walk out with, priced straight:</p>
+  <p>A <strong>$1,500 business makeover</strong>, done live. The <strong>$497 Owner's Kit</strong>, the exact helpers we use. The <strong>$97 cheat sheet</strong>. The <strong>$47 napkin drawings</strong> that explain all of it to your crew.</p>
+</div>
+
+<p class="big-statement">Total on the table: $2,141. Your seat: zero. Dinner's included too.</p>
+
+<div class="letter">
+  <p>And the skill itself, the one I keep calling wishing? It's five things. Wish out loud in your own words. Wish for the thing, not for advice about the thing. Say who it's for. Know that a bad answer means a bad wish, so change what you said and say it again. And always ask, what else could you do for me here?</p>
+  <p>That's it. No code. No class. No manual. If you can break in a new hire, you can do this.</p>
+  <p>No matter where you're starting, first time or power user, you'll leave knowing things about AI most of the world doesn't. And here's my open challenge: find me any AI guru in America who hands you more usable value in two hours, free. Tag me when you do.</p>
+</div>
+
+<h2 class="crosshead">WHY ME? FAIR QUESTION.</h2>
+
+<div class="letter">
+  <p>This night is three ingredients.</p>
+  <p><strong>One. Human behavior.</strong> I've spent my life in direct response, figuring out why people do what they do. Back in 2013, Russell Brunson mailed a sales letter I wrote, word for word. Understand why people buy, and you can get inside the mind of your customer.</p>
+  <p><strong>Two. Jimmy Magic.</strong> The way I connect things nobody else connects. That's the part you get when you work with us.</p>
+  <p><strong>Three. AI.</strong> The genie itself.</p>
+  <p>Thursday night you get number one and number three, free. That alone puts you ahead of almost every owner in this county. Because any one alone is nice. Together, it's not one plus one plus one equals three.</p>
+</div>
+
+<p class="big-statement">It's one plus one plus one equals thirty.</p>
+
+<div class="letter">
+  <p>Paul tells me I give away too much for free. He's probably right. I'm doing it anyway. Here's what I know: the more you give away, the more comes back. Some of you will take everything I show you Thursday, go build it yourself, and never pay us a dime. That's fine. That's great, actually. I just love showing people this stuff.</p>
+  <p>Worst case? You come Thursday, eat a free dinner, and go home knowing enough to run circles around your AI genius nephew at Thanksgiving.</p>
+  <p><strong>If you doubt me, come.</strong></p>
+</div>
+
+<h2 class="crosshead">AND I'M ONLY HALF OF THURSDAY</h2>
+
+<div class="letter">
+  <p>This night is fifty-fifty. Jimmy and Paul.</p>
+</div>
+
+<div class="paul-cards">
+  <div class="paul-card">
+    <h3>JIMMY DAVIS</h3>
+    <span class="card-sublabel">THE MAGIC</span>
+    <p>Twenty years of direct response. The letters he writes get mailed word for word by people you've bought from. Thursday he points AI at real businesses from the room and finds the money, live.</p>
+  </div>
+  <div class="paul-card">
+    <h3>PAUL LORKOWSKI</h3>
+    <span class="card-sublabel">THE TRUST</span>
+    <p>The half of this team people actually like. Paul knows your name by the second time he's heard it, and his whole job Thursday is making sure nobody in that room feels lost for one single minute.</p>
+  </div>
+</div>
+
+<p class="big-statement">"Paul is why they take the meeting. Jimmy is why they never forget it."</p>
+
+<figure class="pic">
+  <img src="img/wish-16.webp" alt="Paul gets you in the room. Jimmy makes the room worth it.">
+  <figcaption>Paul gets you in the room. Jimmy makes the room worth it.</figcaption>
+</figure>
+
+<div class="letter">
+  <p>So when you walk in Thursday and a guy shakes your hand at the door like he's been waiting all week for you? That's Paul. He has been.</p>
+</div>
+
+<h2 class="crosshead">WISH #3 IS BLANK. IT'S YOURS.</h2>
+
+<figure class="pic">
+  <img src="img/wish-17.webp" alt="Two down. The third one has your name on it.">
+  <figcaption>Two down. The third one has your name on it.</figcaption>
+</figure>
+
+<div class="letter">
+  <p>Wish number one was my fireworks. Wish number two was the Jack of All Trades.</p>
+  <p>Wish number three is blank, because it's yours.</p>
+  <p>At the end of the night, if you want it, we'll book you a free 15-minute call. You bring your business. We find your first wish, the one thing AI should be doing for you starting now. That call is wish number three, and getting it scheduled takes thirty seconds.</p>
+  <p>Come Thursday and one of two things happens. You take what I teach, do it yourself, and win. Or you book that call and we find your first wish together. <strong>There's no third door where you lose.</strong> The only losing move is staying home while your competitors learn to wish.</p>
+  <p>Seats are capped for real, by the fire marshal, not by me.</p>
+  <p>And a heads up that matters. We read every single registration before Thursday. When you sign up, you'll tell us the one thing eating your week, and we build the night around the businesses in the room. The earlier you're in, the more of Thursday is about you.</p>
+  <p><strong>One more thing, and I mean it.</strong> If by 8 PM you're not holding something you can use in your business Friday morning, get up and walk out. We'll box your dinner to go and you keep everything we handed you anyway.</p>
+</div>
+
+<div class="btn-wrap">
+  <a class="btn" href="#">Save My Seat. Dinner's on Jimmy.</a>
+</div>
+
+<figure class="pic">
+  <img src="img/wish-18.webp" alt="THURSDAY, 9 PM.">
+  <figcaption>THURSDAY, 9 PM.</figcaption>
+</figure>
+
+<div class="ps-block">
+  <p><strong>P.S.</strong> If you skimmed to the bottom, here's the whole thing. Free night for business owners, Thursday September 10, 6:30 to 9, Launch Fishers. Dinner included. You watch AI fix real local businesses live, you take home $2,141 in real tools, and at the end I'll spend one minute on how to work with us. Most people won't, and the night is theirs either way. Out by 9. School night. We know.</p>
+  <p><strong>P.P.S.</strong> A year ago I found a genie. Thursday night I'm handing you the lamp. If you doubt me, come.</p>
+</div>
+
+<div class="btn-wrap">
+  <a class="btn" href="#">Save My Seat. Dinner's on Jimmy.</a>
+</div>
+
+<p class="footer-line">Review draft for Jason, Daegan, and Paul. Not the live page. Sept 7, 2026.</p>
+
+</body>
+</html>
