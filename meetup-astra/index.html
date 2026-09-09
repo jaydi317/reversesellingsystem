@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1965691120685809');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1965691120685809&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Your first AI helper. Set up Thursday. Free. | Launch Fishers</title>
@@ -73,7 +90,7 @@
   var marker='[Signup page: Astra v1]';
   function sync(){payload.value=marker+(answer.value.trim()?'\n'+answer.value.trim():'');}
   answer.addEventListener('input',sync);
-  form.addEventListener('submit',function(){sync();try{localStorage.setItem('one_thing',answer.value);}catch(e){}});
+  form.addEventListener('submit',function(){sync();if(window.fbq){fbq('track','Lead',{content_name:'Sept 10 meetup',source:(document.getElementById('hear_about')||document.getElementById('hear-about')||{}).value||''});}try{localStorage.setItem('one_thing',answer.value);}catch(e){}});
   var source=new URLSearchParams(location.search).get('src');
   var labels={fbad:'Facebook ad',fbevent:'Facebook event',fbpost:'Facebook post',fbgroup:'Facebook group',eventbrite:'Eventbrite',calendar:'Event calendar',text:'A friend or business owner sent me'};
   if(source&&labels[source])document.getElementById('hear-about').value=labels[source];
