@@ -673,7 +673,7 @@
     const categories = merge.vault?.categories || []; $("vaultCategories").innerHTML = categories.map((item) => `<button type="button" data-vault-category="${escapeHtml(item.id)}">${escapeHtml(item.title)}</button>`).join("");
     $("vaultCategories").querySelectorAll("[data-vault-category]").forEach((button) => button.addEventListener("click", () => { state.featureSequence += 1; state.libraryViewMode = "resources"; state.libraryKind = ""; state.librarySearch = ""; state.libraryCategory = button.dataset.vaultCategory; syncLibraryControls(); switchHomeToLibrary(); }));
     const suppliedLinks = Array.isArray(merge.links) ? merge.links : [];
-    const roomLinks = suppliedLinks.length ? suppliedLinks : [{ title: "Phone room", description: "Turn a live call, review, or objection into a reviewable draft." }, { title: "Doodle room", description: "Make a hard idea visible before you ask anyone to act." }, { title: "Audit room", description: "Compare what happened with what the evidence can actually support.", url: "./assets/ai-audit-offer-sheet.pdf" }];
+    const roomLinks = suppliedLinks.length ? suppliedLinks : [{ title: "Phone room", description: "Turn a live call, review, or objection into a reviewable draft." }, { title: "AI Audit offer", description: "Ready to schedule your personal business audit. Go here now for the full details.", url: "https://reversesellingsystem.com/audit" }];
     $("roomCards").innerHTML = roomLinks.map((item) => `<article><h3>${escapeHtml(item.title || "Room")}</h3><p>${escapeHtml(item.description || "")}</p>${item.url ? `<a class="button" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">Open</a>` : ""}</article>`).join("");
   }
   function renderFeatureCards(targetId, items, prefix) {
