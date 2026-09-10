@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scan to claim the Audit</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0d1830;color:#fff;font-family:Inter,-apple-system,Arial,sans-serif;overflow:hidden}
+.stage{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.2vh;padding:3vh 4vw;text-align:center}
+h1{font-family:"Barlow Condensed",Impact,sans-serif;font-size:7.2vh;line-height:.95;text-transform:uppercase;letter-spacing:.02em}
+h1 em{font-style:normal;color:#e0855f}
+.qrbox{background:#fff;padding:1.6vh;border-radius:2vh;box-shadow:0 3vh 8vh rgba(0,0,0,.55)}
+.qrbox img{display:block;width:41vh;height:41vh}
+.url{font-family:"Barlow Condensed",Impact,sans-serif;font-size:6.4vh;letter-spacing:.03em}
+.url b{color:#e0855f}
+.prices{display:flex;align-items:baseline;gap:2.2vw;font-family:"Barlow Condensed",Impact,sans-serif}
+.was{font-size:5vh;color:#7c8aa8;text-decoration:line-through}
+.now{font-size:11vh;line-height:.85;color:#e0855f}
+.timer{font-size:3.4vh;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#aab6cc}
+#clock{color:#fff;font-variant-numeric:tabular-nums}
+.timer.hot #clock{color:#ff8b62}
+.sub{font-size:2.9vh;color:#aab6cc;max-width:70vw}
+@media(max-aspect-ratio:1/1){.qrbox img{width:52vw;height:52vw}h1{font-size:6vh}}
+</style></head>
+<body><div class="stage">
+  <h1>Point your camera. <em>Find the leak.</em></h1>
+  <div class="qrbox"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MTAiIGhlaWdodD0iNDEwIiBjbGFzcz0ic2Vnbm8iPjxnIHRyYW5zZm9ybT0ic2NhbGUoMTApIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMCAwaDQxdjQxaC00MXoiLz48cGF0aCBjbGFzcz0icXJsaW5lIiBzdHJva2U9IiMwZDE4MzAiIGQ9Ik0yIDIuNWg3bTEgMGg0bTMgMGgybTIgMGgybTEgMGgxbTEgMGgybTIgMGgxbTEgMGg3bS0zNyAxaDFtNSAwaDFtMSAwaDJtMiAwaDFtMSAwaDFtMSAwaDFtMyAwaDRtMSAwaDNtMiAwaDFtNSAwaDFtLTM3IDFoMW0xIDBoM20xIDBoMW0xIDBoMm0yIDBoM203IDBoMW0xIDBoMW0yIDBoMm0xIDBoMW0xIDBoM20xIDBoMW0tMzcgMWgxbTEgMGgzbTEgMGgxbTQgMGgxbTMgMGgxbTIgMGgzbTIgMGg0bTMgMGgxbTEgMGgzbTEgMGgxbS0zNyAxaDFtMSAwaDNtMSAwaDFtNiAwaDJtMSAwaDJtMiAwaDFtMSAwaDNtNSAwaDFtMSAwaDNtMSAwaDFtLTM3IDFoMW01IDBoMW0xIDBoMm0yIDBoM20xIDBoMm0xIDBoM201IDBoMm0xIDBoMW01IDBoMW0tMzcgMWg3bTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGgxbTEgMGg3bS0yOSAxaDFtMSAwaDJtMSAwaDVtMSAwaDJtNSAwaDFtMSAwaDFtLTI3IDFoM20xIDBoMW0xIDBoM20xIDBoMW0xIDBoMm0xIDBoM20yIDBoMW02IDBoM20yIDBoM20tMzUgMWgzbTMgMGgxbTEgMGgybTIgMGgxbTEgMGgybTEgMGgzbTEgMGgxbTEgMGg1bTEgMGgxbTEgMGgxbTEgMGgxbS0zNCAxaDNtMSAwaDJtMSAwaDJtMyAwaDFtMyAwaDFtMSAwaDFtMSAwaDFtMiAwaDJtMyAwaDJtMyAwaDJtLTM0IDFoM20yIDBoMW0xIDBoMW0zIDBoMW0xIDBoNG0yIDBoM20xIDBoMW0xIDBoMW0xIDBoMW0xIDBoMW0yIDBoMW0tMzYgMWgzbTEgMGgxbTEgMGg1bTIgMGgzbTIgMGgxbTIgMGgybTIgMGgybTIgMGg0bTEgMGgzbS0zNiAxaDFtMSAwaDNtMSAwaDFtMiAwaDFtMSAwaDhtMSAwaDFtMSAwaDFtMSAwaDJtMiAwaDFtMSAwaDFtMSAwaDJtLTM0IDFoMW0yIDBoMW0xIDBoMW0xIDBoMm0yIDBoNG0yIDBoMm0xIDBoMW0yIDBoMW0xIDBoOG0xIDBoMm0tMzYgMWgxbTYgMGgxbTIgMGgxbTMgMGgzbTEgMGg2bTIgMGg0bS0zMSAxaDNtMSAwaDdtMSAwaDFtMiAwaDJtMiAwaDFtMiAwaDVtMiAwaDJtMSAwaDFtMSAwaDNtLTM1IDFoM204IDBoMW0xIDBoMW0xIDBoMW0xIDBoMm03IDBoMm0xIDBoMW0tMzIgMWgxbTIgMGgxbTEgMGgzbTEgMGgxbTMgMGgxbTEgMGgxbTEgMGgxbTIgMGgybTIgMGgybTEgMGg2bTIgMGgybS0zNyAxaDFtMiAwaDNtMSAwaDFtMSAwaDRtMyAwaDFtMiAwaDFtNiAwaDNtMSAwaDFtLTMxIDFoMW01IDBoMm0zIDBoMW0zIDBoMW0zIDBoMW0xIDBoN20xIDBoNG0xIDBoM20tMzcgMWgxbTMgMGgxbTIgMGgxbTIgMGgybTEgMGgybTIgMGgzbTEgMGg1bTUgMGgxbTEgMGgxbS0zMyAxaDFtMiAwaDNtMiAwaDJtMSAwaDJtMiAwaDFtMiAwaDFtMiAwaDFtMiAwaDNtMSAwaDJtMyAwaDNtLTM2IDFoMm0xIDBoMW0yIDBoMW0xIDBoMW0xIDBoM20yIDBoMW0xIDBoMW0xIDBoMm0xIDBoM200IDBoMm0zIDBoMW0tMzQgMWgzbTEgMGgxbTMgMGgxbTEgMGgzbTEgMGgxbTEgMGgybTEgMGgybTEgMGgxbTEgMGgxbTMgMGgxbTEgMGgxbTEgMGgybS0zNiAxaDRtMyAwaDFtNCAwaDRtMSAwaDJtMiAwaDJtNCAwaDFtMiAwaDJtLTMyIDFoMW0xIDBoMW0zIDBoMW0xIDBoMW00IDBoN20yIDBoNG0xIDBoMW0yIDBoMW00IDBoMm0tMzcgMWgxbTMgMGgybTEgMGgybTMgMGgzbTEgMGgxbTIgMGgxbTIgMGgybTMgMGgxbTEgMGgxbTEgMGgxbS0zMiAxaDFtMyAwaDNtMSAwaDFtMSAwaDJtMyAwaDNtMiAwaDJtMSAwaDEzbS0yOCAxaDJtMyAwaDJtMyAwaDJtMSAwaDVtMSAwaDJtMyAwaDFtMiAwaDFtLTM2IDFoN20zIDBoMW02IDBoMW0yIDBoMm02IDBoMW0xIDBoMW0xIDBoMm0xIDBoMm0tMzcgMWgxbTUgMGgxbTMgMGgxbTIgMGgybTIgMGg1bTQgMGgxbTEgMGgxbTMgMGgxbTIgMGgybS0zNyAxaDFtMSAwaDNtMSAwaDFtMSAwaDFtMyAwaDFtMyAwaDJtNSAwaDFtMSAwaDhtMSAwaDNtLTM3IDFoMW0xIDBoM20xIDBoMW0xIDBoMW0zIDBoMW0yIDBoMW0yIDBoMW0yIDBoMW0yIDBoMm00IDBoNG0tMzQgMWgxbTEgMGgzbTEgMGgxbTEgMGgxbTEgMGgybTEgMGgybTUgMGgzbTIgMGgybTIgMGgxbTEgMGgxbTEgMGgybTEgMGgxbS0zNyAxaDFtNSAwaDFtMiAwaDFtMiAwaDJtNSAwaDRtMSAwaDFtMSAwaDNtMSAwaDJtNCAwaDFtLTM3IDFoN202IDBoMW00IDBoMm00IDBoM20yIDBoMW0yIDBoMW0xIDBoMyIvPjwvZz48L3N2Zz4K" alt="QR code to reversesellingsystem.com/audit"></div>
+  <div class="url">reversesellingsystem.com/<b>audit</b></div>
+  <div class="prices"><span class="was">$997</span><span class="now" id="now">$797</span></div>
+  <div class="timer" id="t">Room price ends in <span id="clock">--:--</span></div>
+  <div class="sub">45-minute look at your business &middot; a scored report &middot; your own walkthrough video &middot; a call to go through it. Yours to keep either way.</div>
+</div>
+<script>
+var D=Date.parse('2026-09-11T02:00:00Z');
+function pad(n){return(n<10?'0':'')+n}
+function tick(){var d=D-Date.now(),t=document.getElementById('t');
+ if(d<=0){t.innerHTML='The $797 room price has ended';document.getElementById('now').textContent='$997';
+   document.querySelector('.was').style.display='none';return}
+ var h=Math.floor(d/36e5),m=Math.floor(d%36e5/6e4),s=Math.floor(d%6e4/1e3);
+ document.getElementById('clock').textContent=(h>0?h+':'+pad(m)+':'+pad(s):m+':'+pad(s));
+ if(d<9e5)t.className='timer hot';}
+tick();setInterval(tick,1000);
+</script></body></html>
