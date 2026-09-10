@@ -1,8 +1,363 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Redirecting&hellip;</title><meta name="robots" content="noindex">
-<link rel="canonical" href="https://reversesellingsystem.com/audit/">
-<meta http-equiv="refresh" content="0; url=/audit/">
-<script>location.replace('/audit/'+location.search+location.hash);</script>
-<style>body{font-family:-apple-system,Arial,sans-serif;text-align:center;padding:60px 20px;color:#172748}a{color:#b94f37}</style>
-</head><body><p>Taking you to the Audit&hellip;</p><p><a href="/audit/">Tap here if nothing happens</a></p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The AI Audit &middot; Reverse Selling</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#172748">
+<meta property="og:title" content="Here's Your AI Assessment">
+<meta property="og:description" content="Everything you watched tonight. Done for your business. Room price $797 until 10:00 PM.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#172748;--navy:#172c52;--blue:#5f759e;--copper:#b94f37;--body:#535e70;--line:#e0e6ed;--paper:#f7f9fc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,-apple-system,Arial,sans-serif;color:var(--ink);background:#fcfdff;-webkit-font-smoothing:antialiased;line-height:1.62}
+.wrap{max-width:660px;margin:0 auto;padding:26px 22px 80px}
+.brand{font-family:"Barlow Condensed",Impact,sans-serif;font-size:27px;font-weight:700;letter-spacing:.25px;line-height:1;margin-bottom:24px}
+.brand span:first-child{color:var(--copper)}
+h1{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(38px,9.6vw,58px);line-height:.97;letter-spacing:.3px;text-transform:uppercase}
+h2{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(26px,6vw,33px);text-transform:uppercase;letter-spacing:.3px;line-height:1.05;margin:46px 0 12px}
+h3{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(24px,5.4vw,30px);text-transform:uppercase;letter-spacing:.3px;line-height:1.06;margin:0 0 12px}
+p{margin:0 0 15px;font-size:17px;color:var(--body)}
+p.lead{font-size:19px;color:var(--ink)}
+p b,p strong{color:var(--ink);font-weight:600}
+em{font-style:italic}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+
+/* fast-action bar */
+.fastbar{margin:18px 0 6px;border:1px solid #e8d3cb;border-radius:16px;background:linear-gradient(180deg,#fff 0%,#fdf6f3 100%);box-shadow:0 10px 30px rgba(23,39,72,.07);overflow:hidden}
+.fasttop{background:var(--ink);color:#fff;padding:12px 16px;text-align:center;font-size:12px;letter-spacing:.07em;text-transform:uppercase;font-weight:600}
+.fasttop.expired{background:var(--blue)}
+#clock,#clock2{font-variant-numeric:tabular-nums;font-weight:800}
+.fastin{padding:20px 18px 20px;text-align:center}
+.fastin .kicker{font-size:15px;color:var(--ink);font-weight:600;margin-bottom:14px;line-height:1.4}
+.button{display:flex;width:100%;color:#fff;background:linear-gradient(105deg,#702c22 0%,#b24c34 46%,#dc917b 100%);border:1px solid #b96851;border-radius:11px;justify-content:center;align-items:center;padding:20px 20px;font-size:18px;font-weight:700;box-shadow:inset 0 1px 1px #ffd6c699,inset 0 0 0 3px #ffffff15,0 5px 12px #63341d20;transition:transform .18s;text-decoration:none;text-align:center;line-height:1.25}
+.button:active{transform:translateY(1px)}
+.fine{font-size:13px;color:var(--body);margin:12px 0 0}
+.scroll{display:inline-block;margin-top:13px;font-size:14px;color:var(--blue);text-decoration:underline;cursor:pointer}
+
+.rule{margin:40px 0;height:1px;background:var(--line)}
+.stack{margin-top:8px}
+.item{padding:26px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.num{font-family:"Barlow Condensed",Impact,sans-serif;font-size:15px;letter-spacing:.12em;color:var(--copper);text-transform:uppercase;margin-bottom:6px}
+.value{display:inline-block;margin-top:6px;padding:7px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
+.value.free{color:var(--copper)}
+
+.tally{margin:30px 0 0;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 10px 30px rgba(23,39,72,.06);overflow:hidden}
+.tally .row{display:flex;justify-content:space-between;gap:16px;padding:13px 20px;border-bottom:1px solid var(--line);font-size:15px}
+.tally .row span:first-child{color:var(--body)}
+.tally .row span:last-child{font-weight:600;white-space:nowrap}
+.tally .tot{background:var(--paper);font-size:16px}
+.tally .tot span{color:var(--ink)!important;font-weight:700}
+.tally .inv{border-bottom:0;background:var(--ink);color:#fff;padding:20px}
+.tally .inv span{color:#fff!important}
+.tally .inv .big{font-family:"Barlow Condensed",Impact,sans-serif;font-size:40px;line-height:.9}
+.was{color:#96a0b2;text-decoration:line-through;font-weight:500}
+
+.pull{margin:26px 0;padding:20px 22px;border-left:3px solid var(--copper);background:var(--paper);border-radius:0 12px 12px 0}
+.pull p{margin:0;font-size:16px}
+.pull p+p{margin-top:12px}
+
+.foot{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:#8d97a8;text-align:center;line-height:1.6}
+.foot a{color:#8d97a8}
+a{color:inherit}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:#ffffffee;backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:11px 16px;display:none;z-index:50;box-shadow:0 -6px 20px rgba(23,39,72,.08)}
+.sticky .button{padding:15px;font-size:16px;margin:0;max-width:620px;margin:0 auto}
+
+/* at-a-glance offer box (from the original /audit page) */
+.box{margin:26px 0 0;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 10px 30px rgba(23,39,72,.07);overflow:hidden}
+.timerbar{background:var(--ink);color:#fff;padding:13px 18px;text-align:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.timerbar.expired{background:var(--blue)}
+.boxin{padding:26px 22px 24px;text-align:center}
+.pricerow{display:flex;align-items:baseline;justify-content:center;gap:14px;flex-wrap:wrap}
+.pricerow .was{font-size:26px;color:#96a0b2;text-decoration:line-through;font-weight:500}
+.now{font-family:"Barlow Condensed",Impact,sans-serif;font-size:70px;line-height:.9;color:var(--copper)}
+.plab{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-top:10px}
+.box .button{margin-top:22px}
+ol.get{list-style:none;counter-reset:g;margin-top:18px}
+ol.get li{counter-increment:g;position:relative;padding:0 0 20px 52px}
+ol.get li:before{content:counter(g);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:50%;background:var(--paper);border:1px solid var(--line);color:var(--copper);font-family:"Barlow Condensed",Impact,sans-serif;font-size:20px;display:flex;align-items:center;justify-content:center}
+ol.get b{display:block;font-size:17px;font-weight:600;margin-bottom:2px;color:var(--ink)}
+ol.get span{font-size:15px;color:var(--body)}
+.keep{margin-top:6px;padding:18px 20px;border-left:3px solid var(--copper);background:var(--paper);border-radius:0 10px 10px 0;font-size:16px;color:var(--body)}
+.keep b{font-weight:600;color:var(--ink)}
+.bigrule{margin:56px 0 46px;border:0;height:1px;background:var(--line);position:relative}
+.bigrule:after{content:"\2193";position:absolute;left:50%;top:-15px;transform:translateX(-50%);background:#fcfdff;padding:0 14px;color:var(--blue);font-size:19px}
+@media(max-width:420px){.now{font-size:60px}}
+@media(max-width:420px){.wrap{padding:20px 16px 90px}p{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><span>REVERSE</span> <span>SELLING</span></div>
+
+  <h1>Find the leak.<br>Fix the leak.</h1>
+  <p class="sub" style="font-size:18px;color:var(--body);margin-top:16px">You just watched AI run a business. <b>The Audit is where we look at yours</b> &mdash; and hand you the map, whether or not you ever hire us again.</p>
+
+  <div class="box">
+    <div class="timerbar" id="bar0">Room price ends in <span id="clock0">&mdash;&mdash;</span></div>
+    <div class="boxin">
+      <div class="pricerow">
+        <span class="was" id="was0">$997</span>
+        <span class="now" id="price0">$797</span>
+      </div>
+      <div class="plab" id="plab0">Tonight only &middot; one payment</div>
+      <a class="button" id="cta0" href="https://buy.stripe.com/28E3cndE7eyv2agg0zeZ20e">Claim the Audit &rarr;</a>
+      <p class="fine">Card, Apple&nbsp;Pay, Cash&nbsp;App, Klarna or bank. Takes about 40 seconds. You&rsquo;ll get a receipt by email and book your call on the next screen.</p>
+    </div>
+  </div>
+
+  <h2>What you actually get</h2>
+  <ol class="get">
+    <li><b>A 90-minute look at your business</b><span>Recorded. We walk your week and name every place work stalls, repeats, or slips through the cracks &mdash; in your words, not ours.</span></li>
+    <li><b>A written report, scored</b><span>Every opportunity rated on the only three things that matter: money in, hours back, customers kept &mdash; plus impact vs. effort, so you know the one to do first.</span></li>
+    <li><b>A personal walkthrough video</b><span>Your report, explained out loud, built around your business. Watch it twice. Send it to your partner.</span></li>
+    <li><b>A call to go through it together</b><span>We sit with it, you ask everything, and you leave with three steps: first, second, third.</span></li>
+  </ol>
+
+  <div class="keep"><b>It&rsquo;s yours either way.</b> Nothing is held back and nothing is locked. Take the plan and run it yourself, or hand it to anyone you trust. If you want us to build it for you, that&rsquo;s a separate conversation you are free to never have.</div>
+
+  <h2>Honest notes</h2>
+  <p style="font-size:16px">Any dollar figure in your report is labeled as a projection, because it is one. We don&rsquo;t invent numbers &mdash; every one comes out of your own mouth on the call. And the report names at least one thing the Audit <em>didn&rsquo;t</em> cover, because pretending otherwise is how people get sold things twice.</p>
+
+  <hr class="bigrule">
+
+  <h1>Here&rsquo;s Your<br>AI Assessment</h1>
+  <p class="sub" style="font-size:17px;color:var(--body);margin-top:14px">The whole thing, in full, for anyone who wants to read it before they decide.</p>
+
+  <!-- FAST ACTION, TOP OF PAGE -->
+  <div class="fastbar">
+    <div class="fasttop" id="bar1">Room price ends in <span id="clock">&mdash;&mdash;</span></div>
+    <div class="fastin">
+      <div class="kicker">Already know you&rsquo;re in?</div>
+      <a class="button" id="cta1" href="https://buy.stripe.com/28E3cndE7eyv2agg0zeZ20e">I&rsquo;m in &mdash; confirm my spot now &rarr;</a>
+      <p class="fine"><span id="p1"><b>$797</b> tonight instead of $997.</span> Takes about 40 seconds. Card or Apple&nbsp;Pay.</p>
+      <a class="scroll" href="#read">Not sure yet? Read the whole thing &darr;</a>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+  <div id="read"></div>
+
+  <p class="lead">First, let&rsquo;s remember why you started.</p>
+  <p>There was a version of you, before all this, who had a spark. An idea. A vision of what this business could be. A vision of what your life could look like because of it.</p>
+  <p>You didn&rsquo;t dream about invoices.</p>
+  <p>You didn&rsquo;t dream about answering the same question for the fortieth time. You didn&rsquo;t dream about chasing a follow-up you keep forgetting. You didn&rsquo;t dream about staying up past everyone else in your house, rebuilding something that shouldn&rsquo;t have broken.</p>
+  <p>You dreamed about the thing itself. The work you&rsquo;re good at. The reason you took the leap.</p>
+  <p><b>Somewhere between then and tonight, the busywork buried it.</b></p>
+  <p>Not all at once. A little more every week. Until &ldquo;this is just what it is now&rdquo; started to feel true.</p>
+  <p>And underneath it all, something hides. The busywork. The burnout. The slow drift from why you started to just trying to get through the day.</p>
+  <p>Something silent. Something you don&rsquo;t want to admit. Something you don&rsquo;t even want to think about.</p>
+  <p><em>What if something happens that I can&rsquo;t fix?</em></p>
+  <p>There&rsquo;s no answer. So you push it to the back and pretend it isn&rsquo;t there.</p>
+  <p>Then you sat in this room and watched what&rsquo;s possible. Not talked about&hellip; <b>done right in front of your eyes, in real time.</b></p>
+  <p>Now, a couple hours later, everything looks different. You see it. None of the stuff you don&rsquo;t want has to stay.</p>
+  <p>And somewhere in there, something else happened. Something besides the math. You remembered what it felt like before the clutter. And you started to wonder if you could get back there.</p>
+
+  <h2>What This Is</h2>
+  <p class="lead">Everything you watched tonight. Done for your business.</p>
+  <p>Not a demo. Not a template. Not &ldquo;here&rsquo;s what AI can do.&rdquo; <b>Here&rsquo;s what AI does.</b></p>
+  <p>Here&rsquo;s what it does for your story, your website, your leads, your follow-up, your logo. Something you&rsquo;re proud of every time you see it.</p>
+  <p>And we don&rsquo;t just fix these things once. We build the systems that run them. So the parts of this business that were never the reason you started it <b>stop needing you at all.</b></p>
+
+  <h2>This Isn&rsquo;t Just About The Money</h2>
+  <p>Yes, this puts money back in your business. But be honest for a second.</p>
+  <p>Think about who&rsquo;s on the other side of a good day versus a bad one. Your spouse. Your kids. The people who work for you and depend on you being steady.</p>
+  <p>The version of you that isn&rsquo;t drowning in the parts of the business you don&rsquo;t want to think about. That&rsquo;s the version who comes home lighter. Happier. Better.</p>
+  <p><b>Investing in your business was never just about the business.</b></p>
+
+  <div class="stack">
+
+  <div class="item">
+    <div class="num">One</div>
+    <h3>The Meetings That Change Everything</h3>
+    <p>You&rsquo;ll look back on this and say: that was the point where everything changed. Not a sales call. Not a demo.</p>
+    <p>We sit down for about ninety minutes. An hour if that&rsquo;s all it takes. Longer if your business needs it. I get inside your business the way a doctor gets inside a patient before writing a prescription.</p>
+    <p>Not just what&rsquo;s broken. What this business looked like in your head before it looked like this.</p>
+    <p>Some of what I find won&rsquo;t be opportunity. Some of it will be exposure. Places your business runs thinner than you&rsquo;ve let yourself think.</p>
+    <p>Then we run it all through the same AI systems you watched work tonight. What comes back is built for you. Nobody else.</p>
+    <p><b>Then here&rsquo;s the part nobody else does: we meet again.</b> A couple weeks later, once everything we mapped out has had time to run. We sit down. We look at how it&rsquo;s working. What&rsquo;s paying off. What needs a tweak. What to sharpen next.</p>
+    <p>You don&rsquo;t have to figure this out alone. I want to see it work. Together.</p>
+    <p>What&rsquo;s that worth? If it does what it&rsquo;s done for others, it could double your business. That number gets big fast. So let&rsquo;s look at it a different way. I charge $2,000 an hour for a standard consult. This is two sessions, not one. Conservatively, the pair is worth $997.</p>
+    <div class="value">Value: $997</div>
+  </div>
+
+  <div class="item">
+    <div class="num">Two</div>
+    <h3>Maximizing Your Ultimate Unfair Advantage: How To Use Your Story To Sell</h3>
+    <p>A story sits inside your business right now. You&rsquo;ve never told it.</p>
+    <p>It&rsquo;s the reason someone picks you over the three other guys doing the same thing for less.</p>
+    <p>Every business tells people what they do. Almost none tell people why it matters.</p>
+    <p>We find yours (the real one). We train the AI on your voice. It shows up everywhere: your site, your emails, your ads, your follow-up.</p>
+    <p>Six months from now a customer says <em>&ldquo;I looked at a few places, but there was something about you guys.&rdquo;</em> That&rsquo;s someone finally seeing the thing you built. What&rsquo;s it worth to be chosen instead of compared? I can&rsquo;t put a real number on that.</p>
+    <div class="value free">Value: Priceless</div>
+  </div>
+
+  <div class="item">
+    <div class="num">Three</div>
+    <h3>Your Website Conversion Machine</h3>
+    <p>Right now your website is a brochure. It should be your best salesman.</p>
+    <p>One who never calls in sick. Never has an off day. Closes deals at 2am while you sleep.</p>
+    <p>We rebuild yours to do that job. The copy, built on 20 years of direct response experience. The structure. The offer, made irresistible. The pricing. All of it.</p>
+    <p>Then we connect it to the right AI assistant. One that answers your clients&rsquo; questions in real time. Qualifies visitors. Books appointments. Whatever your business needs. You don&rsquo;t lift a finger.</p>
+    <p>Picture this: Sunday morning, you check your phone&hellip; Work came in while you were at your kid&rsquo;s game. Nobody called. Nobody chased. You got the whole afternoon back. And somehow, you made twice what you used to.</p>
+    <p>It doesn&rsquo;t just happen once. It happens every week, like clockwork, without more effort from you. <b>That&rsquo;s its job now. Not yours.</b></p>
+    <p>A direct-response copywriter charges $5,000 to $10,000 for the rewrite alone. Conservatively, $1,997.</p>
+    <div class="value">Value: $1,997</div>
+  </div>
+
+  <div class="item">
+    <div class="num">Four</div>
+    <h3>Finding The Money You Didn&rsquo;t Know You Were Already Making</h3>
+    <p>You&rsquo;re already making this money. You&rsquo;re just not collecting it.</p>
+    <p>Here&rsquo;s what I mean. Say you sell something one-off. A product. A service. A package. Some of your customers would happily pay you every month for it. You just never offered it that way.</p>
+    <p>That one tweak, sitting unmade, has quietly cost you money you never saw. Flip it to a subscription. The same customer pays you again and again. Compounding. Month after month. No extra work from you.</p>
+    <p>That&rsquo;s one example. Dozens of tweaks like it hide in your business right now. Each one quietly leaks money that should already be yours.</p>
+    <p>I find them. Then we flip the switch. The money starts coming to you the way it should have all along.</p>
+    <p>This isn&rsquo;t new money you chase. It&rsquo;s yours. Already earned. What&rsquo;s getting it back worth? Honestly. Priceless.</p>
+    <div class="value free">Value: Priceless</div>
+  </div>
+
+  <div class="item">
+    <div class="num">Five</div>
+    <h3>Feast Or Famine, Solved On Autopilot</h3>
+    <p>Here&rsquo;s the fear you don&rsquo;t say out loud. Not to your spouse. Not to your employees. Maybe not even to yourself. But it&rsquo;s there. Every day. Under everything else you worry about.</p>
+    <p><em>What happens if my main source of leads just&hellip; stops?</em></p>
+    <p>I&rsquo;ve watched it happen. A business owner makes the leap. Bigger house. Better life. The thing they&rsquo;d worked toward for years. Because everything&rsquo;s working. The leads flow. The numbers look good. It feels like it&rsquo;s finally paying off.</p>
+    <p>Then the one thing it all stood on disappears. No warning. No appeal. No person to call.</p>
+    <p>And suddenly the life that looked like success feels like quicksand. The harder you struggle, the faster it pulls you under.</p>
+    <p>That&rsquo;s not a story about luck. That&rsquo;s what happens to a business that feels the problem coming and has no idea how to solve it.</p>
+    <p><b>Here&rsquo;s the fix. Simple: never let one thing be the whole business.</b></p>
+    <p>Multiple lead sources. Multiple ways in the door. If one goes quiet, the other nine keep the lights on. We do the research. We find every viable stream of new customers. We make your business unstoppable.</p>
+    <p>This isn&rsquo;t just about revenue stability. It&rsquo;s about never standing one phone call away from watching it all come apart. A strategist charges $5,000 just for the plan. An agency charges that every month to run it. Conservatively, $2,997.</p>
+    <div class="value">Value: $2,997</div>
+  </div>
+
+  <div class="item">
+    <div class="num">Six</div>
+    <h3>The Multiplier Effect</h3>
+    <p>You don&rsquo;t need more leads to double your revenue. You need this.</p>
+    <p>Here&rsquo;s what almost everyone in this room does right now: one sale, then silence. No follow-up. No reason to come back.</p>
+    <p>Here&rsquo;s what happens instead. Say a plumber fixes someone&rsquo;s toilet. The next day, a text fires automatically: <em>&ldquo;Glad we could help. Got 30 seconds? We&rsquo;d love a quick review.&rdquo;</em></p>
+    <p>One tap. Straight to Google or Yelp. That review just made the business look better to every stranger searching for a plumber tonight.</p>
+    <p>That same review becomes a follow-up weeks later. A personal note that mentions the job. Checks in. Reminds them who to call next time. Not a pitch. Just top of mind.</p>
+    <p>That&rsquo;s the simple example. More hides under the hood. Think of it like a car. You don&rsquo;t think about the engine firing behind the dash. You just drive. That&rsquo;s what we build: different follow-up for what someone bought or almost bought. Automatic re-engagement on a schedule. Dozens of pieces most businesses don&rsquo;t know exist. Running quietly. Your business just goes.</p>
+    <p>Your sole lead source disappearing is an atomic bomb. Loud. Sudden. Unmistakable. <b>Customers drifting away because nobody followed up is the same bomb in slow motion.</b> Quieter. Always there. Hiding in plain sight.</p>
+    <p>Freelancers charge $150 to $500 per email. A full sequence runs into the thousands before anyone automates it. Conservatively, $1,500.</p>
+    <div class="value">Value: $1,500</div>
+  </div>
+
+  <div class="item">
+    <div class="num">Seven</div>
+    <h3>The Business You Always Saw In Your Head&hellip; Finally, It&rsquo;s Yours</h3>
+    <p>You&rsquo;ve got a picture in your head of what this was supposed to look like. Let&rsquo;s get it.</p>
+    <p>Here&rsquo;s what usually happens instead. You started with a logo you slapped together yourself. Or paid someone $50 for, years ago, back when you just wanted the doors open. It was never right. But something more urgent always came first. So it stayed.</p>
+    <p>Now it&rsquo;s on your trucks. Your invoices. The sign out front. The first thing every new customer sees before they meet you.</p>
+    <p>Your logo. Your colors. Your whole presence. Rebuilt to look like the business you run today.</p>
+    <p>A design firm takes six weeks and five figures for this. We build it together. You watch the new direction take shape in front of you. You don&rsquo;t wait weeks for a proof to land in your inbox.</p>
+    <p>And yes. You want to send the link to your brother-in-law. You want the next person who sees it to think <em>these people are serious</em>, not <em>this looks like a hobby</em>.</p>
+    <p>That&rsquo;s not vanity. That&rsquo;s wanting the outside to match the inside.</p>
+    <p>A real design firm charges $3,000 and up, and takes over a month. We keep this one modest: $1,000.</p>
+    <div class="value">Value: $1,000</div>
+  </div>
+
+  </div>
+
+  <h2>Let&rsquo;s Add It All Up</h2>
+  <div class="tally">
+    <div class="row"><span>1. The Meetings That Change Everything</span><span>$997</span></div>
+    <div class="row"><span>2. Your Story To Sell</span><span>Priceless</span></div>
+    <div class="row"><span>3. Your Website Conversion Machine</span><span>$1,997</span></div>
+    <div class="row"><span>4. The Money You&rsquo;re Already Making</span><span>Priceless</span></div>
+    <div class="row"><span>5. Feast Or Famine, Solved</span><span>$2,997</span></div>
+    <div class="row"><span>6. The Multiplier Effect</span><span>$1,500</span></div>
+    <div class="row"><span>7. The Business You Saw In Your Head</span><span>$1,000</span></div>
+    <div class="row tot"><span>Total stacked value</span><span>$8,491</span></div>
+    <div class="row inv"><span>Your investment today<br><span style="font-size:13px;opacity:.8" id="invnote">Tonight, before 10:00 PM</span></span><span class="big" id="invprice">$797</span></div>
+  </div>
+  <p style="margin-top:14px;font-size:15px">Plus two components no honest price could cover. <span id="regnote">Regular price is <b>$997</b> &mdash; the $797 is the room price and it ends at 10:00 PM tonight.</span></p>
+
+  <h2>The Guarantee</h2>
+  <p><b>I&rsquo;ll hand you at least one specific, written recommendation worth ten times what you paid.</b> In your own business. In your own numbers.</p>
+  <p>If I can&rsquo;t, you don&rsquo;t pay. You keep everything either way.</p>
+  <p>You&rsquo;ve put money into this business before you knew it would pay off. The better equipment before you needed it. The ad before anyone called.</p>
+  <p>Betting on your own business has always been the bet worth making. This guarantee means you barely take that risk here. <b>I&rsquo;m on the hook if it doesn&rsquo;t pay off.</b></p>
+
+  <h2>Here We Are At The Crossroads</h2>
+  <p>This isn&rsquo;t about tomorrow morning. It&rsquo;s right now. This room. This moment.</p>
+  <p><b>One road</b>, you walk out. Nothing changes. Same website. Same silence after the sale. The thing you&rsquo;ve never let yourself think about too hard stays exactly as fragile as it is right now.</p>
+  <p><b>The other</b>, you spend ninety minutes with me. You walk out with the map. The machines already running. Written down. Ranked. Automated. Two weeks later, we sit back down and make sure it works.</p>
+  <p>What separates the two roads? Not luck. Not circumstance. It&rsquo;s whether you&rsquo;ll bet on yourself the way you&rsquo;ve bet on this business. The better equipment. The nicer sign out front. The person you finally hired. All before you knew it would pay off.</p>
+  <p>That&rsquo;s not reckless. That&rsquo;s the same leap you already took once, the day you started this business. This just asks you to take it again.</p>
+  <p>The decision you make in the next few minutes isn&rsquo;t small. It&rsquo;s which future you choose. <b>Years from now, you&rsquo;ll look back on this exact moment as the one where you decided.</b></p>
+
+  <!-- FAST ACTION, BOTTOM OF PAGE -->
+  <div class="fastbar" style="margin-top:34px">
+    <div class="fasttop" id="bar2">Room price ends in <span id="clock2">&mdash;&mdash;</span></div>
+    <div class="fastin">
+      <div class="kicker" id="k2">$797 tonight &middot; $997 after 10:00 PM</div>
+      <a class="button" id="cta2" href="https://buy.stripe.com/28E3cndE7eyv2agg0zeZ20e">Yes &mdash; confirm my spot &rarr;</a>
+      <p class="fine">Card, Apple&nbsp;Pay, or bank. About 40 seconds. You&rsquo;ll book your session on the next screen.</p>
+    </div>
+  </div>
+
+  <h2>How To Get In</h2>
+  <p><b>I&rsquo;m not taking everyone.</b></p>
+  <p>I do these myself. Every story session. Every rewrite. Every prescription. Every follow-up two weeks later. Not a team. Not an assistant.</p>
+  <p>Two sessions per client caps how many I take this month. <b>That cap is real.</b></p>
+  <p>If it&rsquo;s a fit, I call you personally to book your session. If it isn&rsquo;t, I&rsquo;ll tell you straight and point you somewhere better.</p>
+  <p>You already know you&rsquo;re worth the investment. You wouldn&rsquo;t still be reading this if you didn&rsquo;t.</p>
+
+  <div class="foot">
+    Reverse Selling LLC &middot; Fishers, Indiana<br>
+    Questions before you buy? Text <a href="sms:+13177241840">(317) 724-1840</a> or grab Jimmy or Paul in the room.<br>
+    <a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a>
+  </div>
+</div>
+
+<div class="sticky" id="sticky"><a class="button" id="cta3" href="https://buy.stripe.com/28E3cndE7eyv2agg0zeZ20e">Confirm my spot &mdash; <span id="stickyprice">$797</span> &rarr;</a></div>
+
+<script>
+(function(){
+  var DEADLINE = Date.parse('2026-09-11T02:00:00Z'); // 10:00 PM ET, Sept 10 2026
+  var EARLY = 'https://buy.stripe.com/28E3cndE7eyv2agg0zeZ20e';
+  var FULL  = 'https://buy.stripe.com/4gM7sD7fJ0HF028bKjeZ20f';
+  var ids = ['bar0','bar1','bar2','clock0','clock','clock2','cta0','cta1','cta2','cta3','was0','price0','plab0'];
+  var el = {}; ids.forEach(function(i){el[i]=document.getElementById(i);});
+  var expired=false;
+  function expire(){
+    if(expired) return; expired=true;
+    ['bar1','bar2'].forEach(function(b){el[b].className='fasttop expired';el[b].innerHTML='The $797 room price has ended';});
+    el.bar0.className='timerbar expired'; el.bar0.innerHTML='The $797 room price has ended';
+    el.was0.style.display='none'; el.price0.textContent='$997';
+    el.plab0.innerHTML='The AI Audit &middot; one payment';
+    ['cta0','cta1','cta2','cta3'].forEach(function(c){el[c].href=FULL;});
+    document.getElementById('p1').innerHTML='<b>$997</b> &mdash; the room price ended at 10:00 PM.';
+    document.getElementById('k2').textContent='The AI Assessment · $997 · one payment';
+    document.getElementById('invprice').textContent='$997';
+    document.getElementById('invnote').textContent='One payment';
+    document.getElementById('regnote').innerHTML='The $797 room price ended at 10:00 PM.';
+    document.getElementById('stickyprice').textContent='$997';
+  }
+  function pad(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var d=DEADLINE-Date.now();
+    if(d<=0){ expire(); return; }
+    var h=Math.floor(d/3600000), m=Math.floor(d/60000)%60, s=Math.floor(d/1000)%60;
+    var t=(h>0? h+':'+pad(m)+':'+pad(s) : m+':'+pad(s));
+    el.clock.textContent=t; el.clock2.textContent=t; el.clock0.textContent=t;
+  }
+  tick(); setInterval(tick,1000);
+  // sticky bar once past the first screen
+  var top=document.getElementById('read');
+  window.addEventListener('scroll',function(){
+    document.getElementById('sticky').style.display =
+      (window.scrollY > top.offsetTop+120 && (document.body.scrollHeight-window.scrollY-window.innerHeight)>420) ? 'block':'none';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

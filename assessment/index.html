@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Here&rsquo;s Your AI Assessment &middot; Reverse Selling</title>
+<title>The AI Audit &middot; Reverse Selling</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#172748">
 <meta property="og:title" content="Here's Your AI Assessment">
@@ -66,6 +66,27 @@ hr{border:0;border-top:1px solid var(--line);margin:44px 0}
 a{color:inherit}
 .sticky{position:fixed;left:0;right:0;bottom:0;background:#ffffffee;backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:11px 16px;display:none;z-index:50;box-shadow:0 -6px 20px rgba(23,39,72,.08)}
 .sticky .button{padding:15px;font-size:16px;margin:0;max-width:620px;margin:0 auto}
+
+/* at-a-glance offer box (from the original /audit page) */
+.box{margin:26px 0 0;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 10px 30px rgba(23,39,72,.07);overflow:hidden}
+.timerbar{background:var(--ink);color:#fff;padding:13px 18px;text-align:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.timerbar.expired{background:var(--blue)}
+.boxin{padding:26px 22px 24px;text-align:center}
+.pricerow{display:flex;align-items:baseline;justify-content:center;gap:14px;flex-wrap:wrap}
+.pricerow .was{font-size:26px;color:#96a0b2;text-decoration:line-through;font-weight:500}
+.now{font-family:"Barlow Condensed",Impact,sans-serif;font-size:70px;line-height:.9;color:var(--copper)}
+.plab{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-top:10px}
+.box .button{margin-top:22px}
+ol.get{list-style:none;counter-reset:g;margin-top:18px}
+ol.get li{counter-increment:g;position:relative;padding:0 0 20px 52px}
+ol.get li:before{content:counter(g);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:50%;background:var(--paper);border:1px solid var(--line);color:var(--copper);font-family:"Barlow Condensed",Impact,sans-serif;font-size:20px;display:flex;align-items:center;justify-content:center}
+ol.get b{display:block;font-size:17px;font-weight:600;margin-bottom:2px;color:var(--ink)}
+ol.get span{font-size:15px;color:var(--body)}
+.keep{margin-top:6px;padding:18px 20px;border-left:3px solid var(--copper);background:var(--paper);border-radius:0 10px 10px 0;font-size:16px;color:var(--body)}
+.keep b{font-weight:600;color:var(--ink)}
+.bigrule{margin:56px 0 46px;border:0;height:1px;background:var(--line);position:relative}
+.bigrule:after{content:"\2193";position:absolute;left:50%;top:-15px;transform:translateX(-50%);background:#fcfdff;padding:0 14px;color:var(--blue);font-size:19px}
+@media(max-width:420px){.now{font-size:60px}}
 @media(max-width:420px){.wrap{padding:20px 16px 90px}p{font-size:16px}}
 </style>
 </head>
@@ -73,7 +94,39 @@ a{color:inherit}
 <div class="wrap">
   <div class="brand"><span>REVERSE</span> <span>SELLING</span></div>
 
+  <h1>Find the leak.<br>Fix the leak.</h1>
+  <p class="sub" style="font-size:18px;color:var(--body);margin-top:16px">You just watched AI run a business. <b>The Audit is where we look at yours</b> &mdash; and hand you the map, whether or not you ever hire us again.</p>
+
+  <div class="box">
+    <div class="timerbar" id="bar0">Room price ends in <span id="clock0">&mdash;&mdash;</span></div>
+    <div class="boxin">
+      <div class="pricerow">
+        <span class="was" id="was0">$997</span>
+        <span class="now" id="price0">$797</span>
+      </div>
+      <div class="plab" id="plab0">Tonight only &middot; one payment</div>
+      <a class="button" id="cta0" href="https://buy.stripe.com/28E3cndE7eyv2agg0zeZ20e">Claim the Audit &rarr;</a>
+      <p class="fine">Card, Apple&nbsp;Pay, Cash&nbsp;App, Klarna or bank. Takes about 40 seconds. You&rsquo;ll get a receipt by email and book your call on the next screen.</p>
+    </div>
+  </div>
+
+  <h2>What you actually get</h2>
+  <ol class="get">
+    <li><b>A 90-minute look at your business</b><span>Recorded. We walk your week and name every place work stalls, repeats, or slips through the cracks &mdash; in your words, not ours.</span></li>
+    <li><b>A written report, scored</b><span>Every opportunity rated on the only three things that matter: money in, hours back, customers kept &mdash; plus impact vs. effort, so you know the one to do first.</span></li>
+    <li><b>A personal walkthrough video</b><span>Your report, explained out loud, built around your business. Watch it twice. Send it to your partner.</span></li>
+    <li><b>A call to go through it together</b><span>We sit with it, you ask everything, and you leave with three steps: first, second, third.</span></li>
+  </ol>
+
+  <div class="keep"><b>It&rsquo;s yours either way.</b> Nothing is held back and nothing is locked. Take the plan and run it yourself, or hand it to anyone you trust. If you want us to build it for you, that&rsquo;s a separate conversation you are free to never have.</div>
+
+  <h2>Honest notes</h2>
+  <p style="font-size:16px">Any dollar figure in your report is labeled as a projection, because it is one. We don&rsquo;t invent numbers &mdash; every one comes out of your own mouth on the call. And the report names at least one thing the Audit <em>didn&rsquo;t</em> cover, because pretending otherwise is how people get sold things twice.</p>
+
+  <hr class="bigrule">
+
   <h1>Here&rsquo;s Your<br>AI Assessment</h1>
+  <p class="sub" style="font-size:17px;color:var(--body);margin-top:14px">The whole thing, in full, for anyone who wants to read it before they decide.</p>
 
   <!-- FAST ACTION, TOP OF PAGE -->
   <div class="fastbar">
@@ -272,13 +325,16 @@ a{color:inherit}
   var DEADLINE = Date.parse('2026-09-11T02:00:00Z'); // 10:00 PM ET, Sept 10 2026
   var EARLY = 'https://buy.stripe.com/28E3cndE7eyv2agg0zeZ20e';
   var FULL  = 'https://buy.stripe.com/4gM7sD7fJ0HF028bKjeZ20f';
-  var ids = ['bar1','bar2','clock','clock2','cta1','cta2','cta3'];
+  var ids = ['bar0','bar1','bar2','clock0','clock','clock2','cta0','cta1','cta2','cta3','was0','price0','plab0'];
   var el = {}; ids.forEach(function(i){el[i]=document.getElementById(i);});
   var expired=false;
   function expire(){
     if(expired) return; expired=true;
     ['bar1','bar2'].forEach(function(b){el[b].className='fasttop expired';el[b].innerHTML='The $797 room price has ended';});
-    ['cta1','cta2','cta3'].forEach(function(c){el[c].href=FULL;});
+    el.bar0.className='timerbar expired'; el.bar0.innerHTML='The $797 room price has ended';
+    el.was0.style.display='none'; el.price0.textContent='$997';
+    el.plab0.innerHTML='The AI Audit &middot; one payment';
+    ['cta0','cta1','cta2','cta3'].forEach(function(c){el[c].href=FULL;});
     document.getElementById('p1').innerHTML='<b>$997</b> &mdash; the room price ended at 10:00 PM.';
     document.getElementById('k2').textContent='The AI Assessment · $997 · one payment';
     document.getElementById('invprice').textContent='$997';
@@ -292,7 +348,7 @@ a{color:inherit}
     if(d<=0){ expire(); return; }
     var h=Math.floor(d/3600000), m=Math.floor(d/60000)%60, s=Math.floor(d/1000)%60;
     var t=(h>0? h+':'+pad(m)+':'+pad(s) : m+':'+pad(s));
-    el.clock.textContent=t; el.clock2.textContent=t;
+    el.clock.textContent=t; el.clock2.textContent=t; el.clock0.textContent=t;
   }
   tick(); setInterval(tick,1000);
   // sticky bar once past the first screen
