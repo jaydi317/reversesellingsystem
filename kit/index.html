@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>window.TOOLKIT_FORCE_OFFLINE=true;</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e8">
+  <title>Owner Toolkit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Owner Toolkit home">
+        <span class="brand-mark">OT</span>
+        <span><strong>Owner Toolkit</strong><small>Useful work for a busy shop</small></span>
+      </a>
+      <div class="api-state" id="apiState" role="status"><span class="state-dot"></span>Checking local runtime</div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="pageTitle">
+        <div>
+          <p class="eyebrow">Your business toolkit</p>
+          <h1 id="pageTitle">What ate your week?</h1>
+          <p class="intro-copy">Find one useful next move. Your business facts stay on this device until you choose to run a local tool.</p>
+        </div>
+        <div class="count-card"><strong id="toolCount">0</strong><span id="resourceSummary">tools + vault resources</span></div>
+      </section>
+
+      <nav class="tabs" aria-label="Toolkit sections">
+        <button class="tab active" data-tab="home">Start here</button>
+        <button class="tab" data-tab="tools">Tools</button>
+        <button class="tab" data-tab="library">Library</button>
+        <button class="tab" data-tab="profile">Business facts</button>
+      </nav>
+
+      <section id="homeView" class="view active" aria-label="Start here">
+        <label class="hero-search"><span class="sr-only">Search the Owner Toolkit</span><input id="homeSearch" type="search" placeholder="What ate your week? Search tools, prompts, and source material" autocomplete="off"></label>
+        <div id="homeResults" class="home-results" aria-live="polite"></div>
+        <div id="nineDoors" class="nine-doors" aria-label="Nine ways in"></div>
+        <section class="gift-card" id="giftCard"></section>
+        <section class="home-section"><div class="section-heading"><div><p class="eyebrow">Start with a real job</p><h2>Featured tools</h2></div></div><div id="starterCards" class="feature-grid"></div></section>
+        <section class="home-section"><div class="section-heading"><div><p class="eyebrow">A useful surprise</p><h2>Try these next</h2></div></div><div id="wowCards" class="feature-grid"></div></section>
+        <section class="home-section"><div class="section-heading"><div><p class="eyebrow">The shelf</p><h2>Browse the vault</h2></div></div><div id="vaultCategories" class="vault-categories"></div></section>
+        <section class="home-section"><div class="section-heading"><div><p class="eyebrow">Ways to use this</p><h2>Three rooms</h2></div></div><div id="roomCards" class="room-cards"></div></section>
+        <section class="home-section"><div class="section-heading"><div><p class="eyebrow">Small tests</p><h2>Experiments</h2></div></div><div id="experimentCards" class="feature-grid"></div></section>
+      </section>
+
+      <section id="toolsView" class="view" aria-label="Tools" hidden>
+        <div class="toolbar">
+          <label class="search-wrap"><span class="sr-only">Search tools</span><input id="toolSearch" type="search" placeholder="Search tools" autocomplete="off"><span class="search-icon">⌕</span></label>
+          <div id="bucketFilters" class="filters" aria-label="Filter tools by bucket"></div>
+        </div>
+        <div class="workspace-grid">
+          <aside class="tool-rail" aria-label="Tool list">
+            <div class="rail-heading"><span>Resources</span><span id="visibleCount">0</span></div>
+            <div id="toolList" class="tool-list"></div>
+          </aside>
+          <section id="toolDetail" class="tool-detail" aria-live="polite"></section>
+        </div>
+      </section>
+
+      <section id="libraryView" class="view" aria-label="Library" hidden>
+        <div class="section-heading"><div><p class="eyebrow">Reference shelf</p><h2>Reusable words and worksheets</h2></div><span class="pill" id="libraryCount">0 entries</span></div>
+        <div class="library-toolbar"><label class="search-wrap"><span class="sr-only">Search library</span><input id="librarySearch" type="search" placeholder="Search the library" autocomplete="off"><span class="search-icon">⌕</span></label><select id="libraryKind" aria-label="Filter library by kind"><option value="">All kinds</option></select><button class="button" id="libraryAll" type="button">All resources</button><button class="button" id="librarySources" type="button">Source records</button><span class="muted" id="libraryScope"></span></div>
+        <div id="libraryList" class="library-list"></div>
+      </section>
+
+      <section id="profileView" class="view" aria-label="Business facts" hidden>
+        <div class="section-heading"><div><p class="eyebrow">Optional context</p><h2>Your business facts</h2><p>Save only what you choose. This stays in this browser and is sent only when you run a tool.</p></div><button id="clearProfile" class="button subtle" type="button">Clear saved facts</button></div>
+        <div class="profile-card"><textarea id="profileText" rows="14" maxlength="3000" placeholder="Maple Plumbing. Repairs and replacements. Plain, friendly tone. Callback within one business hour."></textarea><div class="profile-actions"><span id="profileStatus" class="muted">Not saved · 0/3000 characters</span><button id="saveProfile" class="button primary" type="button">Save on this device</button></div></div>
+      </section>
+    </main>
+
+    <footer>Drafts need your check. Setup guides need your own account.</footer>
+  </div>
+  <section id="stageView" class="stage-shell" hidden aria-label="Volunteer stage console"></section>
+  <script src="offline-data.js" defer></script>
+  <script src="merge-data.js" defer></script>
+  <script src="offline-utils.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
