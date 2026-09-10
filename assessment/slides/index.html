@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The AI Assessment &middot; Slides</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#101c33">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#172748;--copper:#b94f37;--warm:#dc917b;--paper:#f7f9fc;--muted:#9fb0cc}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{background:#101c33;color:#fff;font-family:Inter,-apple-system,Arial,sans-serif;-webkit-font-smoothing:antialiased;cursor:default}
+#deck{position:fixed;inset:0}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:6vh 7vw;opacity:0;transition:opacity .28s ease}
+.slide.on{display:flex;opacity:1}
+.slide.light{background:var(--paper);color:var(--ink)}
+.slide.copper{background:linear-gradient(150deg,#6d2b21 0%,#b24c34 55%,#dc917b 100%)}
+h1{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(46px,9.2vw,150px);line-height:.92;text-transform:uppercase;letter-spacing:.4px;max-width:19ch}
+h2{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(36px,6.4vw,104px);line-height:.96;text-transform:uppercase;letter-spacing:.4px;max-width:22ch}
+p{font-size:clamp(19px,2.5vw,40px);line-height:1.42;max-width:26ch;margin-top:3.2vh;color:#c9d6ea;font-weight:400}
+.light p{color:#4d5c74}
+.copper p{color:#ffe7dd}
+p b{color:#fff;font-weight:600}
+.light p b{color:var(--ink)}
+.eyebrow{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(15px,1.7vw,26px);letter-spacing:.22em;text-transform:uppercase;color:var(--warm);margin-bottom:2.6vh}
+.light .eyebrow{color:var(--copper)}
+.copper .eyebrow{color:#ffd9c9}
+.big{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(70px,15vw,240px);line-height:.85}
+.strike{color:#8496b3;text-decoration:line-through;font-size:.42em;vertical-align:middle;margin-right:.35em}
+.light .strike{color:#9aa6bb}
+.vals{margin-top:3vh;width:min(880px,88vw);font-size:clamp(15px,1.9vw,30px)}
+.vals div{display:flex;justify-content:space-between;gap:20px;padding:.62em .2em;border-bottom:1px solid #ffffff1f;text-align:left;color:#c9d6ea}
+.light .vals div{border-bottom-color:#dde4ee;color:#4d5c74}
+.vals div span:last-child{font-weight:700;white-space:nowrap;color:#fff}
+.light .vals div span:last-child{color:var(--ink)}
+.vals .t{border-bottom:0;margin-top:.5em;font-weight:700;color:#fff;font-size:1.14em}
+.light .vals .t{color:var(--ink)}
+.qrbox{background:#fff;padding:2.4vh;border-radius:20px;box-shadow:0 24px 60px #0006;margin-top:3vh}
+.qrbox img{display:block;width:min(38vh,340px);height:auto;image-rendering:pixelated}
+.url{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(26px,4.4vw,64px);letter-spacing:.5px;margin-top:2.4vh;text-transform:uppercase}
+#nav{position:fixed;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:9px;z-index:9}
+#nav i{width:7px;height:7px;border-radius:50%;background:#ffffff33;transition:background .2s}
+#nav i.on{background:var(--warm)}
+#count{position:fixed;bottom:12px;right:16px;font-size:12px;color:#ffffff44;letter-spacing:.08em;z-index:9}
+.light ~ #count{color:#00000033}
+#hint{position:fixed;top:14px;left:0;right:0;text-align:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#ffffff3a;z-index:9;transition:opacity .5s}
+.tap{position:fixed;top:0;bottom:0;width:32%;z-index:8}
+.tap.l{left:0}.tap.r{right:0}
+</style>
+</head>
+<body>
+<div id="deck">
+
+<section class="slide"><div class="eyebrow">Reverse Selling</div><h1>First, let&rsquo;s remember why you started.</h1></section>
+
+<section class="slide"><p>There was a version of you, before all this, who had <b>a spark.</b></p><p>An idea. A vision of what this business could be. A vision of what your life could look like because of it.</p></section>
+
+<section class="slide"><h2>You didn&rsquo;t dream about invoices.</h2><p>You didn&rsquo;t dream about answering the same question for the fortieth time. Or chasing a follow-up you keep forgetting. Or staying up past everyone else in your house, rebuilding something that shouldn&rsquo;t have broken.</p></section>
+
+<section class="slide"><p>You dreamed about <b>the thing itself.</b></p><p>The work you&rsquo;re good at. The reason you took the leap.</p></section>
+
+<section class="slide copper"><h1>Somewhere between then and tonight, the busywork buried it.</h1><p>Not all at once. A little more every week. Until &ldquo;this is just what it is now&rdquo; started to feel true.</p></section>
+
+<section class="slide"><div class="eyebrow">And underneath it all</div><h2>Something you don&rsquo;t even want to think about.</h2><p><b>What if something happens that I can&rsquo;t fix?</b></p><p>There&rsquo;s no answer. So you push it to the back and pretend it isn&rsquo;t there.</p></section>
+
+<section class="slide light"><h2>Then you sat in this room.</h2><p>And watched what&rsquo;s possible. Not talked about &mdash; <b>done right in front of your eyes, in real time.</b></p></section>
+
+<section class="slide light"><p>A couple hours later, everything looks different.</p><h2>None of the stuff you don&rsquo;t want has to stay.</h2></section>
+
+<section class="slide"><p>And somewhere in there, something else happened. Something besides the math.</p><p><b>You remembered what it felt like before the clutter.</b> And you started to wonder if you could get back there.</p></section>
+
+<section class="slide copper"><div class="eyebrow">What this is</div><h1>Everything you watched tonight. Done for your business.</h1></section>
+
+<section class="slide"><p>Not a demo. Not a template. Not &ldquo;here&rsquo;s what AI can do.&rdquo;</p><h2>Here&rsquo;s what AI does.</h2><p>Your story. Your website. Your leads. Your follow-up. Your logo.</p></section>
+
+<section class="slide"><p>And we don&rsquo;t just fix these things once. We build the systems that run them.</p><h2>So the parts of this business that were never the reason you started it stop needing you at all.</h2></section>
+
+<section class="slide light"><div class="eyebrow">This isn&rsquo;t just about the money</div><p>Think about who&rsquo;s on the other side of a good day versus a bad one. Your spouse. Your kids. The people who depend on you being steady.</p><p><b>Investing in your business was never just about the business.</b></p></section>
+
+<section class="slide light"><div class="eyebrow">One</div><h2>The Meetings That Change Everything</h2><p>Ninety minutes. I get inside your business the way a doctor gets inside a patient before writing a prescription. <b>Then &mdash; and nobody else does this &mdash; we meet again two weeks later</b> and make sure it&rsquo;s working.</p><p><b>Value: $997</b></p></section>
+
+<section class="slide light"><div class="eyebrow">Two</div><h2>Your Story. Your Unfair Advantage.</h2><p>Every business tells people what they do. Almost none tell people why it matters. We find yours and train the AI on your voice.</p><p><b>Value: Priceless</b></p></section>
+
+<section class="slide light"><div class="eyebrow">Three</div><h2>Your Website Conversion Machine</h2><p>Right now your website is a brochure. It should be your best salesman &mdash; one who never calls in sick and closes deals at 2am while you sleep.</p><p><b>Value: $1,997</b></p></section>
+
+<section class="slide light"><div class="eyebrow">Four</div><h2>The Money You&rsquo;re Already Making</h2><p>You&rsquo;re already making it. You&rsquo;re just not collecting it. Dozens of tweaks hide in your business right now, each one quietly leaking money that should already be yours.</p><p><b>Value: Priceless</b></p></section>
+
+<section class="slide light"><div class="eyebrow">Five</div><h2>Feast Or Famine, Solved On Autopilot</h2><p>What happens if your main source of leads just&hellip; stops? The fix is simple: never let one thing be the whole business.</p><p><b>Value: $2,997</b></p></section>
+
+<section class="slide light"><div class="eyebrow">Six</div><h2>The Multiplier Effect</h2><p>One sale, then silence &mdash; that&rsquo;s what almost everyone in this room does. Automatic reviews. Automatic follow-up. Your business just goes.</p><p><b>Value: $1,500</b></p></section>
+
+<section class="slide light"><div class="eyebrow">Seven</div><h2>The Business You Always Saw In Your Head</h2><p>Your logo. Your colors. Your whole presence. Rebuilt to look like the business you run today &mdash; not the one you started with.</p><p><b>Value: $1,000</b></p></section>
+
+<section class="slide"><div class="eyebrow">Let&rsquo;s add it all up</div>
+  <div class="vals">
+    <div><span>The Meetings That Change Everything</span><span>$997</span></div>
+    <div><span>Your Story To Sell</span><span>Priceless</span></div>
+    <div><span>Your Website Conversion Machine</span><span>$1,997</span></div>
+    <div><span>The Money You&rsquo;re Already Making</span><span>Priceless</span></div>
+    <div><span>Feast Or Famine, Solved</span><span>$2,997</span></div>
+    <div><span>The Multiplier Effect</span><span>$1,500</span></div>
+    <div><span>The Business You Saw In Your Head</span><span>$1,000</span></div>
+    <div class="t"><span>Total stacked value</span><span>$8,491</span></div>
+  </div>
+</section>
+
+<section class="slide copper"><div class="eyebrow">Your investment tonight</div><div class="big"><span class="strike">$997</span>$797</div><p><b>Before 10:00 PM tonight.</b> After that it&rsquo;s $997.</p></section>
+
+<section class="slide light"><div class="eyebrow">The guarantee</div><h2>At least one written recommendation worth ten times what you paid.</h2><p>In your own business. In your own numbers. <b>If I can&rsquo;t, you don&rsquo;t pay.</b> You keep everything either way.</p></section>
+
+<section class="slide"><div class="eyebrow">Here we are at the crossroads</div><h2>One road, you walk out and nothing changes.</h2><p>Same website. Same silence after the sale. The thing you&rsquo;ve never let yourself think about too hard stays exactly as fragile as it is right now.</p></section>
+
+<section class="slide"><h2>The other, you spend ninety minutes with me.</h2><p>You walk out with the map. The machines already running. Written down. Ranked. Automated. <b>Two weeks later we sit back down and make sure it works.</b></p></section>
+
+<section class="slide"><h1>Years from now you&rsquo;ll look back on this exact moment as the one where you decided.</h1></section>
+
+<section class="slide light"><div class="eyebrow">I&rsquo;m not taking everyone</div><h2>Two sessions per client caps how many I take this month.</h2><p>I do these myself. Every story session. Every rewrite. Every follow-up. <b>Not a team. Not an assistant.</b> That cap is real.</p></section>
+
+<section class="slide light"><div class="eyebrow">Point your camera here</div><h2>Here&rsquo;s your AI Assessment</h2><div class="qrbox"><img src="qr-start.png" alt="Scan to open your AI Assessment"></div><div class="url">reversesellingsystem.com/start</div></section>
+
+</div>
+<div id="hint">&larr; &rarr; or click &middot; F for full screen</div>
+<div id="nav"></div>
+<div id="count"></div>
+<div class="tap l" id="tl"></div>
+<div class="tap r" id="tr"></div>
+
+<script>
+(function(){
+  var s=[].slice.call(document.querySelectorAll('.slide')), i=0;
+  var nav=document.getElementById('nav'), count=document.getElementById('count'), hint=document.getElementById('hint');
+  s.forEach(function(){var d=document.createElement('i');nav.appendChild(d);});
+  var dots=[].slice.call(nav.children);
+  function show(n){
+    n=Math.max(0,Math.min(s.length-1,n));
+    s[i].classList.remove('on'); dots[i].classList.remove('on');
+    i=n;
+    s[i].classList.add('on'); dots[i].classList.add('on');
+    count.textContent=(i+1)+' / '+s.length;
+    try{location.hash=String(i+1);}catch(e){}
+  }
+  function next(){show(i+1);} function prev(){show(i-1);}
+  document.addEventListener('keydown',function(e){
+    var k=e.key;
+    if(k==='ArrowRight'||k==='ArrowDown'||k===' '||k==='PageDown'||k==='Enter'){e.preventDefault();next();}
+    else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'||k==='Backspace'){e.preventDefault();prev();}
+    else if(k==='Home'){show(0);} else if(k==='End'){show(s.length-1);}
+    else if(k==='f'||k==='F'){ if(document.fullscreenElement){document.exitFullscreen();} else {document.documentElement.requestFullscreen();} }
+    else if(/^[0-9]$/.test(k)){ show((parseInt(k,10)||10)-1); }
+  });
+  document.getElementById('tl').addEventListener('click',prev);
+  document.getElementById('tr').addEventListener('click',next);
+  var x0=null;
+  addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  addEventListener('touchend',function(e){
+    if(x0===null)return; var dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>44){ dx<0?next():prev(); }
+  },{passive:true});
+  var start=parseInt((location.hash||'').replace('#',''),10);
+  show(isNaN(start)?0:start-1);
+  setTimeout(function(){hint.style.opacity='0';},4200);
+})();
+</script>
+</body>
+</html>

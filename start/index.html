@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your AI Assessment &middot; Reverse Selling</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#172748">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#172748;--blue:#5f759e;--copper:#b94f37;--body:#535e70;--line:#e0e6ed;--paper:#f7f9fc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,-apple-system,Arial,sans-serif;color:var(--ink);background:#fcfdff;-webkit-font-smoothing:antialiased;line-height:1.55}
+.wrap{max-width:540px;margin:0 auto;padding:26px 22px 60px}
+.brand{font-family:"Barlow Condensed",Impact,sans-serif;font-size:26px;font-weight:700;line-height:1;margin-bottom:22px}
+.brand span:first-child{color:var(--copper)}
+h1{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(36px,9.5vw,52px);line-height:.98;text-transform:uppercase;letter-spacing:.3px}
+.sub{font-size:17px;color:var(--body);margin-top:14px}
+.sub b{color:var(--ink);font-weight:600}
+.timerbar{margin-top:20px;background:var(--ink);color:#fff;padding:12px 16px;border-radius:11px;text-align:center;font-size:12px;letter-spacing:.07em;text-transform:uppercase;font-weight:600}
+.timerbar.expired{background:var(--blue)}
+#clock{font-variant-numeric:tabular-nums;font-weight:800}
+form{margin-top:22px;text-align:left}
+label{display:block;font-size:12px;font-weight:600;color:#243249;margin:0 0 13px;letter-spacing:.1px}
+input{display:block;width:100%;margin-top:6px;padding:14px 14px;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid #d8e1ee;border-radius:9px;box-shadow:inset 0 1px 2px #17274808}
+input:focus{outline:none;border-color:#b94f37;box-shadow:0 0 0 3px #b94f3722}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:500;color:#535e70;font-size:12px;line-height:1.5;margin-top:2px}
+.consent input{width:auto;margin:3px 0 0;display:inline-block}
+.button{display:flex;width:100%;color:#fff;background:linear-gradient(105deg,#702c22 0%,#b24c34 46%,#dc917b 100%);border:1px solid #b96851;border-radius:11px;justify-content:center;align-items:center;padding:20px;font-size:18px;font-weight:700;margin-top:18px;box-shadow:inset 0 1px 1px #ffd6c699,inset 0 0 0 3px #ffffff15,0 5px 12px #63341d20;text-decoration:none;cursor:pointer;font-family:inherit}
+.button[disabled]{opacity:.6;cursor:default}
+.micro{font-size:12.5px;color:#8d97a8;text-align:center;margin-top:12px;line-height:1.55}
+.err{display:none;margin-top:12px;padding:12px 14px;border-radius:9px;background:#fdf1ee;border:1px solid #e8cdc5;color:#8c3d29;font-size:14px}
+.foot{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:#8d97a8;text-align:center;line-height:1.6}
+.foot a{color:#8d97a8}
+@media(max-width:460px){.fgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><span>REVERSE</span> <span>SELLING</span></div>
+  <h1>Your AI<br>Assessment</h1>
+  <p class="sub">Everything you watched tonight &mdash; done for <b>your</b> business. Put your details in and the whole thing opens on the next screen.</p>
+
+  <div class="timerbar" id="bar">Room price ends in <span id="clock">&mdash;&mdash;</span></div>
+
+  <form id="f" novalidate>
+    <div class="fgrid">
+      <label>First name<input name="first" required autocomplete="given-name" autocapitalize="words"></label>
+      <label>Last name<input name="last" required autocomplete="family-name" autocapitalize="words"></label>
+    </div>
+    <label>Email<input type="email" name="email" required autocomplete="email" inputmode="email"></label>
+    <label>Mobile<input type="tel" name="mobile" required autocomplete="tel" inputmode="tel"></label>
+    <label>Business name<input name="business" required autocapitalize="words"></label>
+    <label class="consent"><input type="checkbox" name="sms" value="yes" required> OK to text and email me about the AI Assessment. Stop anytime.</label>
+    <button class="button" type="submit" id="go">Show me the Assessment &rarr;</button>
+    <div class="err" id="err"></div>
+    <p class="micro">We use this to send your details and hold your spot.<br>No list swapping, no spam, ever.</p>
+  </form>
+
+  <div class="foot">
+    Reverse Selling LLC &middot; Fishers, Indiana<br>
+    Questions? Text <a href="sms:+13177241840">(317) 724-1840</a><br>
+    <a href="/terms.html">Terms</a> &middot; <a href="/privacy.html">Privacy</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var DEADLINE=Date.parse('2026-09-11T02:00:00Z');
+  var bar=document.getElementById('bar'), clock=document.getElementById('clock');
+  function pad(n){return(n<10?'0':'')+n;}
+  function tick(){
+    var d=DEADLINE-Date.now();
+    if(d<=0){bar.className='timerbar expired';bar.innerHTML='The $797 room price has ended';return;}
+    var h=Math.floor(d/3600000),m=Math.floor(d/60000)%60,s=Math.floor(d/1000)%60;
+    clock.textContent=(h>0?h+':'+pad(m)+':'+pad(s):m+':'+pad(s));
+  }
+  tick(); setInterval(tick,1000);
+
+  var NEXT='/assessment/';
+  var f=document.getElementById('f'), go=document.getElementById('go'), err=document.getElementById('err');
+  function fail(msg){err.textContent=msg;err.style.display='block';go.disabled=false;go.textContent='Show me the Assessment →';}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d=new FormData(f);
+    var email=(d.get('email')||'').trim();
+    if(!d.get('first')||!d.get('last')||!email||!d.get('mobile')||!d.get('business')) return fail('Please fill in every box so we can hold your spot.');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('That email address doesn’t look right — mind checking it?');
+    if(!d.get('sms')) return fail('Please tick the box so we’re allowed to send you your details.');
+    go.disabled=true; go.textContent='One second…';
+    // remember them locally so nothing is lost even if the network hiccups
+    try{localStorage.setItem('rs_optin',JSON.stringify({e:email,f:d.get('first'),t:Date.now()}));}catch(x){}
+    var body=new URLSearchParams();
+    body.set('email_address',email);
+    body.set('first_name',(d.get('first')||'').trim());
+    body.set('fields[last_name]',(d.get('last')||'').trim());
+    body.set('fields[mobile]',(d.get('mobile')||'').trim());
+    body.set('fields[business_website]',(d.get('business')||'').trim());
+    body.set('fields[sms_ok]','yes');
+    body.set('fields[optin_source]','assessment-0910');
+    var done=false;
+    function proceed(){ if(done) return; done=true; window.location.href=NEXT; }
+    // never trap a live prospect behind a network error — 6s and we move on regardless
+    var t=setTimeout(proceed,6000);
+    fetch('https://app.kit.com/forms/9872042/subscriptions',{
+      method:'POST', headers:{'Accept':'application/json'}, body:body
+    }).then(function(){clearTimeout(t);proceed();})
+      .catch(function(){clearTimeout(t);proceed();});
+  });
+})();
+</script>
+</body>
+</html>
