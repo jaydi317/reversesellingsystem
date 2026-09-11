@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#172748">
 <meta property="og:title" content="Here's Your AI Assessment">
-<meta property="og:description" content="Everything you watched tonight. Done for your business. Room price $797 until 10:00 PM.">
+<meta property="og:description" content="Everything you watched tonight. Done for your business. Room price $797 until 11:00 PM.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
@@ -276,9 +276,9 @@ ol.get span{font-size:15px;color:var(--body)}
     <div class="row"><span>6. The Multiplier Effect</span><span>$1,500</span></div>
     <div class="row"><span>7. The Business You Saw In Your Head</span><span>$1,000</span></div>
     <div class="row tot"><span>Total stacked value</span><span>$8,491</span></div>
-    <div class="row inv"><span>Your investment today<br><span style="font-size:13px;opacity:.8" id="invnote">Tonight, before 10:00 PM</span></span><span class="big" id="invprice">$797</span></div>
+    <div class="row inv"><span>Your investment today<br><span style="font-size:13px;opacity:.8" id="invnote">Tonight, before 11:00 PM</span></span><span class="big" id="invprice">$797</span></div>
   </div>
-  <p style="margin-top:14px;font-size:15px">Plus two components no honest price could cover. <span id="regnote">Regular price is <b>$997</b> &mdash; the $797 is the room price and it ends at 10:00 PM tonight.</span></p>
+  <p style="margin-top:14px;font-size:15px">Plus two components no honest price could cover. <span id="regnote">Regular price is <b>$997</b> &mdash; the $797 is the room price and it ends at 11:00 PM tonight.</span></p>
 
   <h2>The Guarantee</h2>
   <p><b>I&rsquo;ll hand you at least one specific, written recommendation worth ten times what you paid.</b> In your own business. In your own numbers.</p>
@@ -298,7 +298,7 @@ ol.get span{font-size:15px;color:var(--body)}
   <div class="fastbar" style="margin-top:34px">
     <div class="fasttop" id="bar2">Room price ends in <span id="clock2">&mdash;&mdash;</span></div>
     <div class="fastin">
-      <div class="kicker" id="k2">$797 tonight &middot; $997 after 10:00 PM</div>
+      <div class="kicker" id="k2">$797 tonight &middot; $997 after 11:00 PM</div>
       <a class="button" id="cta2" href="https://buy.stripe.com/28E3cndE7eyv2agg0zeZ20e">Yes &mdash; confirm my spot &rarr;</a>
       <p class="fine">Card, Apple&nbsp;Pay, Cash&nbsp;App, Klarna or bank. About 40 seconds. You&rsquo;ll book your session on the next screen.</p>
     </div>
@@ -315,7 +315,7 @@ ol.get span{font-size:15px;color:var(--body)}
 
 <script>
 (function(){
-  var DEADLINE = Date.parse('2026-09-11T02:00:00Z'); // 10:00 PM ET, Sept 10 2026
+  var DEADLINE = Date.parse('2026-09-11T03:00:00Z'); // 11:00 PM ET, Sept 10 2026
   var EARLY = 'https://buy.stripe.com/28E3cndE7eyv2agg0zeZ20e';
   var FULL  = 'https://buy.stripe.com/4gM7sD7fJ0HF028bKjeZ20f';
   var ids = ['bar0','bar1','bar2','clock0','clock','clock2','cta0','cta1','cta2','cta3','was0','price0','plab0'];
@@ -328,11 +328,11 @@ ol.get span{font-size:15px;color:var(--body)}
     el.was0.style.display='none'; el.price0.textContent='$997';
     el.plab0.innerHTML='The AI Audit &middot; one payment';
     ['cta0','cta1','cta2','cta3'].forEach(function(c){el[c].href=FULL;});
-    document.getElementById('p1').innerHTML='<b>$997</b> &mdash; the room price ended at 10:00 PM.';
+    document.getElementById('p1').innerHTML='<b>$997</b> &mdash; the room price ended at 11:00 PM.';
     document.getElementById('k2').textContent='The AI Assessment · $997 · one payment';
     document.getElementById('invprice').textContent='$997';
     document.getElementById('invnote').textContent='One payment';
-    document.getElementById('regnote').innerHTML='The $797 room price ended at 10:00 PM.';
+    document.getElementById('regnote').innerHTML='The $797 room price ended at 11:00 PM.';
     document.getElementById('stickyprice').textContent='$997';
   }
   function pad(n){return (n<10?'0':'')+n;}
