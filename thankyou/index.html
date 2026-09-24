@@ -22,6 +22,10 @@ h1{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(38px,9.6vw,5
 p{color:var(--body)}
 .sub{font-size:16px;line-height:1.48;margin:12px 0 18px}
 .video{width:100%;aspect-ratio:16/9;border-radius:11px;overflow:hidden;background:#101824;box-shadow:0 10px 30px rgba(23,39,72,.12)}
+.play{display:block;position:relative;width:100%;height:100%;border:0;background:#101824;cursor:pointer}
+.play img{display:block;width:100%;height:100%;object-fit:cover}
+.play:after{content:"▶";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:68px;height:48px;padding-left:4px;border-radius:12px;background:#e62117;color:#fff;font-size:24px;line-height:1}
+.play:focus-visible{outline:3px solid var(--copper);outline-offset:-3px}
 .video iframe{display:block;width:100%;height:100%;border:0}
 .note{font-size:12px;line-height:1.45;color:var(--body);margin:10px 0 28px}
 .links{max-width:660px;margin:0 auto}
@@ -45,7 +49,7 @@ details a:last-child{border-bottom:0}
   <div class="eyebrow">REVERSE SELLING · THURSDAY, SEPT 10</div>
   <h1>Thank you for Thursday.</h1>
   <p class="sub">You could have been anywhere. You spent it in a theater with us. Here's the video, and everything we said was under it.</p>
-  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/mdc6tjwE8y4?rel=0&amp;modestbranding=1" title="Thank-you video from Jimmy and Paul" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+  <div class="video"><button class="play" type="button" aria-label="Play thank-you video"><img src="https://i.ytimg.com/vi/mdc6tjwE8y4/hqdefault.jpg" alt="" width="480" height="360" fetchpriority="high"></button></div>
   <p class="note">We shot this before the wedding. In it I mention an audit link. Skip that part. We're keeping this simple: one thing, below.</p>
   <section class="links" aria-label="Everything we said was under the video">
     <div class="eyebrow">EVERYTHING WE SAID WAS UNDER THE VIDEO</div>
@@ -62,5 +66,15 @@ details a:last-child{border-bottom:0}
   <p class="closing">Next one is about a month out. Bigger. Bring someone.<br>Jimmy and Paul</p>
   <footer class="foot">Reverse Selling LLC · Fishers, Indiana<br>Questions? Text <a href="sms:+13177241840">(317) 724-1840</a><br><a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></footer>
 </main>
+<script>
+document.querySelector('.play').addEventListener('click',function(){
+  const video=document.createElement('iframe');
+  video.src='https://www.youtube-nocookie.com/embed/mdc6tjwE8y4?rel=0&modestbranding=1&autoplay=1';
+  video.title='Thank-you video from Jimmy and Paul';
+  video.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  video.allowFullscreen=true;
+  this.replaceWith(video);
+});
+</script>
 </body>
 </html>
