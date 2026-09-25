@@ -27,8 +27,7 @@ p{color:var(--body)}
 .play:after{content:"▶";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:68px;height:48px;padding-left:4px;border-radius:12px;background:#e62117;color:#fff;font-size:24px;line-height:1}
 .play:focus-visible{outline:3px solid var(--copper);outline-offset:-3px}
 .video iframe{display:block;width:100%;height:100%;border:0}
-.note{font-size:12px;line-height:1.45;color:var(--body);margin:10px 0 28px}
-.links{max-width:660px;margin:0 auto}
+.links{max-width:660px;margin:28px auto 0}
 .links .eyebrow{margin-bottom:14px}
 .button{display:flex;width:100%;min-height:64px;color:#fff;background:var(--ink);border:1px solid var(--navy);border-radius:11px;justify-content:center;align-items:center;padding:17px 20px;font-size:18px;font-weight:700;box-shadow:inset 0 1px 1px #ffffff22,inset 0 0 0 3px #ffffff15,0 5px 12px #17274820;text-decoration:none;text-align:center;line-height:1.25}
 .button:active{transform:translateY(1px)}
@@ -40,7 +39,7 @@ details a:last-child{border-bottom:0}
 .closing{max-width:660px;margin:40px auto 0;text-align:center;font-size:14px;line-height:1.55}
 .foot{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:#8d97a8;text-align:center;line-height:1.6}
 .foot a{color:#8d97a8}
-@media(min-width:700px){.wrap{padding:26px 22px 80px}.sub{font-size:19px;margin:16px 0 24px}.note{font-size:13px;white-space:nowrap}.links{margin-top:8px}}
+@media(min-width:700px){.wrap{padding:26px 22px 80px}.sub{font-size:19px;margin:16px 0 24px}}
 </style>
 </head>
 <body>
@@ -49,8 +48,7 @@ details a:last-child{border-bottom:0}
   <div class="eyebrow">REVERSE SELLING · THURSDAY, SEPT 10</div>
   <h1>Thank you for Thursday.</h1>
   <p class="sub">You could have been anywhere. You spent it in a theater with us. Here's the video, and everything we said was under it.</p>
-  <div class="video"><button class="play" type="button" aria-label="Play thank-you video"><img src="https://i.ytimg.com/vi/mdc6tjwE8y4/hqdefault.jpg" alt="" width="480" height="360" fetchpriority="high"></button></div>
-  <p class="note">We shot this before the wedding. In it I mention an audit link. Skip that part. We're keeping this simple: one thing, below.</p>
+  <div class="video"><button class="play" type="button" aria-label="Play thank-you video"><img src="https://i.ytimg.com/vi/zeEKXbx-2Ak/hqdefault.jpg" alt="" width="480" height="360" fetchpriority="high"></button></div>
   <section class="links" aria-label="Everything we said was under the video">
     <div class="eyebrow">EVERYTHING WE SAID WAS UNDER THE VIDEO</div>
     <a class="button" href="https://reversesellingsystem.com/call">Book your 30 minutes with Jimmy and Paul →</a>
@@ -69,7 +67,7 @@ details a:last-child{border-bottom:0}
 <script>
 document.querySelector('.play').addEventListener('click',function(){
   const video=document.createElement('iframe');
-  video.src='https://www.youtube-nocookie.com/embed/mdc6tjwE8y4?rel=0&modestbranding=1&autoplay=1';
+  video.src='https://www.youtube-nocookie.com/embed/zeEKXbx-2Ak?rel=0&modestbranding=1&autoplay=1';
   video.title='Thank-you video from Jimmy and Paul';
   video.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
   video.allowFullscreen=true;
