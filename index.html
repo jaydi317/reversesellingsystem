@@ -290,14 +290,15 @@ footer a{color:#f0a37e;text-decoration:none}
       <input type="tel" name="Cell" placeholder="3. Cell" required>
       <input type="text" name="Business" placeholder="4. What's your business, and what's working?" required>
       <input type="text" name="Help_and_Budget" placeholder="5. What do you want help with — and what's your budget?" required>
-      <button class="btn" type="submit">Answer the five questions <span class="arr">&rarr;</span></button>
-      <div class="micro">You'll hear from the machine in about a minute. Count the seconds.</div>
+      <label class="consent" style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:var(--ink-soft);text-align:left;margin-top:2px"><input type="checkbox" name="SMS_OK" value="yes" style="width:20px;height:20px;min-width:20px;padding:0;margin:2px 0 0;flex:0 0 auto"> <span><b>Yes, text me at this number.</b> Reverse Selling LLC will send follow-up and scheduling texts about my request and my free assessment. Msg frequency varies (about 1 to 2 per day for up to 7 days, then occasional). Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. Checking this box is not required to submit. <a href="/privacy.html" target="_blank" style="text-decoration:underline">Privacy Policy</a> and <a href="/terms.html" target="_blank" style="text-decoration:underline">Terms</a>.</span></label>
+  <button class="btn" type="submit">Answer the five questions <span class="arr">&rarr;</span></button>
+      <div class="micro">Check the box and you'll hear from us by text in about a minute. Count the seconds.</div>
     </form>
   </div>
   <p class="scarce rv">Capacity is real. When we're full, this form says so.</p>
 </div></div>
 
-<footer>&copy; 2026 Reverse Selling &middot; Jimmy Davis &amp; Paul Lorkowski &middot; <a href="https://ineedjimmy.com/privacy/">Privacy</a> &middot; <a href="https://ineedjimmy.com/terms/">Terms</a></footer>
+<footer>&copy; 2026 Jimmy Davis &amp; Paul Lorkowski &middot; Reverse Selling LLC &middot; 14846 Victory Ct, Carmel, IN 46032 &middot; <a href="tel:+16263543229">(626) 354-3229</a> &middot; <a href="mailto:hello@reversesellingsystem.com">hello@reversesellingsystem.com</a> &middot; <a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms</a></footer>
 
 <script>
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
