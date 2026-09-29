@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Help Us Name Our Business</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Public+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: phone-first ballot. Short intro, sticky progress, one card per name with Like / Pass, then a short finish form. */
+:root{--bg:#f4f2ee;--surface:#fff;--ink:#1d2230;--muted:#5d6370;--line:#dcd8d0;--copper:#b4622d;--copper-soft:#f6e7dc;--good:#2f7a4f;--good-soft:#e1f1e6;--bad:#9a3d37;--bad-soft:#f6e1df;
+--display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;--body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15181e;--surface:#1d2229;--ink:#ebecea;--muted:#a0a6af;--line:#2e353f;--copper:#e28c55;--copper-soft:#3b281c;--good:#6cc790;--good-soft:#1c3326;--bad:#ee8a82;--bad-soft:#3a1f1d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15181e;--surface:#1d2229;--ink:#ebecea;--muted:#a0a6af;--line:#2e353f;--copper:#e28c55;--copper-soft:#3b281c;--good:#6cc790;--good-soft:#1c3326;--bad:#ee8a82;--bad-soft:#3a1f1d;color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;padding:0 16px}
+.wrap{max-width:620px;margin:0 auto;padding-block:28px 60px;display:flex;flex-direction:column;gap:22px}
+h1,h2{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:clamp(2rem,8vw,2.8rem);font-weight:800;letter-spacing:-.02em}
+h1 span{color:var(--copper)}
+h2{font-size:1.4rem;font-weight:800}
+p{margin:0}
+.lede{color:var(--muted)}
+.how{background:var(--copper-soft);border-radius:10px;padding:12px 14px;font-size:.95rem}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;display:flex;flex-direction:column;gap:6px}
+.bar-top{display:flex;justify-content:space-between;font-size:.9rem;font-weight:600}
+.track{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.fill{height:100%;width:0;background:var(--copper);transition:width .25s}
+.cards{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s}
+.card.like{border-color:var(--good)}
+.card.pass{opacity:.7}
+.dom{font-family:var(--display);font-size:1.35rem;font-weight:800;overflow-wrap:anywhere;letter-spacing:-.01em}
+.story{color:var(--muted);font-size:.98rem}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.btns button{font:inherit;font-weight:700;font-size:1rem;padding:12px;border-radius:10px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;min-height:48px}
+.btns button[data-v="like"][aria-pressed="true"]{background:var(--good);border-color:var(--good);color:var(--surface)}
+.btns button[data-v="pass"][aria-pressed="true"]{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--copper);outline-offset:2px}
+.finish{background:var(--surface);border:2px solid var(--ink);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:14px}
+label{font-weight:700;display:block;margin-bottom:6px}
+select,input[type=text],textarea{font:inherit;width:100%;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+textarea{min-height:80px;resize:vertical}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg button{font:inherit;font-weight:600;padding:11px;border-radius:10px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.submit{font:inherit;font-weight:800;font-size:1.1rem;padding:15px;border:0;border-radius:12px;background:var(--copper);color:#fff;cursor:pointer}
+.submit:disabled{opacity:.6;cursor:default}
+.msg{font-size:.92rem;color:var(--muted);min-height:1.2em}
+.msg.err{color:var(--bad)}
+.thanks{text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;padding-block:40px}
+.thanks .big{font-family:var(--display);font-size:2.4rem;font-weight:800;color:var(--copper)}
+.share{font:inherit;font-weight:700;padding:12px 20px;border-radius:99px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.link{font-size:.9rem;color:var(--muted);word-break:break-all}
+.demo{font-size:.8rem;background:var(--copper-soft);color:var(--copper);border-radius:6px;padding:6px 10px;font-weight:600}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head><body>
+<div class="wrap" id="app">
+  <p class="demo" id="demo" hidden>Preview mode: votes are not being saved.</p>
+  <header style="display:flex;flex-direction:column;gap:10px">
+    <h1>Help us <span>name</span> our business</h1>
+    <p class="lede">Jimmy and Paul here. We help local business owners use AI so they make more money and get their time back. We need a new name, and we want your gut reaction.</p>
+    <p class="how">Tap <b>Like</b> or <b>Pass</b> on each name. Go with your gut. It takes about 2 minutes. Pick your favorite at the bottom and hit send.</p>
+  </header>
+  <div class="bar" aria-live="polite">
+    <div class="bar-top"><span id="count">0 of 38 rated</span><span id="likes">0 liked</span></div>
+    <div class="track"><div class="fill" id="fill"></div></div>
+  </div>
+  <div class="cards" id="cards"></div>
+  <section class="finish" id="finish">
+    <h2>Last step</h2>
+    <div><label for="fav">Your favorite name</label><select id="fav"><option value="">Like a few names first, then pick one</option></select></div>
+    <div><label>Do you own a business?</label><div class="seg" role="group" aria-label="Do you own a business"><button type="button" id="own-yes" data-own="yes" aria-pressed="false">Yes</button><button type="button" id="own-no" data-own="no" aria-pressed="false">No</button></div></div>
+    <div><label for="who">Your first name <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="who" type="text" autocomplete="given-name" placeholder="So we know who to thank"></div>
+    <div><label for="note">Anything else? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="note" placeholder="A name we missed, or why you loved one"></textarea></div>
+    <button type="button" class="submit" id="send">Send my votes</button>
+    <p class="msg" id="msg"></p>
+  </section>
+</div>
+<div class="wrap thanks" id="done" hidden>
+  <p class="big">Thank you!</p>
+  <p>Your votes are in. That means a lot to both of us.</p>
+  <p class="lede">Know someone else with an opinion? Send them this link:</p>
+  <button type="button" class="share" id="share">Copy the link</button>
+  <p class="link" id="linktext"></p>
+  <button type="button" class="share" id="again" style="border-color:var(--line)">Change my votes</button>
+</div>
+
+<script>
+(function(){
+var ENDPOINT = "https://script.google.com/macros/s/AKfycbzQN11xVKFxfNKpnOa80qk7bt2xoTPtiCCLF1AIW--GVnTxuoOY1jCOcuwVZ2yURsaF/exec";
+var NAMES = [{"id": "owneragain", "domain": "OwnerAgain.com / .ai", "story": "Feel like the owner of your business again, not its most overworked employee."}, {"id": "freetheowners", "domain": "FreeTheOwners.com", "story": "You started a business to be free. We help give you that freedom back."}, {"id": "moneyinhoursback", "domain": "MoneyInHoursBack.com", "story": "Money in, hours back. We help you make more money and get your time back. That's what we do."}, {"id": "threeoutcomes", "domain": "ThreeOutcomes.ai", "story": "Every tool we set up has to do one of three things: bring money in, give hours back, or keep customers."}, {"id": "homefordinner", "domain": "HomeForDinner.ai", "story": "The real promise of AI isn't more output. It's getting you home for dinner."}, {"id": "fridaysoff", "domain": "FridaysOff.ai", "story": "The business keeps running on Friday. You don't have to."}, {"id": "foundtime", "domain": "FoundTime.ai", "story": "We find the hours hiding in your week and hand them back to you."}, {"id": "nightsback", "domain": "NightsBack.ai", "story": "We set up systems that give you your nights and weekends back."}, {"id": "ownersunplugged", "domain": "OwnersUnplugged.com", "story": "The business keeps running while you actually step away."}, {"id": "deskcleared", "domain": "DeskCleared.com / .ai", "story": "The pile on your desk is gone by five o'clock."}, {"id": "busyworkgone", "domain": "BusyworkGone.ai", "story": "The busywork leaves, and you get back to the work that matters."}, {"id": "pleasehandlethis", "domain": "PleaseHandleThis.com", "story": "The company every overwhelmed owner wishes existed. Bring us your problems and we handle them."}, {"id": "yoursecondcrew", "domain": "YourSecondCrew.com / .ai", "story": "A dependable second crew of people and tools working alongside the team you already have."}, {"id": "actuallyuseful", "domain": "ActuallyUseful.ai", "story": "Lots of people try AI and get frustrated. We bring AI that's actually useful in your business."}, {"id": "usefulaicompany", "domain": "UsefulAICompany.com", "story": "The standard is in the name: the technology has to earn its place by doing real work."}, {"id": "usefulmagic", "domain": "UsefulMagic.ai", "story": "AI feels like magic. If all you're doing is making pictures with it, we help you turn it into useful magic."}, {"id": "youaskitdoes", "domain": "YouAskItDoes.com / .ai", "story": "AI in four words. The whole skill is asking, and we set up the doing."}, {"id": "unfairtoolbox", "domain": "UnfairToolbox.com", "story": "Powerful business tools made simple enough that using them feels like an unfair head start."}, {"id": "genieonstaff", "domain": "GenieOnStaff.com / .ai", "story": "The genie is out of the bottle. We put one on your staff and teach you what to wish for."}, {"id": "hireagenie", "domain": "HireAGenie.ai", "story": "The easiest hire you'll ever make."}, {"id": "timegenie", "domain": "TimeGenie.ai", "story": "Every owner's first wish is more time, so we built a genie for that."}, {"id": "twodriveways", "domain": "TwoDriveways.com", "story": "Two neighbors in Fishers who became the guys other owners call to make their business run better."}, {"id": "twoneighbors", "domain": "TwoNeighbors.ai", "story": "The true story: two guys on the same street who decided to help the businesses around them."}, {"id": "twoguysandarobot", "domain": "TwoGuysAndARobot.com", "story": "Two neighbors helping their town put AI to work. Funny, and true."}, {"id": "culdesaclabs", "domain": "CulDeSacLabs.com", "story": "A funny suburban origin story that turns into a serious place to try useful things."}, {"id": "locallegendslab", "domain": "LocalLegendsLab.com", "story": "A workshop for turning well-loved local businesses into the most capable companies in town."}, {"id": "mainstreetmachine", "domain": "MainStreetMachine.ai", "story": "Big-company tools, built for Main Street businesses."}, {"id": "windatyourback", "domain": "WindAtYourBack.ai", "story": "Stop rowing and catch the wind."}, {"id": "raisethesail", "domain": "RaiseTheSail.ai", "story": "When an owner raises their sail and knows who they are, the market responds."}, {"id": "thebigdomino", "domain": "TheBigDomino.com / BigDomino.ai", "story": "Knock over the right domino and the rest fall on their own."}, {"id": "ripplemakers", "domain": "RippleMakers.ai", "story": "Help one good business well and the ripples reach the whole town."}, {"id": "borrowourladder", "domain": "BorrowOurLadder.com", "story": "Reach the next level without building every tool yourself."}, {"id": "ownersupgrade", "domain": "OwnersUpgrade.com", "story": "Not a software lesson. A real upgrade to how you run the whole business."}, {"id": "ownersnight", "domain": "OwnersNight.com / .ai", "story": "One night where owners watch their own business run on AI, live in the room."}, {"id": "theownersworkshop", "domain": "TheOwnersWorkshop.com", "story": "A place where owners bring real problems and leave with something built for their business."}, {"id": "owneroom", "domain": "Owneroom.com / .ai", "story": "\"Owner\" and \"room\" in one word: the place where local owners meet and figure it out together."}, {"id": "comebuildsomething", "domain": "ComeBuildSomething.com", "story": "A warm invitation to stop watching from the sidelines and try something useful."}, {"id": "bringyourmess", "domain": "BringYourMess.com", "story": "Show up with the real problem you've been hiding behind polished business talk."}];
+var DEMO = !/^https:\/\/script\.google\.com\//.test(ENDPOINT);
+var KEY = "namevote-v1";
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||"null");}catch(e){return null;}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+var S = load() || {};
+if(!S.voter){S.voter="v"+Date.now().toString(36)+Math.random().toString(36).slice(2,8);}
+if(!S.votes)S.votes={};
+if(!S.order){var ids=NAMES.map(function(n){return n.id;});for(var i=ids.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=ids[i];ids[i]=ids[j];ids[j]=t;}S.order=ids;}
+save();
+if(DEMO)document.getElementById("demo").hidden=false;
+var byId={};NAMES.forEach(function(n){byId[n.id]=n;});
+var order=S.order.filter(function(id){return byId[id];});NAMES.forEach(function(n){if(order.indexOf(n.id)<0)order.push(n.id);});
+function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
+var cards=document.getElementById("cards");
+order.forEach(function(id){var n=byId[id];var c=el("article","card");c.id="c-"+id;
+  c.appendChild(el("div","dom",n.domain));c.appendChild(el("p","story",n.story));
+  var b=el("div","btns");["like","pass"].forEach(function(v){var bt=el("button",null,v==="like"?"Like":"Pass");bt.type="button";bt.id="b-"+id+"-"+v;bt.dataset.v=v;bt.dataset.id=id;
+    bt.addEventListener("click",function(){S.votes[id]=S.votes[id]===v?undefined:v;if(!S.votes[id])delete S.votes[id];save();render();});b.appendChild(bt);});
+  c.appendChild(b);cards.appendChild(c);});
+document.querySelectorAll(".seg button").forEach(function(b){b.addEventListener("click",function(){S.owner=b.dataset.own;save();render();});});
+var fav=document.getElementById("fav");fav.addEventListener("change",function(){S.fav=fav.value;save();});
+var who=document.getElementById("who");who.value=S.name||"";who.addEventListener("input",function(){S.name=who.value;save();});
+var note=document.getElementById("note");note.value=S.note||"";note.addEventListener("input",function(){S.note=note.value;save();});
+function render(){
+  var rated=0,liked=[];order.forEach(function(id){var v=S.votes[id];var c=document.getElementById("c-"+id);c.classList.toggle("like",v==="like");c.classList.toggle("pass",v==="pass");
+    c.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",String(v===b.dataset.v));});if(v)rated++;if(v==="like")liked.push(id);});
+  document.getElementById("count").textContent=rated+" of "+order.length+" rated";
+  document.getElementById("likes").textContent=liked.length+" liked";
+  document.getElementById("fill").style.width=(rated/order.length*100)+"%";
+  var cur=S.fav&&liked.indexOf(S.fav)>=0?S.fav:"";fav.textContent="";
+  var o=el("option",null,liked.length?"Choose your favorite":"Like a few names first, then pick one");o.value="";fav.appendChild(o);
+  liked.forEach(function(id){var op=el("option",null,byId[id].domain);op.value=id;fav.appendChild(op);});fav.value=cur;S.fav=cur;
+  document.querySelectorAll(".seg button").forEach(function(b){b.setAttribute("aria-pressed",String(S.owner===b.dataset.own));});
+}
+render();
+var msg=document.getElementById("msg"),send=document.getElementById("send");
+send.addEventListener("click",function(){
+  var likes=[],passes=[];order.forEach(function(id){if(S.votes[id]==="like")likes.push(id);else if(S.votes[id]==="pass")passes.push(id);});
+  msg.className="msg";
+  if(!likes.length&&!passes.length){msg.className="msg err";msg.textContent="Tap Like or Pass on at least a few names first.";return;}
+  var payload={voter:S.voter,likes:likes,passes:passes,favorite:S.fav||"",owner:S.owner||"",name:(S.name||"").slice(0,60),note:(S.note||"").slice(0,1000),rated:likes.length+passes.length};
+  send.disabled=true;send.textContent="Sending...";
+  function ok(){S.sent=true;save();showDone();send.disabled=false;send.textContent="Send my votes";}
+  if(DEMO){setTimeout(ok,500);return;}
+  fetch(ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)})
+    .then(ok).catch(function(){send.disabled=false;send.textContent="Send my votes";msg.className="msg err";msg.textContent="That didn't go through. Check your connection and tap Send again.";});
+});
+var link=location.href.split("#")[0].split("?")[0];
+document.getElementById("linktext").textContent=link;
+function showDone(){document.getElementById("app").hidden=true;document.getElementById("done").hidden=false;window.scrollTo(0,0);}
+document.getElementById("share").addEventListener("click",function(){var b=this;
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("linktext"));var s=window.getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Link selected. Copy it.";}
+  try{navigator.clipboard.writeText(link).then(function(){b.textContent="Copied!";},sel);}catch(e){sel();}});
+document.getElementById("again").addEventListener("click",function(){document.getElementById("done").hidden=true;document.getElementById("app").hidden=false;});
+if(S.sent)showDone();
+})();
+</script>
+
+</body></html>

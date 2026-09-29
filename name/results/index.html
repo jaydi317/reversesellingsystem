@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Name Vote Results</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Public+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: private scoreboard. Totals, leaderboard with like/pass split bars, owners-only view, comments. */
+:root{--bg:#f4f2ee;--surface:#fff;--ink:#1d2230;--muted:#5d6370;--line:#dcd8d0;--copper:#b4622d;--good:#2f7a4f;--bad:#c9857f;
+--display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;--body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15181e;--surface:#1d2229;--ink:#ebecea;--muted:#a0a6af;--line:#2e353f;--copper:#e28c55;--good:#6cc790;--bad:#a8605a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15181e;--surface:#1d2229;--ink:#ebecea;--muted:#a0a6af;--line:#2e353f;--copper:#e28c55;--good:#6cc790;--bad:#a8605a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.5;padding:0 16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 60px;display:flex;flex-direction:column;gap:24px}
+h1,h2{font-family:var(--display);margin:0;line-height:1.1}
+h1{font-size:clamp(2rem,7vw,2.8rem);font-weight:800}
+h2{font-size:1.35rem;font-weight:800}
+p{margin:0}
+.muted{color:var(--muted);font-size:.9rem}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi b{display:block;font-family:var(--display);font-size:2rem;font-variant-numeric:tabular-nums;line-height:1}
+.kpi span{font-size:.85rem;color:var(--muted)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs button{font:inherit;font-weight:600;padding:7px 14px;border-radius:99px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:grid;grid-template-columns:2rem minmax(0,1fr) auto;gap:4px 12px;align-items:center}
+.row .rk{font-family:var(--display);font-weight:800;color:var(--copper);font-variant-numeric:tabular-nums}
+.row .nm{font-weight:700;overflow-wrap:anywhere}
+.row .sc{font-family:var(--display);font-weight:800;font-variant-numeric:tabular-nums;text-align:right}
+.row .split{grid-column:2/4;display:flex;height:8px;border-radius:99px;overflow:hidden;background:var(--line)}
+.row .split i{display:block;height:100%}
+.row .meta{grid-column:2/4;font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.notes{display:flex;flex-direction:column;gap:8px}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.err{background:var(--surface);border:2px solid var(--copper);border-radius:10px;padding:14px}
+button:focus-visible{outline:3px solid var(--copper);outline-offset:2px}
+</style>
+</head><body>
+<div class="wrap">
+  <header style="display:flex;flex-direction:column;gap:6px"><h1>Name Vote Results</h1><p class="muted" id="updated">Loading live votes...</p></header>
+  <div class="kpis" id="kpis"></div>
+  <section style="display:flex;flex-direction:column;gap:12px">
+    <h2>Leaderboard</h2>
+    <p class="muted">Score = likes minus passes, plus 3 points for every "favorite" pick. Green is likes, red is passes.</p>
+    <div class="tabs" role="group" aria-label="Whose votes"><button type="button" id="t-all" data-seg="all" aria-pressed="true">Everyone</button><button type="button" id="t-own" data-seg="own" aria-pressed="false">Business owners only</button></div>
+    <div class="rows" id="rows"></div>
+  </section>
+  <section style="display:flex;flex-direction:column;gap:12px"><h2>What people wrote</h2><div class="notes" id="notes"></div></section>
+</div>
+<script>
+(function(){
+var ENDPOINT="https://script.google.com/macros/s/AKfycbzQN11xVKFxfNKpnOa80qk7bt2xoTPtiCCLF1AIW--GVnTxuoOY1jCOcuwVZ2yURsaF/exec"; var NAMES=[{"id": "owneragain", "domain": "OwnerAgain.com / .ai", "story": "Feel like the owner of your business again, not its most overworked employee."}, {"id": "freetheowners", "domain": "FreeTheOwners.com", "story": "You started a business to be free. We help give you that freedom back."}, {"id": "moneyinhoursback", "domain": "MoneyInHoursBack.com", "story": "Money in, hours back. We help you make more money and get your time back. That's what we do."}, {"id": "threeoutcomes", "domain": "ThreeOutcomes.ai", "story": "Every tool we set up has to do one of three things: bring money in, give hours back, or keep customers."}, {"id": "homefordinner", "domain": "HomeForDinner.ai", "story": "The real promise of AI isn't more output. It's getting you home for dinner."}, {"id": "fridaysoff", "domain": "FridaysOff.ai", "story": "The business keeps running on Friday. You don't have to."}, {"id": "foundtime", "domain": "FoundTime.ai", "story": "We find the hours hiding in your week and hand them back to you."}, {"id": "nightsback", "domain": "NightsBack.ai", "story": "We set up systems that give you your nights and weekends back."}, {"id": "ownersunplugged", "domain": "OwnersUnplugged.com", "story": "The business keeps running while you actually step away."}, {"id": "deskcleared", "domain": "DeskCleared.com / .ai", "story": "The pile on your desk is gone by five o'clock."}, {"id": "busyworkgone", "domain": "BusyworkGone.ai", "story": "The busywork leaves, and you get back to the work that matters."}, {"id": "pleasehandlethis", "domain": "PleaseHandleThis.com", "story": "The company every overwhelmed owner wishes existed. Bring us your problems and we handle them."}, {"id": "yoursecondcrew", "domain": "YourSecondCrew.com / .ai", "story": "A dependable second crew of people and tools working alongside the team you already have."}, {"id": "actuallyuseful", "domain": "ActuallyUseful.ai", "story": "Lots of people try AI and get frustrated. We bring AI that's actually useful in your business."}, {"id": "usefulaicompany", "domain": "UsefulAICompany.com", "story": "The standard is in the name: the technology has to earn its place by doing real work."}, {"id": "usefulmagic", "domain": "UsefulMagic.ai", "story": "AI feels like magic. If all you're doing is making pictures with it, we help you turn it into useful magic."}, {"id": "youaskitdoes", "domain": "YouAskItDoes.com / .ai", "story": "AI in four words. The whole skill is asking, and we set up the doing."}, {"id": "unfairtoolbox", "domain": "UnfairToolbox.com", "story": "Powerful business tools made simple enough that using them feels like an unfair head start."}, {"id": "genieonstaff", "domain": "GenieOnStaff.com / .ai", "story": "The genie is out of the bottle. We put one on your staff and teach you what to wish for."}, {"id": "hireagenie", "domain": "HireAGenie.ai", "story": "The easiest hire you'll ever make."}, {"id": "timegenie", "domain": "TimeGenie.ai", "story": "Every owner's first wish is more time, so we built a genie for that."}, {"id": "twodriveways", "domain": "TwoDriveways.com", "story": "Two neighbors in Fishers who became the guys other owners call to make their business run better."}, {"id": "twoneighbors", "domain": "TwoNeighbors.ai", "story": "The true story: two guys on the same street who decided to help the businesses around them."}, {"id": "twoguysandarobot", "domain": "TwoGuysAndARobot.com", "story": "Two neighbors helping their town put AI to work. Funny, and true."}, {"id": "culdesaclabs", "domain": "CulDeSacLabs.com", "story": "A funny suburban origin story that turns into a serious place to try useful things."}, {"id": "locallegendslab", "domain": "LocalLegendsLab.com", "story": "A workshop for turning well-loved local businesses into the most capable companies in town."}, {"id": "mainstreetmachine", "domain": "MainStreetMachine.ai", "story": "Big-company tools, built for Main Street businesses."}, {"id": "windatyourback", "domain": "WindAtYourBack.ai", "story": "Stop rowing and catch the wind."}, {"id": "raisethesail", "domain": "RaiseTheSail.ai", "story": "When an owner raises their sail and knows who they are, the market responds."}, {"id": "thebigdomino", "domain": "TheBigDomino.com / BigDomino.ai", "story": "Knock over the right domino and the rest fall on their own."}, {"id": "ripplemakers", "domain": "RippleMakers.ai", "story": "Help one good business well and the ripples reach the whole town."}, {"id": "borrowourladder", "domain": "BorrowOurLadder.com", "story": "Reach the next level without building every tool yourself."}, {"id": "ownersupgrade", "domain": "OwnersUpgrade.com", "story": "Not a software lesson. A real upgrade to how you run the whole business."}, {"id": "ownersnight", "domain": "OwnersNight.com / .ai", "story": "One night where owners watch their own business run on AI, live in the room."}, {"id": "theownersworkshop", "domain": "TheOwnersWorkshop.com", "story": "A place where owners bring real problems and leave with something built for their business."}, {"id": "owneroom", "domain": "Owneroom.com / .ai", "story": "\"Owner\" and \"room\" in one word: the place where local owners meet and figure it out together."}, {"id": "comebuildsomething", "domain": "ComeBuildSomething.com", "story": "A warm invitation to stop watching from the sidelines and try something useful."}, {"id": "bringyourmess", "domain": "BringYourMess.com", "story": "Show up with the real problem you've been hiding behind polished business talk."}];
+var byId={};NAMES.forEach(function(n){byId[n.id]=n.domain;});
+function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x!=null)n.textContent=x;return n;}
+var key=(location.hash||"").replace(/^#/,"")||new URLSearchParams(location.search).get("key")||"";
+var D=null,seg="all";
+function draw(){
+  var k=document.getElementById("kpis");k.textContent="";
+  [[D.voters,"people voted"],[D.owners,"are business owners"],[D.voters-D.owners,"friends and family"]].forEach(function(x){var d=el("div","kpi");d.appendChild(el("b",null,String(x[0])));d.appendChild(el("span",null,x[1]));k.appendChild(d);});
+  var list=Object.keys(byId).map(function(id){var t=D.tally[id]||{likes:0,passes:0,fav:0,ownerLikes:0,ownerFav:0};
+    var likes=seg==="own"?t.ownerLikes:t.likes, fav=seg==="own"?t.ownerFav:t.fav, passes=seg==="own"?null:t.passes;
+    var score=seg==="own"?likes+3*fav:likes-passes+3*fav;return {id:id,likes:likes,passes:passes,fav:fav,score:score};})
+    .sort(function(a,b){return b.score-a.score||b.likes-a.likes;});
+  var rows=document.getElementById("rows");rows.textContent="";
+  list.forEach(function(r,i){var d=el("div","row");d.appendChild(el("span","rk",String(i+1)));d.appendChild(el("span","nm",byId[r.id]));d.appendChild(el("span","sc",String(r.score)));
+    var tot=(r.likes||0)+(r.passes||0);var sp=el("div","split");if(tot){var g=el("i");g.style.width=(r.likes/tot*100)+"%";g.style.background="var(--good)";sp.appendChild(g);if(r.passes!=null){var b=el("i");b.style.width=(r.passes/tot*100)+"%";b.style.background="var(--bad)";sp.appendChild(b);}}
+    d.appendChild(sp);d.appendChild(el("span","meta",r.likes+" likes"+(r.passes!=null?" · "+r.passes+" passes":"")+" · "+r.fav+" favorite"+(r.fav===1?"":"s")));rows.appendChild(d);});
+  var n=document.getElementById("notes");n.textContent="";
+  if(!D.notes.length)n.appendChild(el("p","muted","No comments yet."));
+  D.notes.slice().reverse().forEach(function(x){var d=el("div","note");d.appendChild(el("b",null,x.name+(x.owner?" (owner): ":": ")));d.appendChild(document.createTextNode(x.note));n.appendChild(d);});
+  document.getElementById("updated").textContent="Live. Last updated "+new Date(D.updated).toLocaleString()+". Refresh the page for new votes.";
+}
+document.querySelectorAll(".tabs button").forEach(function(b){b.addEventListener("click",function(){seg=b.dataset.seg;document.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-pressed",String(x===b));});if(D)draw();});});
+function fail(m){var u=document.getElementById("updated");u.textContent="";var d=el("p","err",m);u.appendChild(d);}
+if(!/^https:\/\/script\.google\.com\//.test(ENDPOINT)){fail("Not connected yet. Paste the Apps Script web app URL into this page.");return;}
+if(!key){fail("Add the private key to the end of this page's address, like /name/results/#yourkey");return;}
+fetch(ENDPOINT+"?key="+encodeURIComponent(key)).then(function(r){return r.json();}).then(function(d){if(d.error){fail("That key didn't work. Check the link.");return;}D=d;draw();})
+  .catch(function(){fail("Couldn't load the votes. Refresh to try again.");});
+})();
+</script>
+
+</body></html>
