@@ -53,7 +53,7 @@ input:focus{outline:none;border-color:#b94f37;box-shadow:0 0 0 3px #b94f3722}
     <label>Email<input type="email" name="email" required autocomplete="email" inputmode="email"></label>
     <label>Mobile<input type="tel" name="mobile" required autocomplete="tel" inputmode="tel"></label>
     <label>Business name<input name="business" required autocapitalize="words"></label>
-    <label class="consent"><input type="checkbox" name="sms" value="yes" required> OK to text and email me about the AI Assessment. Stop anytime.</label>
+    <label class="consent"><input type="checkbox" name="sms" value="yes"> Yes, text me at this number about my request. Reverse Selling Limited Liability Company (Reverse Selling LLC) will send follow-up, scheduling and reminder texts about my request, my free assessment and events I register for. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. Not required to submit.</label>
     <button class="button" type="submit" id="go">Show me the Assessment &rarr;</button>
     <div class="err" id="err"></div>
     <p class="micro">We use this to send your details and hold your spot.<br>No list swapping, no spam, ever.</p>
@@ -88,7 +88,6 @@ input:focus{outline:none;border-color:#b94f37;box-shadow:0 0 0 3px #b94f3722}
     var email=(d.get('email')||'').trim();
     if(!d.get('first')||!d.get('last')||!email||!d.get('mobile')||!d.get('business')) return fail('Please fill in every box so we can hold your spot.');
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('That email address doesn’t look right — mind checking it?');
-    if(!d.get('sms')) return fail('Please tick the box so we’re allowed to send you your details.');
     go.disabled=true; go.textContent='One second…';
     // remember them locally so nothing is lost even if the network hiccups
     try{localStorage.setItem('rs_optin',JSON.stringify({e:email,f:d.get('first'),t:Date.now()}));}catch(x){}
@@ -98,7 +97,7 @@ input:focus{outline:none;border-color:#b94f37;box-shadow:0 0 0 3px #b94f3722}
     body.set('fields[last_name]',(d.get('last')||'').trim());
     body.set('fields[mobile]',(d.get('mobile')||'').trim());
     body.set('fields[business_website]',(d.get('business')||'').trim());
-    body.set('fields[sms_ok]','yes');
+    if(d.get('sms')) body.set('fields[sms_ok]','yes');
     body.set('fields[optin_source]','assessment-0910');
     var done=false;
     function proceed(){ if(done) return; done=true; window.location.href=NEXT; }
