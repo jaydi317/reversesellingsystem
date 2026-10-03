@@ -8,10 +8,6 @@
 <meta name="theme-color" content="#172748">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1965691120685809');fbq('track','PageView');
-</script>
 <style>
 :root{--ink:#172748;--navy:#172c52;--blue:#5f759e;--copper:#b94f37;--body:#535e70;--line:#e0e6ed;--paper:#f7f9fc}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -76,7 +72,6 @@ a{color:inherit}
 (function(){
   var q=new URLSearchParams(location.search), s=q.get('s'), v=parseInt(q.get('v')||'0',10);
   if(s) document.getElementById('ref').textContent='Reference: '+s;
-  if(window.fbq && v) fbq('track','Purchase',{value:v,currency:'USD',content_name:'AI Audit'});
   try{ localStorage.setItem('rs_audit_paid', JSON.stringify({s:s,v:v,t:Date.now()})); }catch(e){}
 })();
 (function(C,A,L){var p=function(a,ar){a.q.push(ar)};var d=C.document;C.Cal=C.Cal||function(){var cal=C.Cal;var ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];typeof namespace==="string"?(cal.ns[namespace]=api)&&p(api,ar):p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.com/embed/embed.js","init");
